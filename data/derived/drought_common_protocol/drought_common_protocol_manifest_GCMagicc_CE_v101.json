@@ -1,0 +1,1684 @@
+{
+  "schema": "gcmagicc-drought-common-protocol/v1",
+  "generated_at": "2026-07-11T22:49:54.708374+00:00",
+  "protocol": {
+    "region": "IRN",
+    "event": "ERA5 December 2025 area-weighted SPEI-48",
+    "pet_methods": [
+      "thornthwaite",
+      "hargreaves",
+      "penman-monteith"
+    ],
+    "scale_months": 48,
+    "primary_baseline": [
+      1991,
+      2010
+    ],
+    "baseline_sensitivity": [
+      1981,
+      2010
+    ],
+    "gcmagicc_recent": [
+      2021,
+      2025
+    ],
+    "gcmagicc_future": [
+      2041,
+      2060
+    ],
+    "smile_common_window": [
+      1995,
+      2014
+    ],
+    "rsds_primary": "ERA5 minus source ensemble-mean; centered 21-year monthly smoothing; natural-only holds 1940 offset",
+    "rsds_sensitivity": "unadjusted",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260711,
+    "moving_block_years": 5,
+    "region_mask": "Natural Earth v5.0.0 countries_110; ISO3 IRN",
+    "grid_cells": 157
+  },
+  "root_environment_contract": {
+    "cmip6": "GCMAGICC_CMIP6_ROOT",
+    "gcmagicc": "GCMAGICC_ENSEMBLE_ROOT",
+    "era5": "GCMAGICC_ERA5_FILE"
+  },
+  "reproduction_command": [
+    "python",
+    "-m",
+    "gcmagicc_repro",
+    "reproduce",
+    "--figure",
+    "drought-common-protocol"
+  ],
+  "software_environment": {
+    "python": "3.12.0",
+    "numpy": "2.3.3",
+    "xarray": "2025.9.0",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.6",
+    "h5netcdf": "1.6.4",
+    "netCDF4": "1.7.2",
+    "regionmask": "0.13.0"
+  },
+  "workflow_arguments": {
+    "gcmagicc_label": "GCMagicc-CE",
+    "only_gcmagicc": true,
+    "max_members": null,
+    "workers": 8
+  },
+  "source_files": [
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r1i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m304-20260210-0338_ERA5_ssp245_r1i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770694748576203843
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r2i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m585-20260227-0642_ERA5_ssp245_r2i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772174593504972460
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r3i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m338-20260210-0402_ERA5_ssp245_r3i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770696146868137101
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r4i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m37-20260204-0525_ERA5_ssp245_r4i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770182773481384914
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r5i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m220-20260204-0828_ERA5_ssp245_r5i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770193730650415701
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r6i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m377-20260210-2058_ERA5_ssp245_r6i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770757127163035654
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r7i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m359-20260210-2028_ERA5_ssp245_r7i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770755322046080435
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r8i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m333-20260204-1017_ERA5_ssp245_r8i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770200254053378313
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r9i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m251-20260204-0854_ERA5_ssp245_r9i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770195273077300882
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r10i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m358-20260210-2018_ERA5_ssp245_r10i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770754743209112937
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r11i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m276-20260204-0940_ERA5_ssp245_r11i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770198025622168255
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r12i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m440-20260210-2249_ERA5_ssp245_r12i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770763774803419757
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r13i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m164-20260204-0751_ERA5_ssp245_r13i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770191510980659025
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r14i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m376-20260210-2047_ERA5_ssp245_r14i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770756473606131857
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r15i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m116-20260204-0641_ERA5_ssp245_r15i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770187308391314626
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r16i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m243-20260204-0846_ERA5_ssp245_r16i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770194823146412536
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r17i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m509-20260227-0416_ERA5_ssp245_r17i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772165825564929654
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r18i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m64-20260204-0619_ERA5_ssp245_r18i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770186009241594329
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r19i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m489-20260227-0315_ERA5_ssp245_r19i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772162146193709758
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r20i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m212-20260204-0815_ERA5_ssp245_r20i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770192969522936469
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r21i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m395-20260210-2145_ERA5_ssp245_r21i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770759929193226143
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r22i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m468-20260210-2349_ERA5_ssp245_r22i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770767486631494865
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r23i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m117-20260204-0657_ERA5_ssp245_r23i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770188256014266477
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r24i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m259-20260204-0904_ERA5_ssp245_r24i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770195891776242135
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r25i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m497-20260227-0349_ERA5_ssp245_r25i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772164200774490698
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r26i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m54-20260204-0559_ERA5_ssp245_r26i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770184801424452515
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r27i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m271-20260204-0922_ERA5_ssp245_r27i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770196967949624750
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r28i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m357-20260210-2008_ERA5_ssp245_r28i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770754148321860560
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r29i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m413-20260210-2215_ERA5_ssp245_r29i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770761752337920632
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r30i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m442-20260210-2302_ERA5_ssp245_r30i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770764547757094288
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r31i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m522-20260227-0531_ERA5_ssp245_r31i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772170284083922879
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r32i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m345-20260210-0747_ERA5_ssp245_r32i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770709699840171025
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r33i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m264-20260204-0911_ERA5_ssp245_r33i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770196334599292069
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r34i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m163-20260204-0739_ERA5_ssp245_r34i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770190799891946392
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r35i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m538-20260227-0532_ERA5_ssp245_r35i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772170349101820064
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r36i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m346-20260210-1929_ERA5_ssp245_r36i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770751780915668093
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r37i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m582-20260227-0626_ERA5_ssp245_r37i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772173591085522353
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r38i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m11-20260204-0524_ERA5_ssp245_r38i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770182695744666357
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r39i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m551-20260227-0557_ERA5_ssp245_r39i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772171879287302730
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r40i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m353-20260210-1949_ERA5_ssp245_r40i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770752970768290895
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r41i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m237-20260204-0834_ERA5_ssp245_r41i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770194090651404475
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r42i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m431-20260210-2226_ERA5_ssp245_r42i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770762382636843922
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r43i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m1-20260204-0506_ERA5_ssp245_r43i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255007,
+      "mtime_ns": 1770181620670572010
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r44i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m584-20260227-0623_ERA5_ssp245_r44i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772173414107811817
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r45i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m286-20260204-0948_ERA5_ssp245_r45i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770198542963183050
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r46i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m590-20260227-0644_ERA5_ssp245_r46i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772174683643827551
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r47i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m161-20260204-0737_ERA5_ssp245_r47i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770190638024467055
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r48i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m400-20260210-2156_ERA5_ssp245_r48i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770760582704039173
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r49i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m308-20260204-1010_ERA5_ssp245_r49i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770199846110761137
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r50i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m434-20260210-2237_ERA5_ssp245_r50i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770763050268633708
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r51i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m390-20260210-2127_ERA5_ssp245_r51i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770758868838099772
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r52i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m349-20260210-1939_ERA5_ssp245_r52i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770752369745218596
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r53i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m465-20260210-2332_ERA5_ssp245_r53i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770766341361109197
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r54i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m199-20260204-0814_ERA5_ssp245_r54i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770192888073206229
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r55i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m133-20260204-0714_ERA5_ssp245_r55i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770189312679604078
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r56i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m90-20260204-0638_ERA5_ssp245_r56i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770187116160948601
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r57i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m123-20260204-0659_ERA5_ssp245_r57i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770188409553774847
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r58i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m33-20260204-0524_ERA5_ssp245_r58i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770182716262592072
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r59i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m404-20260210-2205_ERA5_ssp245_r59i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770761156097992714
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r60i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m506-20260227-0356_ERA5_ssp245_r60i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772164624404811530
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r61i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m89-20260204-0623_ERA5_ssp245_r61i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770186223108891588
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r62i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m275-20260204-0931_ERA5_ssp245_r62i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770197496722458513
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r63i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m521-20260227-0444_ERA5_ssp245_r63i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772167494660352369
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r64i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m225-20260204-0832_ERA5_ssp245_r64i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770193965226362371
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r65i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m174-20260204-0756_ERA5_ssp245_r65i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770191794827746210
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r66i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m513-20260227-0421_ERA5_ssp245_r66i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772166097297504531
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r67i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m595-20260227-0646_ERA5_ssp245_r67i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772174827241596702
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r68i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m272-20260204-0931_ERA5_ssp245_r68i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770197509484906989
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r69i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m494-20260227-0329_ERA5_ssp245_r69i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772162972163441969
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r70i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m558-20260227-0558_ERA5_ssp245_r70i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772171905582260383
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r71i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m250-20260204-0852_ERA5_ssp245_r71i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770195143281369494
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r72i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m498-20260227-0348_ERA5_ssp245_r72i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772164123276619300
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r73i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m180-20260204-0758_ERA5_ssp245_r73i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770191913047366051
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r74i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m135-20260204-0715_ERA5_ssp245_r74i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770189367271616732
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r75i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m186-20260204-0810_ERA5_ssp245_r75i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770192630076060468
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r76i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m354-20260210-1959_ERA5_ssp245_r76i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770753571975639726
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r77i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m59-20260204-0600_ERA5_ssp245_r77i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770184871957234386
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r78i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m152-20260204-0733_ERA5_ssp245_r78i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770190427488150696
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r79i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m40-20260204-0543_ERA5_ssp245_r79i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770183802013739769
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r80i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m122-20260204-0656_ERA5_ssp245_r80i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770188228976353052
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r81i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m382-20260210-2111_ERA5_ssp245_r81i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770757928334698863
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r82i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m469-20260227-0323_ERA5_ssp245_r82i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772162613145989914
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r83i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m518-20260227-0422_ERA5_ssp245_r83i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772166140977436194
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r84i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m288-20260204-0949_ERA5_ssp245_r84i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770198575404071068
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r85i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m5-20260204-0507_ERA5_ssp245_r85i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255007,
+      "mtime_ns": 1770181669528394117
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r86i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m492-20260227-0313_ERA5_ssp245_r86i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772162007360923810
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r87i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m265-20260204-0912_ERA5_ssp245_r87i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770196352314705124
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r88i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m337-20260204-1018_ERA5_ssp245_r88i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770200325941134622
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r89i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m361-20260210-2038_ERA5_ssp245_r89i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770755896734083565
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r90i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m107-20260204-0639_ERA5_ssp245_r90i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770187168508775953
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r91i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m340-20260210-0719_ERA5_ssp245_r91i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770707990938834279
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r92i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m579-20260227-0612_ERA5_ssp245_r92i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772172770089861706
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r93i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m549-20260227-0537_ERA5_ssp245_r93i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1772170663856322332
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r94i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m4-20260204-0506_ERA5_ssp245_r94i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255007,
+      "mtime_ns": 1770181606625623147
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r95i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m67-20260204-0621_ERA5_ssp245_r95i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770186101891289897
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r96i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m296-20260210-0312_ERA5_ssp245_r96i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770693197355530454
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r97i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m42-20260204-0542_ERA5_ssp245_r97i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770183737770962309
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r98i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m61-20260204-0602_ERA5_ssp245_r98i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770184938900027360
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r99i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m47-20260204-0543_ERA5_ssp245_r99i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255008,
+      "mtime_ns": 1770183850060573337
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "factual",
+      "member": "r100i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m148-20260204-0718_ERA5_ssp245_r100i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255009,
+      "mtime_ns": 1770189529514080247
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r1i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m513-20260227-1735_ERA5_ssp245-nat_r1i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772213742404063874
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r2i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m584-20260227-1902_ERA5_ssp245-nat_r2i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772218974925276971
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r3i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m107-20260227-0916_ERA5_ssp245-nat_r3i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772183829906927686
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r4i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m122-20260227-0941_ERA5_ssp245-nat_r4i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772185331005474082
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r5i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m33-20260227-0729_ERA5_ssp245-nat_r5i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772177369279548801
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r6i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m59-20260227-0815_ERA5_ssp245-nat_r6i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772180120853064065
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r7i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m522-20260227-1759_ERA5_ssp245-nat_r7i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772215161420644563
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r8i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m400-20260227-1517_ERA5_ssp245-nat_r8i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772205449191773068
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r9i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m518-20260227-1738_ERA5_ssp245-nat_r9i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772213931727740571
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r10i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m308-20260227-1311_ERA5_ssp245-nat_r10i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772197895537249399
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r11i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m390-20260227-1506_ERA5_ssp245-nat_r11i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772204830896805211
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r12i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m237-20260227-1123_ERA5_ssp245-nat_r12i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772191422318317780
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r13i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m382-20260227-1458_ERA5_ssp245-nat_r13i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772204299480719763
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r14i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m186-20260227-1056_ERA5_ssp245-nat_r14i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772189823070949690
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r15i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m164-20260227-1038_ERA5_ssp245-nat_r15i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772188751946661993
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r16i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m442-20260227-1600_ERA5_ssp245-nat_r16i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772208025976644593
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r17i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m338-20260227-1330_ERA5_ssp245-nat_r17i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772199045962396761
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r18i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m440-20260227-1558_ERA5_ssp245-nat_r18i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772207901101838562
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r19i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m521-20260227-1804_ERA5_ssp245-nat_r19i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772215462105139006
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r20i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m349-20260227-1353_ERA5_ssp245-nat_r20i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772200439607089254
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r21i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m361-20260227-1432_ERA5_ssp245-nat_r21i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772202798217248721
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r22i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m276-20260227-1228_ERA5_ssp245-nat_r22i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772195352501240430
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r23i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m579-20260227-1844_ERA5_ssp245-nat_r23i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772217905476149754
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r24i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m265-20260227-1206_ERA5_ssp245-nat_r24i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772194005250272165
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r25i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m89-20260227-0850_ERA5_ssp245-nat_r25i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772182227208595906
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r26i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m359-20260227-1428_ERA5_ssp245-nat_r26i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772202556102650482
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r27i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m271-20260227-1207_ERA5_ssp245-nat_r27i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772194096837133274
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r28i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m152-20260227-1019_ERA5_ssp245-nat_r28i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772187584290631081
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r29i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m199-20260227-1104_ERA5_ssp245-nat_r29i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772190314943126269
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r30i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m5-20260227-0709_ERA5_ssp245-nat_r30i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255023,
+      "mtime_ns": 1772176179443450125
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r31i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m225-20260227-1123_ERA5_ssp245-nat_r31i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772191434995297225
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r32i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m506-20260227-1718_ERA5_ssp245-nat_r32i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772212754613721737
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r33i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m174-20260227-1045_ERA5_ssp245-nat_r33i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772189165690971214
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r34i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m288-20260227-1249_ERA5_ssp245-nat_r34i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772196558909358507
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r35i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m133-20260227-0958_ERA5_ssp245-nat_r35i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772186357834771192
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r36i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m434-20260227-1546_ERA5_ssp245-nat_r36i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772207181238044118
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r37i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m340-20260227-1332_ERA5_ssp245-nat_r37i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772199174978182368
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r38i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m337-20260227-1325_ERA5_ssp245-nat_r38i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772198758652867295
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r39i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m11-20260227-0725_ERA5_ssp245-nat_r39i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772177125435940173
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r40i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m40-20260227-0753_ERA5_ssp245-nat_r40i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772178853982172157
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r41i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m538-20260227-1803_ERA5_ssp245-nat_r41i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772215451741156399
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r42i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m54-20260227-0814_ERA5_ssp245-nat_r42i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772180109215082796
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r43i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m489-20260227-1642_ERA5_ssp245-nat_r43i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772210545756490452
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r44i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m275-20260227-1228_ERA5_ssp245-nat_r44i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772195348813246082
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r45i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m395-20260227-1514_ERA5_ssp245-nat_r45i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772205295760029693
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r46i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m404-20260227-1525_ERA5_ssp245-nat_r46i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772205940509961979
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r47i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m497-20260227-1710_ERA5_ssp245-nat_r47i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772212268152530485
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r48i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m243-20260227-1131_ERA5_ssp245-nat_r48i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772191921111505271
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r49i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m264-20260227-1202_ERA5_ssp245-nat_r49i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772193785561605323
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r50i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m551-20260227-1823_ERA5_ssp245-nat_r50i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772216646415165862
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r51i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m251-20260227-1145_ERA5_ssp245-nat_r51i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772192723522237760
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r52i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m272-20260227-1222_ERA5_ssp245-nat_r52i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772194953144849021
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r53i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m582-20260227-1850_ERA5_ssp245-nat_r53i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772218223519563154
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r54i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m4-20260227-0706_ERA5_ssp245-nat_r54i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255023,
+      "mtime_ns": 1772176005366727721
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r55i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m42-20260227-0754_ERA5_ssp245-nat_r55i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772178924778057582
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r56i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m333-20260227-1311_ERA5_ssp245-nat_r56i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772197924395198830
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r57i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m64-20260227-0850_ERA5_ssp245-nat_r57i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772182231806588376
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r58i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m304-20260227-1306_ERA5_ssp245-nat_r58i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772197610792711255
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r59i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m498-20260227-1711_ERA5_ssp245-nat_r59i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772212327632432718
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r60i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m469-20260227-1625_ERA5_ssp245-nat_r60i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772209540241181336
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r61i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m161-20260227-1022_ERA5_ssp245-nat_r61i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772187779990300983
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r62i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m37-20260227-0731_ERA5_ssp245-nat_r62i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772177536692280040
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r63i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m148-20260227-1003_ERA5_ssp245-nat_r63i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772186637153301715
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r64i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m346-20260227-1349_ERA5_ssp245-nat_r64i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772200200625477509
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r65i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m492-20260227-1649_ERA5_ssp245-nat_r65i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772210973123657449
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r66i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m286-20260227-1242_ERA5_ssp245-nat_r66i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772196180876967095
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r67i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m296-20260227-1248_ERA5_ssp245-nat_r67i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772196552939368200
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r68i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m61-20260227-0817_ERA5_ssp245-nat_r68i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772180256604846958
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r69i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m465-20260227-1613_ERA5_ssp245-nat_r69i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772208834809355557
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r70i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m90-20260227-0909_ERA5_ssp245-nat_r70i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772183394664653823
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r71i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m357-20260227-1412_ERA5_ssp245-nat_r71i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772201555701272065
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r72i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m250-20260227-1142_ERA5_ssp245-nat_r72i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772192577584473900
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r73i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m259-20260227-1148_ERA5_ssp245-nat_r73i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772192953456866426
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r74i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m354-20260227-1408_ERA5_ssp245-nat_r74i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772201345992610040
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r75i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m377-20260227-1457_ERA5_ssp245-nat_r75i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772204276851756985
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r76i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m1-20260227-0702_ERA5_ssp245-nat_r76i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255023,
+      "mtime_ns": 1772175764776111420
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r77i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m116-20260227-0913_ERA5_ssp245-nat_r77i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772183656660216484
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r78i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m67-20260227-0838_ERA5_ssp245-nat_r78i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772181554070724493
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r79i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m590-20260227-1919_ERA5_ssp245-nat_r79i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772219998383528331
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r80i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m358-20260227-1419_ERA5_ssp245-nat_r80i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772202006973544087
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r81i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m47-20260227-0759_ERA5_ssp245-nat_r81i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255024,
+      "mtime_ns": 1772179179161645891
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r82i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m494-20260227-1654_ERA5_ssp245-nat_r82i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772211307549061198
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r83i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m413-20260227-1534_ERA5_ssp245-nat_r83i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772206475561118852
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r84i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m117-20260227-0940_ERA5_ssp245-nat_r84i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772185236092630962
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r85i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m353-20260227-1401_ERA5_ssp245-nat_r85i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772200910313311980
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r86i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m376-20260227-1440_ERA5_ssp245-nat_r86i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772203259110477901
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r87i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m180-20260227-1046_ERA5_ssp245-nat_r87i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772189197268918537
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r88i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m585-20260227-1910_ERA5_ssp245-nat_r88i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772219432982484271
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r89i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m431-20260227-1539_ERA5_ssp245-nat_r89i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772206797154665691
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r90i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m509-20260227-1735_ERA5_ssp245-nat_r90i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772213719488102563
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r91i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m558-20260227-1831_ERA5_ssp245-nat_r91i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772217094098418488
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r92i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m212-20260227-1105_ERA5_ssp245-nat_r92i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772190353071062714
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r93i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m163-20260227-1024_ERA5_ssp245-nat_r93i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772187893163110088
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r94i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m345-20260227-1343_ERA5_ssp245-nat_r94i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772199858328028286
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r95i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m123-20260227-0941_ERA5_ssp245-nat_r95i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772185283936551881
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r96i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m595-20260227-1931_ERA5_ssp245-nat_r96i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772220682069335877
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r97i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m220-20260227-1114_ERA5_ssp245-nat_r97i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772190881375195676
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r98i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m549-20260227-1820_ERA5_ssp245-nat_r98i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772216429388528020
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r99i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m135-20260227-0959_ERA5_ssp245-nat_r99i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772186385559725351
+    },
+    {
+      "source": "GCMagicc-CE",
+      "forcing": "natural",
+      "member": "r100i1p1f1",
+      "filename": "GCMagicc-v101-d1b0e0m468-20260227-1625_ERA5_ssp245-nat_r100i1p1f1_psl-tas-pr-sfcWind-ts-tasmin-tasmax-rsds-hurs-huss.nc",
+      "bytes": 15614255025,
+      "mtime_ns": 1772209569646131426
+    }
+  ],
+  "outputs": [
+    {
+      "path": "drought_common_protocol_summary.csv",
+      "bytes": 13296,
+      "sha256": "6f884a64470f9f214e7143f188a6a31bf388d4280aef9730ee3d344be86d28cb"
+    },
+    {
+      "path": "drought_common_protocol_series.csv",
+      "bytes": 9015176,
+      "sha256": "4a377716810d52b901e4d5d36ef0b658eb4ca76d0e4489176e80c68e839681a5"
+    }
+  ]
+}

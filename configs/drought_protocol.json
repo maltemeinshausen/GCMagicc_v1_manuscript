@@ -13,5 +13,10 @@
   "bootstrap_seed": 20260711,
   "moving_block_years": 5,
   "interval": "percentile",
-  "zero_counterfactual": "one-sided-bound"
+  "zero_counterfactual": "exact-one-sided-upper-bound-on-effective-member-by-five-year-block-trials",
+  "gcmagicc_recent_window": [2021, 2025],
+  "gcmagicc_future_window": [2041, 2060],
+  "smile_common_window": [1995, 2014],
+  "smile_sources": ["CanESM5", "MIROC6", "GISS-E2-1-G"],
+  "required_variables": ["pr", "tas", "tasmin", "tasmax", "rsds", "sfcWind", "hurs", "psl"]
 }

@@ -95,23 +95,36 @@ try:
 except Exception:
     _HAVE_SCIPY = False
 
-from scr.validation_helpers.helper_bench_metric import check_for_existing_records_batch, parse_filename
-from scr.validation_helpers.helper_bench_plot import generate_pdf_filename
-from scr.validation_helpers.helper_benchmark import _generate_time_windows
-from scr.validation_helpers.helper_recipes import setup_carlito_font, add_bold_title, get_segment_title
-from scr.validation_helpers.recipe_metadata_utils import build_metric_metadata
-from scr.validation_helpers.helper_path_utils import get_output_folder
 from numpy import nanpercentile
-from scr.validation_helpers.helper_heatmap_metrics import (
-    quantile_rmse_map,
-    spectral_rmse_map,
-    dominant_period_map,
-)
-from scr.validation_helpers.helper_regions_ar6 import (
-    region_means_for_ar6,
-    DEFAULT_AR6_EXAMPLE_REGIONS,
-)
-from scr.validation_helpers.helper_heatmap_plot import plot_region_scale_time_heatmaps
+
+# The PET and SPEI kernels are deliberately importable without the original
+# notebook tree. Benchmark/report helpers are required only by ``gof`` and
+# ``replot_figure``; the standalone drought workflow uses the pure kernels.
+try:  # pragma: no cover - availability depends on optional benchmark extras
+    from gcmagicc_eval.helpers.validation_helpers.helper_bench_metric import check_for_existing_records_batch, parse_filename
+    from gcmagicc_eval.helpers.validation_helpers.helper_bench_plot import generate_pdf_filename
+    from gcmagicc_eval.helpers.validation_helpers.helper_benchmark import _generate_time_windows
+    from gcmagicc_eval.helpers.validation_helpers.helper_recipes import setup_carlito_font, add_bold_title, get_segment_title
+    from gcmagicc_eval.helpers.validation_helpers.recipe_metadata_utils import build_metric_metadata
+    from gcmagicc_eval.helpers.validation_helpers.helper_path_utils import get_output_folder
+    from gcmagicc_eval.helpers.validation_helpers.helper_heatmap_metrics import (
+        quantile_rmse_map,
+        spectral_rmse_map,
+        dominant_period_map,
+    )
+    from gcmagicc_eval.helpers.validation_helpers.helper_regions_ar6 import (
+        region_means_for_ar6,
+        DEFAULT_AR6_EXAMPLE_REGIONS,
+    )
+    from gcmagicc_eval.helpers.validation_helpers.helper_heatmap_plot import plot_region_scale_time_heatmaps
+except (ImportError, ModuleNotFoundError):
+    check_for_existing_records_batch = parse_filename = None
+    generate_pdf_filename = _generate_time_windows = None
+    setup_carlito_font = add_bold_title = get_segment_title = None
+    build_metric_metadata = get_output_folder = None
+    quantile_rmse_map = spectral_rmse_map = dominant_period_map = None
+    region_means_for_ar6 = plot_region_scale_time_heatmaps = None
+    DEFAULT_AR6_EXAMPLE_REGIONS = ()
 
 __all__ = ["gof", "replot_figure", "expected_records"]
 
@@ -1358,7 +1371,7 @@ def expected_records(file_a: str, file_b: str, cfg: Dict, *, comparison: str = "
             tpls.append({**base, "metrictype": f"Map_RMSE_SPEI{scale}DISTQ_{wname}"})
             tpls.append({**base, "metrictype": f"Map_RMSE_SPEI{scale}SPEC_{wname}"})
             try:
-                from scr.validation_helpers.helper_regions_ar6 import DEFAULT_AR6_EXAMPLE_REGIONS as _DEF
+                from gcmagicc_eval.helpers.validation_helpers.helper_regions_ar6 import DEFAULT_AR6_EXAMPLE_REGIONS as _DEF
                 for reg in cfg.get("regions_for_heatmaps", _DEF):
                     tpls.append({**base, "metrictype": f"Reg_RMSE_SPEI{scale}DISTQ_{reg}_{wname}"})
                     tpls.append({**base, "metrictype": f"Reg_RMSE_SPEI{scale}SPEC_{reg}_{wname}"})
