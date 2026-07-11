@@ -1,0 +1,17 @@
+{
+  "event_region": "IRN",
+  "event_year": 2025,
+  "event_month": 12,
+  "scale_months": 48,
+  "primary_baseline": [1991, 2010],
+  "baseline_sensitivity_years": 30,
+  "primary_regional_aggregation": "area-weighted-mean-of-gridcell-standardized-spei",
+  "aggregation_sensitivity": "standardize-area-weighted-regional-water-balance",
+  "primary_rsds": "era5-adjusted",
+  "rsds_sensitivity": "unadjusted",
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260711,
+  "moving_block_years": 5,
+  "interval": "percentile",
+  "zero_counterfactual": "one-sided-bound"
+}

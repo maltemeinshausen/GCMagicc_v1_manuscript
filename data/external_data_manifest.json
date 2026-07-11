@@ -1,0 +1,42 @@
+{
+  "schema": "gcmagicc-external-data/v1",
+  "release": "v1.0.1",
+  "objects": [
+    {
+      "id": "gcmagicc-checkpoints",
+      "public_model": "GCMagicc",
+      "status": "pending-publication",
+      "url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "data/external/checkpoints/gcmagicc"
+    },
+    {
+      "id": "gcmagicc-ce-checkpoints",
+      "public_model": "GCMagicc-CE",
+      "status": "pending-publication",
+      "url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "data/external/checkpoints/gcmagicc-ce"
+    },
+    {
+      "id": "gcmagicc-pm-bundle",
+      "public_model": "GCMagicc-PM",
+      "status": "pending-model-author-provenance",
+      "url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "data/external/nicolai/perfect-model"
+    },
+    {
+      "id": "gcmagicc-xs-bundle",
+      "public_model": "GCMagicc-XS",
+      "status": "pending-model-author-provenance",
+      "url": null,
+      "sha256": null,
+      "bytes": null,
+      "destination": "data/external/nicolai/xs"
+    }
+  ]
+}

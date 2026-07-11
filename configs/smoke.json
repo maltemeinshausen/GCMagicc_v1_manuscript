@@ -1,0 +1,11 @@
+{
+  "seed": 20260711,
+  "hargreaves": {
+    "temperature_c": 20.0,
+    "temperature_min_c": 15.0,
+    "temperature_max_c": 27.0,
+    "rsds_mj_m2_day": 18.0,
+    "days": 30
+  },
+  "two_pass_delta_c": [0.2, -0.1, 0.0]
+}

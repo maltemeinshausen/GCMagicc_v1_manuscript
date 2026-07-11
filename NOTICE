@@ -1,0 +1,9 @@
+GCMagicc v1.0.1
+
+Core GCMagicc model, training, and inference code:
+  Copyright Nicolai Meinshausen
+
+Evaluation, analysis, figure, data-processing, and portal-related code:
+  Copyright Malte Meinshausen and GCMagicc evaluation suite contributors
+
+Files combining both bodies of work retain both notices. Source snapshots and their original revisions are enumerated in provenance/manifest.csv. Apache-2.0 applies to code. CC BY 4.0 applies to data, figures, and documentation.
