@@ -31,6 +31,24 @@ def describe(path: Path) -> dict[str, str]:
             "license": "CC-BY-4.0",
             "role": "drought common-protocol derived data and run manifest",
         }
+    if rel.startswith("data/derived/turkiye_regional_application/"):
+        return {
+            "source_repository": "gcmmagicc",
+            "source_revision": "bc0a782e019d4d04bf60fad676ac46758145fae4",
+            "source_path": "data/projection_plots_simple_815/versioned/v100/figure1025_july1_exact_20260703",
+            "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+            "license": "CC-BY-4.0",
+            "role": "frozen annual Türkiye regional projection percentiles",
+        }
+    if rel == "data/derived/validation_metrics/metrics_audit.json":
+        return {
+            "source_repository": "gcmmagicc",
+            "source_revision": "metrics.sqlite snapshot 2026-04-20",
+            "source_path": "data/metric_databases/metrics.sqlite (read-only audit; database not copied)",
+            "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+            "license": "CC-BY-4.0",
+            "role": "validation record-count audit with source database checksum and SQL",
+        }
     if rel.startswith("figures/drought_common_protocol/"):
         return {
             "source_repository": "GCMagicc_v1_manuscript",
@@ -39,6 +57,15 @@ def describe(path: Path) -> dict[str, str]:
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
             "role": "drought common-protocol manuscript figure",
+        }
+    if rel.startswith("figures/turkiye_regional_application/"):
+        return {
+            "source_repository": "GCMagicc_v1_manuscript",
+            "source_revision": "release-generated Türkiye application v1",
+            "source_path": "src/gcmagicc_eval/workflows/1100_turkiye_regional_application.py",
+            "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+            "license": "CC-BY-4.0",
+            "role": "Türkiye regional application figure and summary",
         }
     if rel.startswith("src/gcmagicc_model/gcmagicc/"):
         name = rel.rsplit("/", 1)[-1]
@@ -135,7 +162,10 @@ def main() -> None:
     files += sorted((ROOT / "src/gcmagicc_eval").rglob("*.py"))
     files += [ROOT / "data/natural_forcing_ssp245_ar6_run0_1850-2100.csv"]
     files += sorted((ROOT / "data/derived/drought_common_protocol").glob("*"))
+    files += sorted((ROOT / "data/derived/turkiye_regional_application").rglob("*.json"))
+    files += sorted((ROOT / "data/derived/validation_metrics").glob("*.json"))
     files += sorted((ROOT / "figures/drought_common_protocol").glob("*"))
+    files += sorted((ROOT / "figures/turkiye_regional_application").glob("*"))
     rows = []
     for path in sorted(set(files)):
         meta = describe(path)

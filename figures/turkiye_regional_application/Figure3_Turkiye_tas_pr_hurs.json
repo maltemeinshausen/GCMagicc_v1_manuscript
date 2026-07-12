@@ -1,0 +1,287 @@
+{
+  "baseline": [
+    1995,
+    2014
+  ],
+  "future": [
+    2081,
+    2100
+  ],
+  "inputs": [
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/tas/ssp119.json",
+      "sha256": "695e73b7131b49ab0f08e0b83e58439301904124b415c3d286baddb6ac8da472",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/tas/ssp245.json",
+      "sha256": "a771871af6c6f6e6dc5b78453a071d9a9df87c345dcb3b665e0cbe091dd4a681",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/tas/ssp585.json",
+      "sha256": "1d498584a9e1a405bac2dba5c3279c6dd32f3d05d336e209f55dfbe16b26feac",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/tas/VL.json",
+      "sha256": "f0055c0528d8db788fb79e3a56e003ce9f14578ec79e818d0ad1aa61edf99d01",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/tas/M.json",
+      "sha256": "5e108d62eb1566b26615c6c150428b57cf0a8e652731e922894338549710ebc7",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/tas/H.json",
+      "sha256": "08518c3ca1da913065474baa7bc393ba481fe0e4fcd09557d4649aca5cb38558",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/pr/ssp119.json",
+      "sha256": "b3f79ff21ef0e39f8d45d3685649eb90a566524517e8612a0b886fc433c80999",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/pr/ssp245.json",
+      "sha256": "d047131862a09fe2bfe98636760e2d28f8dec7031d5bbeef0c7f244449be1319",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/pr/ssp585.json",
+      "sha256": "a1715b568679d17db924c996343f92f801782f59f4d90104512a0f2ca563224d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/pr/VL.json",
+      "sha256": "0ba1bd0edd8ac97baadf46e2dbc0cd055b729138265a0d25c6a9ea4dae51645a",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/pr/M.json",
+      "sha256": "e95b162341b35cf661bb4e947adb74fccb20936b870699a3b1b7af75a8478a94",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/pr/H.json",
+      "sha256": "2342023fed3843144190e45c4ee4103ba07e4b00e27b2a6f94a2fec5103b3233",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/hurs/ssp119.json",
+      "sha256": "2dce05c7e0e19ff05863eafef157846d3902a3b853af11c9865df5838f54356d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/hurs/ssp245.json",
+      "sha256": "4e7ef942394ee8b35f027e6820a0ae5b3521b10cf6c5c94e39236f66e864d6cc",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/hurs/ssp585.json",
+      "sha256": "0a76544c1119a7270a45d71c1c3e052730d848961a2b0dd1ce05b1537c4fde1e",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/hurs/VL.json",
+      "sha256": "a48e26e0ae817c586387c67f894fb604951c2b8b2f4923ff632063cd8a32a8f5",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/hurs/M.json",
+      "sha256": "7862e447c2d8a88e3c2f0a57f31e8b0d88bf70b26cc3f894df756c23e42981ec",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_application/inputs/hurs/H.json",
+      "sha256": "7783863f2770c36a96f6e211813290c24bef8eb05301f8f7ab614fbdc2a84e86",
+      "source_tag": [
+        "v100"
+      ]
+    }
+  ],
+  "outputs": {
+    "Figure3_Turkiye_tas_pr_hurs.pdf": "5f7f7d8e29dfbf13cde7ac4730fb96362c7e974101e16c2cd1a5ae0d531a7d69",
+    "Figure3_Turkiye_tas_pr_hurs.png": "923c805fe25e32dd88e0cfec6bcbd1d22c110f525909def16f25b5376e35d539"
+  },
+  "region": "T\u00fcrkiye (ISO3: TUR)",
+  "scenarios": [
+    "ssp119",
+    "ssp245",
+    "ssp585",
+    "VL",
+    "M",
+    "H"
+  ],
+  "schema": "gcmagicc-turkiye-application/v1",
+  "season": "annual",
+  "variables": {
+    "hurs": {
+      "H": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.741045,
+        "median_change": -2.5985954999999876,
+        "median_future": 59.14244950000001,
+        "members": 20
+      },
+      "M": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.64483399999999,
+        "median_change": -2.2097229999999968,
+        "median_future": 59.43511099999999,
+        "members": 20
+      },
+      "VL": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.63649299999999,
+        "median_change": -0.9715819999999908,
+        "median_future": 60.664911,
+        "members": 20
+      },
+      "ssp119": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.80000700000001,
+        "median_change": -1.075539500000005,
+        "median_future": 60.7244675,
+        "members": 20
+      },
+      "ssp245": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.66300149999999,
+        "median_change": -2.309208499999997,
+        "median_future": 59.353792999999996,
+        "members": 20
+      },
+      "ssp585": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.778804,
+        "median_change": -4.717204999999986,
+        "median_future": 57.061599000000015,
+        "members": 20
+      }
+    },
+    "pr": {
+      "H": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.78212,
+        "median_change": -6.2261825,
+        "median_future": 46.5559375,
+        "members": 20
+      },
+      "M": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.638636,
+        "median_change": -5.307257499999999,
+        "median_future": 47.3313785,
+        "members": 20
+      },
+      "VL": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.54548200000001,
+        "median_change": -2.6527935000000014,
+        "median_future": 49.892688500000006,
+        "members": 20
+      },
+      "ssp119": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 53.034647500000005,
+        "median_change": -2.8968035000000114,
+        "median_future": 50.137843999999994,
+        "members": 20
+      },
+      "ssp245": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.4002605,
+        "median_change": -5.300127500000002,
+        "median_future": 47.100133,
+        "members": 20
+      },
+      "ssp585": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.883948,
+        "median_change": -11.008284499999988,
+        "median_future": 41.87566350000001,
+        "members": 20
+      }
+    },
+    "tas": {
+      "H": {
+        "change_unit": "K",
+        "median_baseline": 285.1627205,
+        "median_change": 3.027772499999969,
+        "median_future": 288.19049299999995,
+        "members": 20
+      },
+      "M": {
+        "change_unit": "K",
+        "median_baseline": 285.09660099999996,
+        "median_change": 2.5107020000000375,
+        "median_future": 287.607303,
+        "members": 20
+      },
+      "VL": {
+        "change_unit": "K",
+        "median_baseline": 285.156739,
+        "median_change": 0.9641739999999572,
+        "median_future": 286.120913,
+        "members": 20
+      },
+      "ssp119": {
+        "change_unit": "K",
+        "median_baseline": 285.060301,
+        "median_change": 0.9070725000000266,
+        "median_future": 285.9673735,
+        "members": 20
+      },
+      "ssp245": {
+        "change_unit": "K",
+        "median_baseline": 285.094658,
+        "median_change": 2.4279730000000086,
+        "median_future": 287.522631,
+        "members": 20
+      },
+      "ssp585": {
+        "change_unit": "K",
+        "median_baseline": 285.12700700000005,
+        "median_change": 4.567418999999973,
+        "median_future": 289.694426,
+        "members": 20
+      }
+    }
+  }
+}

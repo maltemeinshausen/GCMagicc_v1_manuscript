@@ -1,0 +1,86 @@
+{
+  "all_versions": {
+    "gofnc_records": 4539079,
+    "ssp245_holdout_records": 1265222
+  },
+  "database": {
+    "basename": "metrics.sqlite",
+    "bytes": 11919757312,
+    "sha256": "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03"
+  },
+  "queries": {
+    "gofnc_by_domain": "SELECT version_tag, metricdomain, COUNT(*)\nFROM gofnc GROUP BY version_tag, metricdomain ORDER BY version_tag, metricdomain",
+    "gofnc_by_scenario": "SELECT version_tag, experiment_id, COUNT(*)\nFROM gofnc GROUP BY version_tag, experiment_id ORDER BY version_tag, experiment_id"
+  },
+  "schema": "gcmagicc-metrics-audit/v1",
+  "versions": {
+    "v100": {
+      "by_experiment_id": {
+        "1pctCO2": 183008,
+        "abrupt-2xCO2": 62909,
+        "abrupt-4xCO2": 188727,
+        "hist-GHG": 80061,
+        "hist-aer": 80066,
+        "hist-nat": 91504,
+        "historical": 280231,
+        "ssp119": 108661,
+        "ssp126": 183008,
+        "ssp245": 1063375,
+        "ssp370": 200165,
+        "ssp434": 57190,
+        "ssp460": 57190,
+        "ssp534-over": 74347,
+        "ssp585": 228760
+      },
+      "by_metricdomain": {
+        "BiasMaps": 156270,
+        "ENSOCharacteristics": 2950,
+        "ENSOTelecon": 2092,
+        "GlobalTimeseries": 10298,
+        "Histograms": 597284,
+        "HumidityCoupling": 2368,
+        "IndicatorFreq": 10638,
+        "JointEvolution": 363912,
+        "SeasonalCycle": 892446,
+        "Variability": 890706,
+        "ZonalMeans": 10238
+      },
+      "gofnc_records": 2939202,
+      "ssp245_holdout_records": 1063375
+    },
+    "v101": {
+      "by_experiment_id": {
+        "1pctCO2": 151077,
+        "abrupt-2xCO2": 49777,
+        "abrupt-4xCO2": 159938,
+        "hist-GHG": 49904,
+        "hist-aer": 49952,
+        "hist-nat": 59944,
+        "historical": 200792,
+        "ssp119": 74781,
+        "ssp126": 149570,
+        "ssp245": 201847,
+        "ssp370": 144561,
+        "ssp434": 48402,
+        "ssp460": 46249,
+        "ssp534-over": 57306,
+        "ssp585": 155777
+      },
+      "by_metricdomain": {
+        "BiasMaps": 91770,
+        "ENSOCharacteristics": 2045,
+        "ENSOTelecon": 1316,
+        "GlobalTimeseries": 6618,
+        "Histograms": 343244,
+        "HumidityCoupling": 1636,
+        "IndicatorFreq": 5004,
+        "JointEvolution": 200640,
+        "SeasonalCycle": 507906,
+        "Variability": 431520,
+        "ZonalMeans": 8178
+      },
+      "gofnc_records": 1599877,
+      "ssp245_holdout_records": 201847
+    }
+  }
+}

@@ -37,6 +37,15 @@
       "sha256": null,
       "bytes": null,
       "destination": "data/external/nicolai/xs"
+    },
+    {
+      "id": "validation-metrics-sqlite",
+      "public_model": "GCMagicc evaluation suite",
+      "status": "pending-publication",
+      "url": null,
+      "sha256": "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03",
+      "bytes": 11919757312,
+      "destination": "data/external/validation/metrics.sqlite"
     }
   ]
 }

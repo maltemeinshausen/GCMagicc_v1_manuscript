@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 EXTERNAL_MANIFEST = ROOT / "data" / "external_data_manifest.json"
 
 FIGURES = {
-    "turkiye": ("1025_FigureX_RegionalScenarioRange.py", []),
+    "turkiye": ("1100_turkiye_regional_application.py", []),
     "drought": ("1040_Figure4_DroughtAttribution_ExampleCountry.py", []),
     "drought-common-protocol": ("1090_drought_common_protocol.py", []),
     "resolution": ("1050_figureSX_resolution.py", ["gcmagicc-checkpoints"]),
