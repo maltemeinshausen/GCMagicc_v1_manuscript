@@ -32,9 +32,10 @@ List or reproduce a manuscript figure:
 python -m gcmagicc_repro reproduce --figure turkiye --dry-run
 python -m gcmagicc_repro reproduce --figure turkiye
 python -m gcmagicc_repro reproduce --figure workflow
+python -m gcmagicc_repro reproduce --figure drought-main-figure
 ```
 
-The publication workflow schematic is generated as PDF, PNG, and editable SVG without external inputs. The Türkiye workflow is fully standalone: it reads 75 frozen annual-percentile files for `tas`, `pr`, and `hurs`, draws the 25 pathways in a 3-by-3 scenario-family matrix with ERA5 historical series, writes PDF/PNG outputs, and records every input and output checksum in a JSON sidecar. The validation-count audit is also release-native; point it at a local or fetched `metrics.sqlite` without modifying the database:
+The publication workflow schematic is generated as PDF, PNG, and editable SVG without external inputs. The seven-panel drought main figure is also standalone: it reads the frozen corrected common-protocol series and summary plus a small hashed ERA5 map/boundary artifact. The Türkiye workflow reads 75 frozen annual-percentile files for `tas`, `pr`, and `hurs`, draws the 25 pathways in a 3-by-3 scenario-family matrix with ERA5 historical series, writes PDF/PNG outputs, and records every input and output checksum in a JSON sidecar. The validation-count audit is also release-native; point it at a local or fetched `metrics.sqlite` without modifying the database:
 
 ```bash
 python src/gcmagicc_eval/workflows/1110_metrics_database_audit.py \

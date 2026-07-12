@@ -56,6 +56,31 @@ def test_workflow_schematic_records_the_locked_method() -> None:
     }
 
 
+def test_drought_hybrid_figure_restores_context_without_old_results() -> None:
+    sidecar = json.loads(
+        (ROOT / "figures/drought_common_protocol/Figure5_DroughtAttribution_IRN_hybrid_common_protocol.json").read_text()
+    )
+    assert sidecar["schema"] == "gcmagicc-drought-hybrid-figure/v1"
+    assert list(sidecar["panels"]) == list("abcdefg")
+    assert sidecar["method"]["baseline"] == [1991, 2010]
+    assert sidecar["method"]["aggregation"] == "area-weighted mean of grid-cell-standardized December SPEI-48"
+    assert sidecar["design_provenance"]["scientific_results"].startswith("corrected common-protocol")
+    assert len(sidecar["inputs"]) == 3
+    assert set(sidecar["outputs"]) == {
+        "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.pdf",
+        "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.png",
+    }
+
+    map_artifact = json.loads(
+        (ROOT / "data/derived/drought_common_protocol/era5_irn_penman_monteith_spei48_map.json").read_text()
+    )
+    assert map_artifact["schema"] == "gcmagicc-era5-irn-event-map/v1"
+    assert map_artifact["event"] == "December 2025"
+    assert map_artifact["baseline"] == [1991, 2010]
+    assert any(boundary["iso3"] == "IRN" for boundary in map_artifact["boundaries"])
+    assert map_artifact["source"]["sha256"] == "2c6fd00ebd257794dd1bbe17be6c5a0e24b4caa7e8234949108e1ac01dcbcef0"
+
+
 def test_validation_audit_matches_frozen_database_snapshot() -> None:
     audit = json.loads((ROOT / "data/derived/validation_metrics/metrics_audit.json").read_text())
     assert audit["database"]["sha256"] == "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03"

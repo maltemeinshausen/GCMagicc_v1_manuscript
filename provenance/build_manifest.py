@@ -145,6 +145,15 @@ def describe(path: Path) -> dict[str, str]:
                 "license": "Apache-2.0",
                 "role": "publication workflow schematic generator",
             }
+        if name == "1130_drought_hybrid_figure.py":
+            return {
+                "source_repository": "GCMagicc_v1_manuscript",
+                "source_revision": "release-native implementation 2026-07-12",
+                "source_path": rel,
+                "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+                "license": "Apache-2.0",
+                "role": "corrected seven-panel drought synthesis figure generator",
+            }
         if name.startswith(("320_", "321_", "331_")):
             repo, revision = "gcmagicc_ensemble_runner", "fabeb92623a82d7adc0527ded00177ba09f1d2a8"
             source = f"notebooks/{name}"

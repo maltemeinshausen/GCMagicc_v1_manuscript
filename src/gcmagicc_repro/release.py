@@ -23,6 +23,7 @@ FIGURES = {
     "turkiye": ("1100_turkiye_regional_application.py", []),
     "drought": ("1040_Figure4_DroughtAttribution_ExampleCountry.py", []),
     "drought-common-protocol": ("1090_drought_common_protocol.py", []),
+    "drought-main-figure": ("1130_drought_hybrid_figure.py", []),
     "resolution": ("1050_figureSX_resolution.py", ["gcmagicc-checkpoints"]),
     "emergent": ("1060_figureX_emergentConstraints.py", ["gcmagicc-pm-bundle"]),
     "aerosol": ("1070_figureX_AerosolPattern.py", ["gcmagicc-pm-bundle"]),

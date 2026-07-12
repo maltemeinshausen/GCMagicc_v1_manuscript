@@ -30,6 +30,14 @@ python -m gcmagicc_repro reproduce --figure drought-common-protocol
 
 The direct CMIP6 comparison uses CanESM5, MIROC6, and GISS-E2-1-G. Its common factual/natural-only probability window is 1995--2014 because the GISS-E2-1-G natural-only archive ends in 2014. GCMagicc retains 2021--2025 and 2041--2060. Input roots can also be supplied through explicit CLI options; the output manifest records source filenames, byte sizes, timestamps, protocol settings, and hashes of every derived table and figure.
 
+The corrected seven-panel main figure can be regenerated without the large source NetCDF files:
+
+```sh
+python -m gcmagicc_repro reproduce --figure drought-main-figure
+```
+
+It restores the bordered ERA5 event map, separate GCMagicc `ssp245` and `ssp245-nat` ensemble series, and recent/future histograms from the former 1040 design. Its final two panels use only the corrected common-protocol event probabilities and three-SMILE probability ratios. The frozen map artifact records the exact ERA5 source hash, 1991--2010 baseline, Penman–Monteith calculation, area-weighted series, and clipped Natural Earth boundaries.
+
 ## Türkiye regional application
 
 The release includes annual Türkiye projections for all 25 frozen pathways and for `tas`, `pr`, and `hurs`. The 3-by-3 figure separates CMIP6 SSPs, NDC/SSP2-com/current-policy pathways, and CMIP7 scenarios by column and overlays ERA5 in black through 2025. Reproduce it without any sibling repository:

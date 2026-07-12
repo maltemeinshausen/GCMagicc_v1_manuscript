@@ -18,6 +18,10 @@ These are the release outputs of
   bootstrap.
 - `manifest` files record the locked protocol, source-file inventory, output
   hashes, and portable input-root environment contract.
+- `era5_irn_penman_monteith_spei48_map.json` is the small standalone map input
+  for the main synthesis figure. It freezes the corrected December 2025 map,
+  area-weighted ERA5 series, clipped Natural Earth boundaries, and exact source
+  filename, byte count, and SHA-256.
 
 The primary lane uses the 1991--2010 fitting baseline, ERA5-adjusted `rsds`,
 and an area-weighted mean of grid-cell-standardized SPEI. The files also
