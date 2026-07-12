@@ -38,7 +38,17 @@ The release includes annual Türkiye projections for all 25 frozen pathways and 
 python -m gcmagicc_repro reproduce --figure turkiye
 ```
 
-The workflow reports medians and 5--95% ranges, uses 1995--2014 as its baseline and 2081--2100 as its future period, and writes a JSON summary containing the 20-member median changes and SHA-256 hashes.
+The Türkiye workflow reports medians and 5--95% ranges, uses 1995--2014 as its baseline and 2081--2100 as its future period, and writes a JSON summary containing the 20-member median changes and SHA-256 hashes.
+
+## Workflow schematic
+
+Regenerate the vector-native training and inference schematic with:
+
+```sh
+python -m gcmagicc_repro reproduce --figure workflow
+```
+
+The figure separates the one-time CMIP6/ERA5 training and held-out evaluation from scenario inference. It also records the fixed two-pass correction used by the full-predictor variants: only `tas_smoothed` changes before a single same-seed rerun; GCMagicc-PM and GCMagicc-XS use reduced predictors and one emulator pass.
 
 ## Validation database audit
 

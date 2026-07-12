@@ -36,6 +36,26 @@ def test_turkiye_release_bundle_is_complete() -> None:
     assert all(item["members"] == 20 for values in summary["variables"].values() for item in values.values())
 
 
+def test_workflow_schematic_records_the_locked_method() -> None:
+    summary = json.loads((ROOT / "figures/gcmagicc_workflow/Figure4_GCMagicc_workflow.json").read_text())
+    assert summary["schema"] == "gcmagicc-workflow-schematic/v1"
+    assert summary["inference"]["requires_gridded_esm_or_reanalysis_fields"] is False
+    assert summary["inference"]["requires_prescribed_sst_or_ocean_state"] is False
+    assert summary["inference"]["full_predictor_variants"] == ["GCMagicc", "GCMagicc-CE"]
+    assert summary["inference"]["reduced_predictor_variants"] == ["GCMagicc-PM", "GCMagicc-XS"]
+    assert summary["inference"]["correction"] == {
+        "changed_predictors": ["tas_smoothed"],
+        "iterative_convergence_loop": False,
+        "passes": 2,
+        "unchanged_seed": True,
+    }
+    assert set(summary["outputs"]) == {
+        "Figure4_GCMagicc_workflow.pdf",
+        "Figure4_GCMagicc_workflow.png",
+        "Figure4_GCMagicc_workflow.svg",
+    }
+
+
 def test_validation_audit_matches_frozen_database_snapshot() -> None:
     audit = json.loads((ROOT / "data/derived/validation_metrics/metrics_audit.json").read_text())
     assert audit["database"]["sha256"] == "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03"

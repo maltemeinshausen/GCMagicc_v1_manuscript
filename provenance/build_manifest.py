@@ -67,6 +67,15 @@ def describe(path: Path) -> dict[str, str]:
             "license": "CC-BY-4.0",
             "role": "Türkiye regional application figure and summary",
         }
+    if rel.startswith("figures/gcmagicc_workflow/"):
+        return {
+            "source_repository": "GCMagicc_v1_manuscript",
+            "source_revision": "release-generated workflow schematic v1",
+            "source_path": "src/gcmagicc_eval/workflows/1120_gcmagicc_workflow_schematic.py",
+            "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+            "license": "CC-BY-4.0",
+            "role": "GCMagicc training and inference workflow schematic",
+        }
     if rel.startswith("src/gcmagicc_model/gcmagicc/"):
         name = rel.rsplit("/", 1)[-1]
         return {
@@ -127,6 +136,15 @@ def describe(path: Path) -> dict[str, str]:
                 "license": "Apache-2.0",
                 "role": "corrected drought and three-SMILE common-protocol workflow",
             }
+        if name == "1120_gcmagicc_workflow_schematic.py":
+            return {
+                "source_repository": "GCMagicc_v1_manuscript",
+                "source_revision": "release-native implementation 2026-07-12",
+                "source_path": rel,
+                "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+                "license": "Apache-2.0",
+                "role": "publication workflow schematic generator",
+            }
         if name.startswith(("320_", "321_", "331_")):
             repo, revision = "gcmagicc_ensemble_runner", "fabeb92623a82d7adc0527ded00177ba09f1d2a8"
             source = f"notebooks/{name}"
@@ -166,6 +184,7 @@ def main() -> None:
     files += sorted((ROOT / "data/derived/validation_metrics").glob("*.json"))
     files += sorted((ROOT / "figures/drought_common_protocol").glob("*"))
     files += sorted((ROOT / "figures/turkiye_regional_application").glob("*"))
+    files += sorted((ROOT / "figures/gcmagicc_workflow").glob("*"))
     rows = []
     for path in sorted(set(files)):
         meta = describe(path)
