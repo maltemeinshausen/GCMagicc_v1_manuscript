@@ -32,7 +32,7 @@ The direct CMIP6 comparison uses CanESM5, MIROC6, and GISS-E2-1-G. Its common fa
 
 ## Türkiye regional application
 
-The release includes a portable six-pathway subset of annual Türkiye projections for `tas`, `pr`, and `hurs`. Reproduce the three-panel figure without any sibling repository:
+The release includes annual Türkiye projections for all 25 frozen pathways and for `tas`, `pr`, and `hurs`. The 3-by-3 figure separates CMIP6 SSPs, NDC/SSP2-com/current-policy pathways, and CMIP7 scenarios by column and overlays ERA5 in black through 2025. Reproduce it without any sibling repository:
 
 ```sh
 python -m gcmagicc_repro reproduce --figure turkiye

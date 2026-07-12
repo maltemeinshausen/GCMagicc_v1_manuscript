@@ -23,8 +23,16 @@ def test_turkiye_release_bundle_is_complete() -> None:
     )
     assert summary["baseline"] == [1995, 2014]
     assert summary["future"] == [2081, 2100]
+    assert summary["schema"] == "gcmagicc-turkiye-application/v2"
     assert set(summary["variables"]) == {"tas", "pr", "hurs"}
-    assert len(summary["inputs"]) == 18
+    assert {key: len(value) for key, value in summary["scenario_groups"].items()} == {
+        "cmip6_ssps": 8,
+        "ndc_ssp2com_current_policy": 10,
+        "cmip7": 7,
+    }
+    assert len(summary["inputs"]) == 75
+    assert all(item["plotted"] for item in summary["era5"].values())
+    assert all(item["end_year"] == 2025 for item in summary["era5"].values())
     assert all(item["members"] == 20 for values in summary["variables"].values() for item in values.values())
 
 
