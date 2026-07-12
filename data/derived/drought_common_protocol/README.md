@@ -22,6 +22,11 @@ These are the release outputs of
   for the main synthesis figure. It freezes the corrected December 2025 map,
   area-weighted ERA5 series, clipped Natural Earth boundaries, and exact source
   filename, byte count, and SHA-256.
+- `cmip6_irn_penman_monteith_spei48_sidecar.json` is a compact, hashed reduction
+  of the former 1040 panel-I sidecar. It supplies the thin red CMIP6 context
+  lines in the two time-series panels. These legacy per-member-standardized
+  lines are visual context only and do not enter the corrected probabilities,
+  ratios, or uncertainty intervals.
 
 The primary lane uses the 1991--2010 fitting baseline, ERA5-adjusted `rsds`,
 and an area-weighted mean of grid-cell-standardized SPEI. The files also

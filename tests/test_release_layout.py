@@ -65,7 +65,7 @@ def test_drought_hybrid_figure_restores_context_without_old_results() -> None:
     assert sidecar["method"]["baseline"] == [1991, 2010]
     assert sidecar["method"]["aggregation"] == "area-weighted mean of grid-cell-standardized December SPEI-48"
     assert sidecar["design_provenance"]["scientific_results"].startswith("corrected common-protocol")
-    assert len(sidecar["inputs"]) == 3
+    assert len(sidecar["inputs"]) == 4
     assert set(sidecar["outputs"]) == {
         "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.pdf",
         "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.png",
@@ -79,6 +79,15 @@ def test_drought_hybrid_figure_restores_context_without_old_results() -> None:
     assert map_artifact["baseline"] == [1991, 2010]
     assert any(boundary["iso3"] == "IRN" for boundary in map_artifact["boundaries"])
     assert map_artifact["source"]["sha256"] == "2c6fd00ebd257794dd1bbe17be6c5a0e24b4caa7e8234949108e1ac01dcbcef0"
+
+    cmip6_sidecar = json.loads(
+        (ROOT / "data/derived/drought_common_protocol/cmip6_irn_penman_monteith_spei48_sidecar.json").read_text()
+    )
+    assert cmip6_sidecar["schema"] == "gcmagicc-cmip6-drought-sidecar/v1"
+    assert len(cmip6_sidecar["factual"]) == 54
+    assert len(cmip6_sidecar["natural"]) == 9
+    assert "not used in corrected attribution statistics" in cmip6_sidecar["purpose"]
+    assert cmip6_sidecar["source"]["sha256"] == "c9e76841922b6b552bc82c3fae70787269121d704fef09cbf47e7ae992a72b3b"
 
 
 def test_validation_audit_matches_frozen_database_snapshot() -> None:

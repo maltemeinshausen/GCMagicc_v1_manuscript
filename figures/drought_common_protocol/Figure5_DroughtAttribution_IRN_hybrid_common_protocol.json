@@ -19,6 +19,11 @@
       "bytes": 54212,
       "path": "data/derived/drought_common_protocol/era5_irn_penman_monteith_spei48_map.json",
       "sha256": "f3a1cfa23a559d68283080e48e717f48589458fe6332ceab9617ee815d86b424"
+    },
+    {
+      "bytes": 328974,
+      "path": "data/derived/drought_common_protocol/cmip6_irn_penman_monteith_spei48_sidecar.json",
+      "sha256": "51f5a8748d289e29f1af6eaa5952a03c1503ea216e79038533bf6c89af0babb9"
     }
   ],
   "method": {
@@ -31,13 +36,13 @@
     "threshold": -1.8381701072586882
   },
   "outputs": {
-    "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.pdf": "36d971740a379f6c1de2526bf41ca4de0341583698bc86c7c9a5124b926a1a64",
-    "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.png": "be75d1e6845511311280724a4eb6fcaa42a143581eb1d21c2d7153a3d3959266"
+    "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.pdf": "6104ba88988c3c3941919ab57e9bfb68e88fc799a15dca126908cb4bc1011758",
+    "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.png": "452d356fe6a629abeaa132bf04fbbcce5ac59223aa4db1b6ec30e15e2210acb7"
   },
   "panels": {
     "a": "ERA5 December 2025 Penman\u2013Monteith SPEI-48 map with Natural Earth country boundaries",
-    "b": "GCMagicc ssp245 December SPEI-48 ensemble series",
-    "c": "GCMagicc ssp245-nat December SPEI-48 ensemble series",
+    "b": "GCMagicc ssp245 ensemble plus legacy CMIP6 sidecar context",
+    "c": "GCMagicc ssp245-nat ensemble plus legacy CMIP6 hist-nat sidecar context",
     "d": "GCMagicc factual/natural distribution during 2021\u20132025",
     "e": "GCMagicc factual/natural distribution during 2041\u20132060",
     "f": "corrected GCMagicc event probabilities by PET method",

@@ -36,7 +36,7 @@ The corrected seven-panel main figure can be regenerated without the large sourc
 python -m gcmagicc_repro reproduce --figure drought-main-figure
 ```
 
-It restores the bordered ERA5 event map, separate GCMagicc `ssp245` and `ssp245-nat` ensemble series, and recent/future histograms from the former 1040 design. Its final two panels use only the corrected common-protocol event probabilities and three-SMILE probability ratios. The frozen map artifact records the exact ERA5 source hash, 1991--2010 baseline, Penman–Monteith calculation, area-weighted series, and clipped Natural Earth boundaries.
+It restores the bordered ERA5 event map, separate GCMagicc `ssp245` and `ssp245-nat` ensemble series, recent/future histograms, and thin red CMIP6 sidecar context from the former 1040 design. Its final two panels use only the corrected common-protocol event probabilities and three-SMILE probability ratios. The frozen map artifact records the exact ERA5 source hash, 1991--2010 baseline, Penman–Monteith calculation, area-weighted series, and clipped Natural Earth boundaries. A second compact artifact records the former sidecar hash and the 54 factual and nine natural-only CMIP6 regional lines; those lines are visual context only and are not used in the corrected attribution calculations.
 
 ## Türkiye regional application
 

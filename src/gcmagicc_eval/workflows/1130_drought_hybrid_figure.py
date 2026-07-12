@@ -28,6 +28,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.gridspec import GridSpec
+from matplotlib.lines import Line2D
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -35,6 +36,7 @@ DATA_ROOT = ROOT / "data" / "derived" / "drought_common_protocol"
 DEFAULT_SERIES = DATA_ROOT / "drought_common_protocol_series_GCMagicc_v100_and_SMILEs.csv"
 DEFAULT_SUMMARY = DATA_ROOT / "drought_common_protocol_summary_GCMagicc_v100_and_SMILEs.csv"
 DEFAULT_MAP = DATA_ROOT / "era5_irn_penman_monteith_spei48_map.json"
+DEFAULT_CMIP6_SIDECAR = DATA_ROOT / "cmip6_irn_penman_monteith_spei48_sidecar.json"
 DEFAULT_OUTPUT = ROOT / "figures" / "drought_common_protocol"
 STEM = "Figure5_DroughtAttribution_IRN_hybrid_common_protocol"
 
@@ -50,6 +52,7 @@ FACTUAL = "#D18F35"
 NATURAL = "#4C90C0"
 ERA5 = "#111111"
 MODEL_COLORS = {"CanESM5": "#228833", "MIROC6": "#CCBB44", "GISS-E2-1-G": "#EE6677"}
+CMIP6_SIDECAR = "#A31849"
 
 
 def sha256(path: Path) -> str:
@@ -151,6 +154,49 @@ def extract_map_artifact(era5_file: Path, output: Path) -> None:
     print(output)
 
 
+def extract_cmip6_sidecar(source: Path, output: Path) -> None:
+    """Reduce the former 1040 CMIP6 panel-I sidecar to regional lines only."""
+    payload = json.loads(source.read_text(encoding="utf-8"))
+
+    def reduce_series(items: Iterable[Mapping[str, object]]) -> list[dict[str, object]]:
+        reduced: list[dict[str, object]] = []
+        for item in items:
+            values = np.asarray(item["values"], dtype=float)
+            regional = values if values.ndim == 1 else np.nanmean(values, axis=1)
+            times = np.asarray(item.get("time", item.get("years", [])), dtype=float)
+            if regional.size != times.size:
+                raise ValueError(f"CMIP6 sidecar length mismatch for {item.get('label')}")
+            reduced.append(
+                {
+                    "label": str(item.get("label", "CMIP6")),
+                    "time": times.tolist(),
+                    "regional_mean": [None if not np.isfinite(value) else float(value) for value in regional],
+                }
+            )
+        return reduced
+
+    series = payload["series"]
+    artifact = {
+        "schema": "gcmagicc-cmip6-drought-sidecar/v1",
+        "purpose": "thin contextual CMIP6 lines in Figure 5 panels b and c; not used in corrected attribution statistics",
+        "pet_method": payload["pet_method"],
+        "region": payload["region"],
+        "source": {
+            "path_tail": "/".join(source.parts[-7:]),
+            "bytes": source.stat().st_size,
+            "sha256": sha256(source),
+            "generated_at": payload.get("generated_at"),
+            "timetag": payload.get("timetag"),
+            "baseline_strategy": "historical:per_member (legacy 1040 visual context)",
+        },
+        "factual": reduce_series([*series.get("cmip6_hist", []), *series.get("cmip6_ssp245", [])]),
+        "natural": reduce_series(series.get("cmip6_hist_nat", [])),
+    }
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(artifact, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(output)
+
+
 def load_series(path: Path) -> dict[str, dict[int, list[tuple[int, float]]]]:
     groups: dict[str, dict[int, list[tuple[int, float]]]] = {
         "factual": defaultdict(list),
@@ -212,10 +258,10 @@ def panel_label(ax: plt.Axes, label: str, *, inside: bool = False) -> None:
             zorder=10,
         )
     else:
-        ax.text(-0.10, 1.04, label, transform=ax.transAxes, fontsize=10.5, fontweight="bold", va="top", ha="left")
+        ax.text(-0.055, 1.04, label, transform=ax.transAxes, fontsize=10.5, fontweight="bold", va="top", ha="left")
 
 
-def plot_map(ax: plt.Axes, payload: Mapping[str, object]) -> None:
+def plot_map(ax: plt.Axes, cax: plt.Axes, payload: Mapping[str, object]) -> None:
     lat = np.asarray(payload["lat"], dtype=float)
     lon = np.asarray(payload["lon"], dtype=float)
     values = np.array([[np.nan if value is None else value for value in row] for row in payload["spei48_december_2025"]], dtype=float)
@@ -230,10 +276,9 @@ def plot_map(ax: plt.Axes, payload: Mapping[str, object]) -> None:
     ax.set_xlim(float(lon.min()) - 3.2, float(lon.max()) + 3.2)
     ax.set_ylim(float(lat.min()) - 2.2, float(lat.max()) + 2.2)
     ax.set_aspect("equal", adjustable="box")
-    ax.set_xlabel("Longitude")
     ax.set_ylabel("Latitude")
-    ax.set_title("ERA5 December 2025 Penman–Monteith SPEI-48", loc="left", fontsize=10.2, pad=5)
-    cbar = plt.colorbar(mesh, ax=ax, orientation="horizontal", fraction=0.07, pad=0.13, aspect=24)
+    ax.set_title("ERA5 December 2025\nPenman–Monteith SPEI-48", loc="left", fontsize=9.5, pad=4)
+    cbar = plt.colorbar(mesh, cax=cax, orientation="horizontal")
     cbar.set_label("SPEI-48", labelpad=1)
     cbar.ax.tick_params(labelsize=7)
 
@@ -247,6 +292,7 @@ def plot_series_panel(
     era5_years: np.ndarray,
     era5_values: np.ndarray,
     threshold: float,
+    cmip6_sidecar: Iterable[Mapping[str, object]],
 ) -> None:
     years, matrix = ensemble_matrix(members)
     for row in matrix:
@@ -254,6 +300,23 @@ def plot_series_panel(
     q05, q50, q95 = np.nanquantile(matrix, [0.05, 0.50, 0.95], axis=0)
     ax.fill_between(years, q05, q95, color=color, alpha=0.16, linewidth=0)
     ax.plot(years, q50, color=color, lw=1.5, label=f"GCMagicc median ({forcing_label})")
+    first_cmip6 = True
+    for item in cmip6_sidecar:
+        sidecar_time = np.asarray(item["time"], dtype=float)
+        sidecar_values = np.asarray(
+            [np.nan if value is None else value for value in item["regional_mean"]],
+            dtype=float,
+        )
+        ax.plot(
+            sidecar_time,
+            sidecar_values,
+            color=CMIP6_SIDECAR,
+            alpha=0.24,
+            lw=0.28,
+            label="CMIP6 sidecar" if first_cmip6 else None,
+            zorder=3,
+        )
+        first_cmip6 = False
     ax.plot(era5_years, era5_values, color=ERA5, lw=1.25, label="ERA5", zorder=5)
     ax.axhline(threshold, color=ERA5, lw=0.9, ls=":", label="ERA5 Dec 2025 threshold")
     ax.axvline(2025, color="0.55", lw=0.55, ls="--")
@@ -262,7 +325,7 @@ def plot_series_panel(
     ax.set_ylabel("December SPEI-48")
     ax.set_title(f"GCMagicc {forcing_label}", loc="left", fontsize=10.2, pad=5)
     ax.grid(axis="y", color="0.88", lw=0.5)
-    ax.legend(loc="upper left", ncol=3, fontsize=7.0, frameon=False, handlelength=2.2)
+    ax.legend(loc="upper left", ncol=4, fontsize=6.8, frameon=False, handlelength=2.2, columnspacing=1.0)
 
 
 def window_values(members: Mapping[int, list[tuple[int, float]]], period: tuple[int, int]) -> np.ndarray:
@@ -317,7 +380,7 @@ def plot_probabilities(
     ax.scatter(x + width / 2, natural_upper, marker="v", color="black", s=24, label="95% upper bound (zero count)", zorder=4)
     ax.set_xticks(x, PET_LABELS)
     ax.set_ylabel("Probability")
-    ax.set_title("GCMagicc event probability, 2021–2025", loc="left", fontsize=10.2, pad=5)
+    ax.set_title(r"$\mathbf{f}$   GCMagicc event probability, 2021–2025", loc="left", fontsize=10.2, pad=5)
     ax.legend(fontsize=7.2, frameon=False)
     ax.grid(axis="y", color="0.9", lw=0.5)
 
@@ -347,33 +410,54 @@ def plot_smile_ratios(ax: plt.Axes, rows: list[Mapping[str, str]]) -> None:
     ax.set_xticks(x, PET_LABELS)
     ax.set_ylim(0, maximum * 1.18)
     ax.set_ylabel("Probability ratio")
-    ax.set_title("CMIP6 SMILE comparison, 1995–2014", loc="left", fontsize=10.2, pad=5)
+    ax.set_title(r"$\mathbf{g}$   CMIP6 SMILE comparison, 1995–2014", loc="left", fontsize=10.2, pad=5)
     ax.legend(fontsize=7.0, frameon=False, ncol=2)
     ax.grid(axis="y", color="0.9", lw=0.5)
 
 
-def make_figure(series_path: Path, summary_path: Path, map_path: Path, output_dir: Path) -> dict[str, object]:
+def make_figure(
+    series_path: Path,
+    summary_path: Path,
+    map_path: Path,
+    cmip6_sidecar_path: Path,
+    output_dir: Path,
+) -> dict[str, object]:
     groups = load_series(series_path)
     summary_rows = load_summary(summary_path)
     ratios = primary_ratio_rows(summary_rows)
     map_payload = json.loads(map_path.read_text(encoding="utf-8"))
+    cmip6_sidecar = json.loads(cmip6_sidecar_path.read_text(encoding="utf-8"))
     era5_years = np.asarray(map_payload["area_weighted_series"]["years"], dtype=int)
     era5_values = np.asarray([np.nan if value is None else value for value in map_payload["area_weighted_series"]["values"]], dtype=float)
     threshold = float(map_payload["event_threshold"])
 
     mpl.rcParams.update({"font.family": "DejaVu Sans", "pdf.fonttype": 42, "ps.fonttype": 42})
-    fig = plt.figure(figsize=(13.2, 9.0), constrained_layout=True)
-    outer = GridSpec(3, 4, figure=fig, height_ratios=[1.12, 1.12, 1.0], width_ratios=[1.05, 1.0, 1.0, 1.0])
-    ax_map = fig.add_subplot(outer[0, 0])
+    fig = plt.figure(figsize=(13.2, 8.45))
+    outer = GridSpec(
+        3,
+        4,
+        figure=fig,
+        height_ratios=[1.0, 1.0, 0.92],
+        width_ratios=[1.16, 1.0, 1.0, 1.0],
+        left=0.065,
+        right=0.99,
+        bottom=0.075,
+        top=0.965,
+        wspace=0.34,
+        hspace=0.29,
+    )
+    map_grid = outer[0, 0].subgridspec(2, 1, height_ratios=[1.0, 0.075], hspace=0.23)
+    ax_map = fig.add_subplot(map_grid[0, 0])
+    cax_map = fig.add_subplot(map_grid[1, 0])
     ax_factual = fig.add_subplot(outer[0, 1:])
-    hist_grid = outer[1, 0].subgridspec(2, 1, hspace=0.28)
+    hist_grid = outer[1, 0].subgridspec(2, 1, hspace=0.50)
     ax_hist_recent = fig.add_subplot(hist_grid[0, 0])
     ax_hist_future = fig.add_subplot(hist_grid[1, 0])
     ax_natural = fig.add_subplot(outer[1, 1:])
     ax_probability = fig.add_subplot(outer[2, :2])
     ax_smile = fig.add_subplot(outer[2, 2:])
 
-    plot_map(ax_map, map_payload)
+    plot_map(ax_map, cax_map, map_payload)
     plot_series_panel(
         ax_factual,
         groups["factual"],
@@ -382,7 +466,9 @@ def make_figure(series_path: Path, summary_path: Path, map_path: Path, output_di
         era5_years=era5_years,
         era5_values=era5_values,
         threshold=threshold,
+        cmip6_sidecar=cmip6_sidecar["factual"],
     )
+    ax_factual.tick_params(axis="x", labelbottom=False)
     plot_series_panel(
         ax_natural,
         groups["natural"],
@@ -391,10 +477,12 @@ def make_figure(series_path: Path, summary_path: Path, map_path: Path, output_di
         era5_years=era5_years,
         era5_values=era5_values,
         threshold=threshold,
+        cmip6_sidecar=cmip6_sidecar["natural"],
     )
     ax_natural.set_xlabel("Year")
     plot_histogram(ax_hist_recent, groups, RECENT, threshold)
     plot_histogram(ax_hist_future, groups, FUTURE, threshold)
+    ax_hist_recent.tick_params(axis="x", labelbottom=False)
     ax_hist_future.set_xlabel("December SPEI-48")
     handles, labels = ax_hist_recent.get_legend_handles_labels()
     ax_hist_recent.legend(handles, labels, fontsize=6.3, frameon=False, loc="upper right")
@@ -405,8 +493,6 @@ def make_figure(series_path: Path, summary_path: Path, map_path: Path, output_di
         panel_label(ax, label)
     panel_label(ax_hist_recent, "d", inside=True)
     panel_label(ax_hist_future, "e", inside=True)
-    panel_label(ax_probability, "f")
-    panel_label(ax_smile, "g")
 
     output_dir.mkdir(parents=True, exist_ok=True)
     pdf = output_dir / f"{STEM}.pdf"
@@ -431,8 +517,8 @@ def make_figure(series_path: Path, summary_path: Path, map_path: Path, output_di
         },
         "panels": {
             "a": "ERA5 December 2025 Penman–Monteith SPEI-48 map with Natural Earth country boundaries",
-            "b": "GCMagicc ssp245 December SPEI-48 ensemble series",
-            "c": "GCMagicc ssp245-nat December SPEI-48 ensemble series",
+            "b": "GCMagicc ssp245 ensemble plus legacy CMIP6 sidecar context",
+            "c": "GCMagicc ssp245-nat ensemble plus legacy CMIP6 hist-nat sidecar context",
             "d": "GCMagicc factual/natural distribution during 2021–2025",
             "e": "GCMagicc factual/natural distribution during 2041–2060",
             "f": "corrected GCMagicc event probabilities by PET method",
@@ -446,7 +532,7 @@ def make_figure(series_path: Path, summary_path: Path, map_path: Path, output_di
         },
         "inputs": [
             {"path": path.relative_to(ROOT).as_posix(), "bytes": path.stat().st_size, "sha256": sha256(path)}
-            for path in (series_path, summary_path, map_path)
+            for path in (series_path, summary_path, map_path, cmip6_sidecar_path)
         ],
         "outputs": {pdf.name: sha256(pdf), png.name: sha256(png)},
     }
@@ -461,13 +547,18 @@ def main() -> int:
     parser.add_argument("--series", type=Path, default=DEFAULT_SERIES)
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
     parser.add_argument("--map-json", type=Path, default=DEFAULT_MAP)
+    parser.add_argument("--cmip6-sidecar", type=Path, default=DEFAULT_CMIP6_SIDECAR)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--extract-era5", type=Path, help="Extract and freeze the small map artifact from this ERA5 NetCDF")
+    parser.add_argument("--extract-cmip6-sidecar", type=Path, help="Reduce the former 1040 panel-I CMIP6 sidecar")
     args = parser.parse_args()
     if args.extract_era5:
         extract_map_artifact(args.extract_era5, args.map_json)
         return 0
-    make_figure(args.series, args.summary, args.map_json, args.output_dir)
+    if args.extract_cmip6_sidecar:
+        extract_cmip6_sidecar(args.extract_cmip6_sidecar, args.cmip6_sidecar)
+        return 0
+    make_figure(args.series, args.summary, args.map_json, args.cmip6_sidecar, args.output_dir)
     return 0
 
 
