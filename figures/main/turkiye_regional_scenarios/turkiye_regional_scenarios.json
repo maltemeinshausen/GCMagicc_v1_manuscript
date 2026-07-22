@@ -1,0 +1,1212 @@
+{
+  "baseline": [
+    1995,
+    2014
+  ],
+  "era5": {
+    "hurs": {
+      "colour": "black",
+      "end_year": 2025,
+      "n_annual_values": 86,
+      "plotted": true,
+      "source": "embedded in every frozen annual-percentile input",
+      "start_year": 1940
+    },
+    "pr": {
+      "colour": "black",
+      "end_year": 2025,
+      "n_annual_values": 86,
+      "plotted": true,
+      "source": "embedded in every frozen annual-percentile input",
+      "start_year": 1940
+    },
+    "tas": {
+      "colour": "black",
+      "end_year": 2025,
+      "n_annual_values": 86,
+      "plotted": true,
+      "source": "embedded in every frozen annual-percentile input",
+      "start_year": 1940
+    }
+  },
+  "future": [
+    2081,
+    2100
+  ],
+  "inputs": [
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp119.json",
+      "sha256": "695e73b7131b49ab0f08e0b83e58439301904124b415c3d286baddb6ac8da472",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp126.json",
+      "sha256": "181cd1a380a46eb02754ae63dc07582cb1c5cdd6301b5834c5d0c2f7d3af38b6",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp245.json",
+      "sha256": "a771871af6c6f6e6dc5b78453a071d9a9df87c345dcb3b665e0cbe091dd4a681",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp370.json",
+      "sha256": "d3c6d9bb8599dc87b483a7e842ee574606a29035c088e7dfdb843be002eb014e",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp434.json",
+      "sha256": "81854ace07c28e025b2f049c8826a07b5c9bba2a532d30898fcdf50e9999e5ed",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp460.json",
+      "sha256": "ef1f84449a0d8ba47c5f39c42e4f87fd9675a76797e57ac09ea06f357635c45c",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp534-over.json",
+      "sha256": "18399296f74b5d251d83a841028de65fe181a5246afebffb1d6360d960f17264",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ssp585.json",
+      "sha256": "1d498584a9e1a405bac2dba5c3279c6dd32f3d05d336e209f55dfbe16b26feac",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/SSP2-com.json",
+      "sha256": "89093a18d5589f2f36416d2bb474b757944b4756213c7ffb2f45804570d19c35",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/NDC-submitted-low.json",
+      "sha256": "482709106e8006490da35c932dc2111eba310cccda153739c23857d068c6632d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/NDC-submitted-high.json",
+      "sha256": "3dbe5f913a342823618cea302d6d406d0bbccc5ca43d13a79ef9eedc0dd9388c",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/NDC-PA-allNDCs-30June26-lower.json",
+      "sha256": "83b0aebb12c8db6e1e7206df1933fdc8b6e1133956d7a68811400238dc4d3191",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/NDC-PA-allNDCs-30June26-upper.json",
+      "sha256": "3cdf21829639b4af400a1c3c7bc56344815ae1afa89640ad2c3ca83bed34d03a",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/NDC-PA-wo-USA-30June26-lower.json",
+      "sha256": "7adfa61f2f3fac6f5120a1f276db31f7163634871dff9cfb2db4efa169de42d1",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/NDC-PA-wo-USA-30June26-upper.json",
+      "sha256": "b01f2728f1df70f3127d93ce610c994c399985578ff9f3d45df4af2a70c91e6a",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/Current-Policies-GCAM.json",
+      "sha256": "b16e79c3482056234ad729141e5bc364604737483dc096950802cd42c778d6c3",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/Current-Policies-MESSAGE.json",
+      "sha256": "931b1939f21928469b18e3d341c1cb33b1b4c9a65929fcb8f1935d8db758607a",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/Current-Policies-REMIND.json",
+      "sha256": "974b912d4aab7e642122f5d14e4f7c67407f352e36c2956ec67a0151c283bb3d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/VL.json",
+      "sha256": "f0055c0528d8db788fb79e3a56e003ce9f14578ec79e818d0ad1aa61edf99d01",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/LN.json",
+      "sha256": "6d320e95104b563e0b400b922602422620d2defc77a6b434fd720bce0e2c6636",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/L.json",
+      "sha256": "17b5e4cc3ac872f0e858085886fbc11702b287b5ca144b8fda25fc110491ba23",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/ML.json",
+      "sha256": "6b5a3389c2183c8791df40f1e6508299cdb3929001778daf4c6cd987d7eeb10f",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/M.json",
+      "sha256": "5e108d62eb1566b26615c6c150428b57cf0a8e652731e922894338549710ebc7",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/HL.json",
+      "sha256": "53bab6f85039fbc82e5553b0d0a1d4d2885c726a720e790a936036f26589a8db",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/tas/H.json",
+      "sha256": "08518c3ca1da913065474baa7bc393ba481fe0e4fcd09557d4649aca5cb38558",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp119.json",
+      "sha256": "b3f79ff21ef0e39f8d45d3685649eb90a566524517e8612a0b886fc433c80999",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp126.json",
+      "sha256": "80069937200e13cdf58c8b5b59636bbfff437c7300c23f9950103cf36e06fc9e",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp245.json",
+      "sha256": "d047131862a09fe2bfe98636760e2d28f8dec7031d5bbeef0c7f244449be1319",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp370.json",
+      "sha256": "a7c3c832f395658663baff8444cd2c511b65f53679f1ba939afc2a02f6b8b594",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp434.json",
+      "sha256": "47a2d868f337be31f40eca7f8c96ca1bc61298eda7ec04bc3b2fa3af637aa278",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp460.json",
+      "sha256": "ae64feac7dba33fa9a342a4ddaf6dc6f74d8be69604d537d89efc0bc5b788848",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp534-over.json",
+      "sha256": "6feec4010ef19c5d47d57ae13486052e5addbd8dfbdee602c185ef0612c27a08",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ssp585.json",
+      "sha256": "a1715b568679d17db924c996343f92f801782f59f4d90104512a0f2ca563224d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/SSP2-com.json",
+      "sha256": "f5b309749cf9937bbeb2f00846b586e932cfbce2d6eca238ec927b84462245c2",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/NDC-submitted-low.json",
+      "sha256": "08099cc3817fa55896757dd72cfd450344b829f5d4ddad8bd55eb9e0b9f78e8d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/NDC-submitted-high.json",
+      "sha256": "c1fed3f17ea47f107c713f2975149c0bc26d2085836d80573a5dd6fb2d43afda",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/NDC-PA-allNDCs-30June26-lower.json",
+      "sha256": "f254684c45784e0c5c0b0c51d57f4cd2a3769376f27b9d99a8889147f752f5f9",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/NDC-PA-allNDCs-30June26-upper.json",
+      "sha256": "7b52d9263e1774aa9590e764a1768dc19e54bde41bd834ee41042067fa490549",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/NDC-PA-wo-USA-30June26-lower.json",
+      "sha256": "c19c46d0c017fe8df014fdddef6249b06efa160783f2541d42f3d82f90e0fbb3",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/NDC-PA-wo-USA-30June26-upper.json",
+      "sha256": "deda8f0bddcb92488db2f21834073eca80e13368dedd57ef5b8b035416eab38f",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/Current-Policies-GCAM.json",
+      "sha256": "b02b11358ecf7d9dd8cd980693fe7c3213d8aafe28da30045e39407f7f690a5f",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/Current-Policies-MESSAGE.json",
+      "sha256": "febbdc402b374d27c0ff20552bf535548c5ab76d923687f93d12c6ed9e6dcd97",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/Current-Policies-REMIND.json",
+      "sha256": "4590fe80efbfa6992443ded7825700d164a6868af46c068522773ddcc8950c5d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/VL.json",
+      "sha256": "0ba1bd0edd8ac97baadf46e2dbc0cd055b729138265a0d25c6a9ea4dae51645a",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/LN.json",
+      "sha256": "cf77b59e5c1c8f09aa4353685227624eaad0006bc48709820f9dd5dc02d96cdc",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/L.json",
+      "sha256": "d54c685c9edd0f647dd892d3239f34d52d8f33fa6b610c05387b9d887e2181bc",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/ML.json",
+      "sha256": "1cab18b8b8a7e2b13548e086070479300bf3851eb6007c920dca2a7dd55c7ccb",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/M.json",
+      "sha256": "e95b162341b35cf661bb4e947adb74fccb20936b870699a3b1b7af75a8478a94",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/HL.json",
+      "sha256": "d1924e8aafdc9720b2653679b076eac2d8efeb437d9e94ee0c0fe505fd8f445e",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/pr/H.json",
+      "sha256": "2342023fed3843144190e45c4ee4103ba07e4b00e27b2a6f94a2fec5103b3233",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp119.json",
+      "sha256": "2dce05c7e0e19ff05863eafef157846d3902a3b853af11c9865df5838f54356d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp126.json",
+      "sha256": "d6e79227d03317bee6219c77447ad9279733490c22f58c1154183ca18ccf71b1",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp245.json",
+      "sha256": "4e7ef942394ee8b35f027e6820a0ae5b3521b10cf6c5c94e39236f66e864d6cc",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp370.json",
+      "sha256": "b40d270415b76fed5afb3463f92a7ea7a1faaa7ea4ca20127291e2fcbb918a0a",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp434.json",
+      "sha256": "553c52318e41a7d9164f25357c2d8854ab8d40f8bedadae2be0f8729cb0ac750",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp460.json",
+      "sha256": "15b3842e25ace128f9daff98b9be6e7ffb6e8843037272fe53bf76fa8fc3fd80",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp534-over.json",
+      "sha256": "e7ea9fc709d5922d22a3e3cb398469f6b99b3e1be43a8ca23bb24d8135e55cd3",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ssp585.json",
+      "sha256": "0a76544c1119a7270a45d71c1c3e052730d848961a2b0dd1ce05b1537c4fde1e",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/SSP2-com.json",
+      "sha256": "a31b5991a3f7adfcb9fc31f74ba88030436b9e38c1f584c3779c0aba164926b6",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/NDC-submitted-low.json",
+      "sha256": "bea8d01e8aaac035a650b052dc304b593dc2ea1ad941523394f10fe032e8eb3a",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/NDC-submitted-high.json",
+      "sha256": "b862ec469ce97e7a04509fbcb867d1abb357704d25eaf03e281ebb53463bf47b",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/NDC-PA-allNDCs-30June26-lower.json",
+      "sha256": "c9b1a39d522dd949648471f86d1a03e8f95627e8622adba6637daa843b98fbcb",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/NDC-PA-allNDCs-30June26-upper.json",
+      "sha256": "72e9a1134332fc7d74cc0dc4c261a83cfe8f44e02ffd5993dac78291eae73d2d",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/NDC-PA-wo-USA-30June26-lower.json",
+      "sha256": "4a5bd1d0ad4b5071eadd8b946eab1bf22290ebcaa950a9cdd02de6af5a7d508c",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/NDC-PA-wo-USA-30June26-upper.json",
+      "sha256": "9546c024c1e71496d03872c3a55414a3dfc041b2cef75ba191ab9dc3f0673f65",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/Current-Policies-GCAM.json",
+      "sha256": "c7c150ffd961da390a233d569b0e73299437a9f8ad7cf85f31d6b7c2c1fd842e",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/Current-Policies-MESSAGE.json",
+      "sha256": "63e8640113621466304d0da9a19488e30d18ee98a23785a85deb6e5b7d269992",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/Current-Policies-REMIND.json",
+      "sha256": "a0bd787bcbc8629df2003447198f4775a44d17020700462ea86d82dd9758b6da",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/VL.json",
+      "sha256": "a48e26e0ae817c586387c67f894fb604951c2b8b2f4923ff632063cd8a32a8f5",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/LN.json",
+      "sha256": "9aabf8b6479517e2e31081e428adb9117f529654ca8f81c009412d4392c2b23c",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/L.json",
+      "sha256": "c183cb0a3a53dce22775e6516cc5079dfd8d2e53924b8ad9235bbd2e4e6de442",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/ML.json",
+      "sha256": "c05aab14e08fe1c7cc80b0ddcca24690203d64dbb7b3883b43ecdee4d4c960be",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/M.json",
+      "sha256": "7862e447c2d8a88e3c2f0a57f31e8b0d88bf70b26cc3f894df756c23e42981ec",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/HL.json",
+      "sha256": "c226b19ed4b218b919d6db7542f1a9628d8f97f095d03b73ec1cac3f34e01e3e",
+      "source_tag": [
+        "v100"
+      ]
+    },
+    {
+      "path": "data/derived/turkiye_regional_scenarios/inputs/hurs/H.json",
+      "sha256": "7783863f2770c36a96f6e211813290c24bef8eb05301f8f7ab614fbdc2a84e86",
+      "source_tag": [
+        "v100"
+      ]
+    }
+  ],
+  "layout": "3 rows (tas, pr, hurs) x 3 scenario-family columns",
+  "outputs": {
+    "turkiye_regional_scenarios.pdf": "5979622c8e20d69d37466617a95bf3664de4b150989b17955d4a246ffcde709d",
+    "turkiye_regional_scenarios.png": "0daeb488d7cf53a69fbb4b767c0ab1f4a337c385b04837d6c1629410aac4ca36"
+  },
+  "region": "T\u00fcrkiye (ISO3: TUR)",
+  "scenario_groups": {
+    "cmip6_ssps": [
+      "ssp119",
+      "ssp126",
+      "ssp245",
+      "ssp370",
+      "ssp434",
+      "ssp460",
+      "ssp534-over",
+      "ssp585"
+    ],
+    "cmip7": [
+      "VL",
+      "LN",
+      "L",
+      "ML",
+      "M",
+      "HL",
+      "H"
+    ],
+    "ndc_ssp2com_current_policy": [
+      "SSP2-com",
+      "NDC-submitted-low",
+      "NDC-submitted-high",
+      "NDC-PA-allNDCs-30June26-lower",
+      "NDC-PA-allNDCs-30June26-upper",
+      "NDC-PA-wo-USA-30June26-lower",
+      "NDC-PA-wo-USA-30June26-upper",
+      "Current-Policies-GCAM",
+      "Current-Policies-MESSAGE",
+      "Current-Policies-REMIND"
+    ]
+  },
+  "schema": "gcmagicc-turkiye-regional-scenarios/v3",
+  "season": "annual",
+  "variables": {
+    "hurs": {
+      "Current-Policies-GCAM": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.720192,
+        "median_change": -2.3326615000000075,
+        "median_future": 59.38753049999999,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "Current-Policies-MESSAGE": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.810795999999996,
+        "median_change": -2.335093499999985,
+        "median_future": 59.47570250000001,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "Current-Policies-REMIND": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.76084750000001,
+        "median_change": -2.9586175000000026,
+        "median_future": 58.80223000000001,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "H": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.741045,
+        "median_change": -2.5985954999999876,
+        "median_future": 59.14244950000001,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "HL": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.96504050000001,
+        "median_change": -2.7467364999999972,
+        "median_future": 59.21830400000001,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "L": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.738341500000004,
+        "median_change": -1.3737080000000006,
+        "median_future": 60.364633500000004,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "LN": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.58736900000001,
+        "median_change": -0.9388680000000136,
+        "median_future": 60.648500999999996,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "M": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.64483399999999,
+        "median_change": -2.2097229999999968,
+        "median_future": 59.43511099999999,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "ML": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.7593495,
+        "median_change": -1.9931079999999994,
+        "median_future": 59.7662415,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "NDC-PA-allNDCs-30June26-lower": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.6873295,
+        "median_change": -1.224378999999999,
+        "median_future": 60.4629505,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-allNDCs-30June26-upper": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.51533400000001,
+        "median_change": -1.5385380000000168,
+        "median_future": 59.97679599999999,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-wo-USA-30June26-lower": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.64522899999999,
+        "median_change": -1.0103694999999888,
+        "median_future": 60.634859500000005,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-wo-USA-30June26-upper": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.58273700000001,
+        "median_change": -1.701487500000006,
+        "median_future": 59.8812495,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-submitted-high": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.58539350000001,
+        "median_change": -1.5662220000000175,
+        "median_future": 60.01917149999999,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-submitted-low": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.59618849999998,
+        "median_change": -1.0141694999999942,
+        "median_future": 60.58201899999999,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "SSP2-com": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.719959499999995,
+        "median_change": -1.7185584999999932,
+        "median_future": 60.001401,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "VL": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.63649299999999,
+        "median_change": -0.9715819999999908,
+        "median_future": 60.664911,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "ssp119": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.80000700000001,
+        "median_change": -1.075539500000005,
+        "median_future": 60.7244675,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp126": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.687622499999996,
+        "median_change": -1.4091270000000122,
+        "median_future": 60.278495499999984,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp245": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.66300149999999,
+        "median_change": -2.309208499999997,
+        "median_future": 59.353792999999996,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp370": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.71942099999999,
+        "median_change": -3.1941539999999833,
+        "median_future": 58.52526700000001,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp434": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.68231649999999,
+        "median_change": -1.487936999999988,
+        "median_future": 60.194379500000004,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp460": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.61415149999999,
+        "median_change": -2.5800589999999914,
+        "median_future": 59.0340925,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp534-over": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.586248999999995,
+        "median_change": -2.086323499999999,
+        "median_future": 59.499925499999996,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp585": {
+        "change_unit": "percentage points",
+        "median_baseline": 61.778804,
+        "median_change": -4.717204999999986,
+        "median_future": 57.061599000000015,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      }
+    },
+    "pr": {
+      "Current-Policies-GCAM": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.819575500000006,
+        "median_change": -5.777519500000011,
+        "median_future": 47.042055999999995,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "Current-Policies-MESSAGE": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 53.16784399999999,
+        "median_change": -6.014066499999984,
+        "median_future": 47.153777500000004,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "Current-Policies-REMIND": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.951415499999996,
+        "median_change": -7.675127499999995,
+        "median_future": 45.276288,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "H": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.78212,
+        "median_change": -6.2261825,
+        "median_future": 46.5559375,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "HL": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 53.500930499999996,
+        "median_change": -6.285733999999998,
+        "median_future": 47.2151965,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "L": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.955779500000006,
+        "median_change": -3.540526000000007,
+        "median_future": 49.4152535,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "LN": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.4912335,
+        "median_change": -2.502356000000006,
+        "median_future": 49.988877499999994,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "M": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.638636,
+        "median_change": -5.307257499999999,
+        "median_future": 47.3313785,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "ML": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.72068900000001,
+        "median_change": -4.626215500000001,
+        "median_future": 48.09447350000001,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "NDC-PA-allNDCs-30June26-lower": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.149200500000006,
+        "median_change": -2.851719000000003,
+        "median_future": 49.2974815,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-allNDCs-30June26-upper": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.121629,
+        "median_change": -3.796550999999994,
+        "median_future": 48.325078000000005,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-wo-USA-30June26-lower": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.726375499999996,
+        "median_change": -2.5850089999999994,
+        "median_future": 50.1413665,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-wo-USA-30June26-upper": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.09247800000001,
+        "median_change": -3.6504340000000113,
+        "median_future": 48.442043999999996,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-submitted-high": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 51.699019,
+        "median_change": -2.8714760000000012,
+        "median_future": 48.827543,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-submitted-low": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.04795849999999,
+        "median_change": -2.559002999999997,
+        "median_future": 49.488955499999996,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "SSP2-com": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.8047105,
+        "median_change": -4.616601999999993,
+        "median_future": 48.188108500000006,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "VL": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.54548200000001,
+        "median_change": -2.6527935000000014,
+        "median_future": 49.892688500000006,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "ssp119": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 53.034647500000005,
+        "median_change": -2.8968035000000114,
+        "median_future": 50.137843999999994,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp126": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.725689,
+        "median_change": -3.3999575000000064,
+        "median_future": 49.325731499999996,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp245": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.4002605,
+        "median_change": -5.300127500000002,
+        "median_future": 47.100133,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp370": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.4779955,
+        "median_change": -7.037257000000004,
+        "median_future": 45.440738499999995,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp434": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.768871000000004,
+        "median_change": -3.6846855000000005,
+        "median_future": 49.084185500000004,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp460": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.350081,
+        "median_change": -6.035998499999998,
+        "median_future": 46.314082500000005,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp534-over": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.4625725,
+        "median_change": -5.068069999999999,
+        "median_future": 47.3945025,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp585": {
+        "change_unit": "mm month$^{-1}$",
+        "median_baseline": 52.883948,
+        "median_change": -11.008284499999988,
+        "median_future": 41.87566350000001,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      }
+    },
+    "tas": {
+      "Current-Policies-GCAM": {
+        "change_unit": "K",
+        "median_baseline": 285.0563404999999,
+        "median_change": 2.6599445000001083,
+        "median_future": 287.716285,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "Current-Policies-MESSAGE": {
+        "change_unit": "K",
+        "median_baseline": 285.128058,
+        "median_change": 2.435651499999949,
+        "median_future": 287.56370949999996,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "Current-Policies-REMIND": {
+        "change_unit": "K",
+        "median_baseline": 285.0761635,
+        "median_change": 2.784368499999971,
+        "median_future": 287.860532,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "H": {
+        "change_unit": "K",
+        "median_baseline": 285.1627205,
+        "median_change": 3.027772499999969,
+        "median_future": 288.19049299999995,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "HL": {
+        "change_unit": "K",
+        "median_baseline": 285.08243699999997,
+        "median_change": 2.6205625000000055,
+        "median_future": 287.7029995,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "L": {
+        "change_unit": "K",
+        "median_baseline": 285.131761,
+        "median_change": 1.2237330000000384,
+        "median_future": 286.355494,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "LN": {
+        "change_unit": "K",
+        "median_baseline": 285.1319865,
+        "median_change": 1.1351890000000253,
+        "median_future": 286.2671755,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "M": {
+        "change_unit": "K",
+        "median_baseline": 285.09660099999996,
+        "median_change": 2.5107020000000375,
+        "median_future": 287.607303,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "ML": {
+        "change_unit": "K",
+        "median_baseline": 285.065471,
+        "median_change": 1.9870235000000207,
+        "median_future": 287.0524945,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "NDC-PA-allNDCs-30June26-lower": {
+        "change_unit": "K",
+        "median_baseline": 285.097778,
+        "median_change": 1.178750999999977,
+        "median_future": 286.276529,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-allNDCs-30June26-upper": {
+        "change_unit": "K",
+        "median_baseline": 285.14069600000005,
+        "median_change": 1.8448384999999234,
+        "median_future": 286.98553449999997,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-wo-USA-30June26-lower": {
+        "change_unit": "K",
+        "median_baseline": 285.15752299999997,
+        "median_change": 1.3028970000000868,
+        "median_future": 286.46042000000006,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-PA-wo-USA-30June26-upper": {
+        "change_unit": "K",
+        "median_baseline": 285.153619,
+        "median_change": 2.0161624999999503,
+        "median_future": 287.16978149999994,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-submitted-high": {
+        "change_unit": "K",
+        "median_baseline": 285.108661,
+        "median_change": 1.8897549999999796,
+        "median_future": 286.99841599999996,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "NDC-submitted-low": {
+        "change_unit": "K",
+        "median_baseline": 285.10720150000003,
+        "median_change": 1.2062609999999836,
+        "median_future": 286.3134625,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "SSP2-com": {
+        "change_unit": "K",
+        "median_baseline": 285.086573,
+        "median_change": 1.7296060000000466,
+        "median_future": 286.81617900000003,
+        "members": 20,
+        "scenario_group": "ndc_ssp2com_current_policy"
+      },
+      "VL": {
+        "change_unit": "K",
+        "median_baseline": 285.156739,
+        "median_change": 0.9641739999999572,
+        "median_future": 286.120913,
+        "members": 20,
+        "scenario_group": "cmip7"
+      },
+      "ssp119": {
+        "change_unit": "K",
+        "median_baseline": 285.060301,
+        "median_change": 0.9070725000000266,
+        "median_future": 285.9673735,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp126": {
+        "change_unit": "K",
+        "median_baseline": 285.1423275,
+        "median_change": 1.3444664999999532,
+        "median_future": 286.486794,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp245": {
+        "change_unit": "K",
+        "median_baseline": 285.094658,
+        "median_change": 2.4279730000000086,
+        "median_future": 287.522631,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp370": {
+        "change_unit": "K",
+        "median_baseline": 285.08043549999996,
+        "median_change": 3.593671499999971,
+        "median_future": 288.67410699999994,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp434": {
+        "change_unit": "K",
+        "median_baseline": 285.1017565,
+        "median_change": 1.7371919999999363,
+        "median_future": 286.83894849999996,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp460": {
+        "change_unit": "K",
+        "median_baseline": 285.08111599999995,
+        "median_change": 2.9001405000000204,
+        "median_future": 287.9812565,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp534-over": {
+        "change_unit": "K",
+        "median_baseline": 285.093458,
+        "median_change": 1.944936499999983,
+        "median_future": 287.0383945,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      },
+      "ssp585": {
+        "change_unit": "K",
+        "median_baseline": 285.12700700000005,
+        "median_change": 4.567418999999973,
+        "median_future": 289.694426,
+        "members": 20,
+        "scenario_group": "cmip6_ssps"
+      }
+    }
+  }
+}

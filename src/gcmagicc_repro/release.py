@@ -21,13 +21,13 @@ EXTERNAL_MANIFEST = ROOT / "data" / "external_data_manifest.json"
 FIGURES = {
     "workflow": ("1120_gcmagicc_workflow_schematic.py", []),
     "turkiye": ("1100_turkiye_regional_application.py", []),
-    "drought": ("1040_Figure4_DroughtAttribution_ExampleCountry.py", []),
+    "drought": ("1040_drought_attribution_example_country.py", []),
     "drought-common-protocol": ("1090_drought_common_protocol.py", []),
-    "drought-main-figure": ("1130_drought_hybrid_figure.py", []),
-    "resolution": ("1050_figureSX_resolution.py", ["gcmagicc-checkpoints"]),
-    "emergent": ("1060_figureX_emergentConstraints.py", ["gcmagicc-pm-bundle"]),
-    "aerosol": ("1070_figureX_AerosolPattern.py", ["gcmagicc-pm-bundle"]),
-    "xs": ("1080_Figure_GCMAGICC-XS_predictionskill.py", ["gcmagicc-xs-bundle"]),
+    "drought-main-figure": ("1130_drought_attribution_synthesis.py", []),
+    "resolution": ("1050_resolution_sensitivity.py", ["gcmagicc-checkpoints"]),
+    "emergent": ("1060_emergent_constraints.py", ["gcmagicc-pm-bundle"]),
+    "aerosol": ("1070_aerosol_pattern.py", ["gcmagicc-pm-bundle"]),
+    "xs": ("1080_gcmagicc_xs_prediction_skill.py", ["gcmagicc-xs-bundle"]),
 }
 
 

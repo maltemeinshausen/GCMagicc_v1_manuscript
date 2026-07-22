@@ -46,7 +46,7 @@ from gcmagicc_eval.recipes.SPEIx import (
 DEFAULT_CMIP6_ROOT = Path(os.environ.get("GCMAGICC_CMIP6_ROOT", "data/external/cmip6"))
 DEFAULT_GCMAGICC_ROOT = Path(os.environ.get("GCMAGICC_ENSEMBLE_ROOT", "data/external/gcmagicc"))
 DEFAULT_ERA5_FILE = Path(os.environ.get("GCMAGICC_ERA5_FILE", "data/external/era5.nc"))
-DEFAULT_OUTPUT = Path("data/derived/drought_common_protocol")
+DEFAULT_OUTPUT = Path("data/derived/iran_drought_attribution")
 MODELS = ("CanESM5", "MIROC6", "GISS-E2-1-G")
 PET_METHODS = ("thornthwaite", "hargreaves", "penman-monteith")
 VARIABLES = ("pr", "tas", "tasmin", "tasmax", "rsds", "sfcWind", "hurs", "psl")
@@ -796,7 +796,7 @@ def make_figures(
     axes[1, 1].legend(fontsize=8)
     for suffix in ("pdf", "png"):
         metadata = {"CreationDate": None, "ModDate": None} if suffix == "pdf" else None
-        fig.savefig(output / f"Figure4_DroughtAttribution_IRN_common_protocol.{suffix}", dpi=300, metadata=metadata)
+        fig.savefig(output / f"iran_drought_attribution_common_protocol.{suffix}", dpi=300, metadata=metadata)
     plt.close(fig)
 
     # Thin-line overlay requested for the supplement (Penman--Monteith primary lane).
@@ -824,7 +824,7 @@ def make_figures(
     ax.legend(ncol=2, fontsize=7)
     for suffix in ("pdf", "png"):
         metadata = {"CreationDate": None, "ModDate": None} if suffix == "pdf" else None
-        fig.savefig(output / f"FigureS_SMILE_IRN_common_protocol.{suffix}", dpi=300, metadata=metadata)
+        fig.savefig(output / f"iran_smile_common_protocol.{suffix}", dpi=300, metadata=metadata)
     plt.close(fig)
 
 
@@ -965,7 +965,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     _write_csv(series_path, series_rows)
     if not args.no_figures:
         make_figures(rows, series_rows, figure_data, region, args.output)
-    output_files = [summary_path, series_path, *sorted(args.output.glob("Figure*.pdf")), *sorted(args.output.glob("Figure*.png"))]
+    output_files = [summary_path, series_path, *sorted(args.output.glob("*.pdf")), *sorted(args.output.glob("*.png"))]
     manifest_path = args.output / "drought_common_protocol_manifest.json"
     write_manifest(manifest_path, specs, region, output_files, args)
     print(f"Wrote {summary_path}")

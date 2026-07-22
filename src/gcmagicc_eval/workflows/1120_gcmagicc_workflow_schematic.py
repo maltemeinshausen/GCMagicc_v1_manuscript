@@ -21,7 +21,7 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 
 ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_OUTPUT = ROOT / "figures" / "gcmagicc_workflow"
+DEFAULT_OUTPUT = ROOT / "figures" / "main" / "training_inference_workflow"
 
 NAVY = "#17324D"
 MUTED = "#52677B"
@@ -450,9 +450,9 @@ def build_figure(output_dir: Path) -> dict[str, object]:
     )
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    pdf = output_dir / "Figure4_GCMagicc_workflow.pdf"
-    png = output_dir / "Figure4_GCMagicc_workflow.png"
-    svg = output_dir / "Figure4_GCMagicc_workflow.svg"
+    pdf = output_dir / "gcmagicc_training_inference_workflow.pdf"
+    png = output_dir / "gcmagicc_training_inference_workflow.png"
+    svg = output_dir / "gcmagicc_training_inference_workflow.svg"
     metadata = {
         "Title": "GCMagicc v1.0.1 workflow",
         "Author": "Malte Meinshausen and GCMagicc evaluation suite contributors",
@@ -473,7 +473,7 @@ def build_figure(output_dir: Path) -> dict[str, object]:
 
     script = Path(__file__).resolve()
     summary: dict[str, object] = {
-        "schema": "gcmagicc-workflow-schematic/v1",
+        "schema": "gcmagicc-training-inference-workflow/v2",
         "generator": {"path": script.relative_to(ROOT).as_posix(), "sha256": sha256(script)},
         "training": {
             "targets": "32 CMIP6 models plus ERA5; monthly fields for 10 variables",
@@ -499,7 +499,7 @@ def build_figure(output_dir: Path) -> dict[str, object]:
         "outputs": {},
     }
     summary["outputs"] = {path.name: sha256(path) for path in (pdf, png, svg)}
-    summary_path = output_dir / "Figure4_GCMagicc_workflow.json"
+    summary_path = output_dir / "gcmagicc_training_inference_workflow.json"
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(summary_path)
     return summary

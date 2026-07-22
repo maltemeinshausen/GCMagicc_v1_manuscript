@@ -21,8 +21,8 @@ import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[3]
-INPUT_ROOT = ROOT / "data" / "derived" / "turkiye_regional_application" / "inputs"
-DEFAULT_OUTPUT = ROOT / "figures" / "turkiye_regional_application"
+INPUT_ROOT = ROOT / "data" / "derived" / "turkiye_regional_scenarios" / "inputs"
+DEFAULT_OUTPUT = ROOT / "figures" / "main" / "turkiye_regional_scenarios"
 
 SCENARIO_GROUPS = {
     "cmip6_ssps": (
@@ -160,7 +160,7 @@ def main() -> int:
     )
     fig.subplots_adjust(left=0.08, right=0.99, top=0.92, bottom=0.235, wspace=0.10, hspace=0.16)
     summary: dict[str, object] = {
-        "schema": "gcmagicc-turkiye-application/v2",
+        "schema": "gcmagicc-turkiye-regional-scenarios/v3",
         "layout": "3 rows (tas, pr, hurs) x 3 scenario-family columns",
         "region": "Türkiye (ISO3: TUR)",
         "season": "annual",
@@ -285,8 +285,8 @@ def main() -> int:
         )
     fig.suptitle("Annual regional projections for Türkiye", fontsize=14, fontweight="bold")
 
-    pdf = args.output_dir / "Figure3_Turkiye_tas_pr_hurs.pdf"
-    png = args.output_dir / "Figure3_Turkiye_tas_pr_hurs.png"
+    pdf = args.output_dir / "turkiye_regional_scenarios.pdf"
+    png = args.output_dir / "turkiye_regional_scenarios.png"
     metadata = {"CreationDate": None, "ModDate": None, "Creator": "GCMagicc v1.0.1 reproducibility release"}
     fig.savefig(pdf, metadata=metadata, bbox_inches="tight", pad_inches=0.06)
     fig.savefig(
@@ -299,7 +299,7 @@ def main() -> int:
     plt.close(fig)
 
     summary["outputs"] = {pdf.name: sha256(pdf), png.name: sha256(png)}
-    summary_path = args.output_dir / "Figure3_Turkiye_tas_pr_hurs.json"
+    summary_path = args.output_dir / "turkiye_regional_scenarios.json"
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(summary_path)
     return 0

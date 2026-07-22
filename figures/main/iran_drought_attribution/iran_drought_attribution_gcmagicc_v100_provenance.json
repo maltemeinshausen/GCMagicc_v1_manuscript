@@ -1,0 +1,51 @@
+{
+  "schema": "gcmagicc-iran-drought-attribution/v2",
+  "source_repository": "gcmmagicc",
+  "source_revision": "2b9bd0a9dfb111a0f813c77caaa7c798fe219c2e",
+  "source_workflow": "notebooks/1040_drought_attribution_example_country.py",
+  "generated_at": "2026-07-21T00:14:08.048027+00:00",
+  "source_timetag": "20260322_220619",
+  "region": "IRN",
+  "version_tag": "v100",
+  "scenario_pair": [
+    "ssp245",
+    "ssp245-nat"
+  ],
+  "pet_method": "penman-monteith",
+  "artifact": {
+    "path": "figures/main/iran_drought_attribution/iran_drought_attribution_gcmagicc_v100.pdf",
+    "bytes": 50708076,
+    "sha256": "8c456857fb63f4da9d8bac5969c49be02d1394790ff49b8b2819e6e6938233c3",
+    "panels": "a-m"
+  },
+  "smile_protocol": {
+    "schema": "gcmagicc-drought-cmip6-smiles/v2",
+    "baseline": {
+      "start_year": 1991,
+      "end_year": 2010,
+      "pooling": "model-pooled across every eligible historical member",
+      "calendar_month_specific": true
+    },
+    "rsds_adjustment": "none; raw rsds",
+    "regional_aggregation": "cosine-latitude weighted mean of grid-cell-standardized SPEI-48",
+    "natural_extension": "repeat each member's final five complete years to 2100 for visual context only",
+    "member_counts": {
+      "CanESM5": {
+        "historical": 65,
+        "hist-nat": 50,
+        "ssp245": 50
+      },
+      "MIROC6": {
+        "historical": 50,
+        "hist-nat": 50,
+        "ssp245": 50
+      },
+      "GISS-E2-1-G": {
+        "historical": 46,
+        "hist-nat": 20,
+        "ssp245": 22
+      }
+    }
+  },
+  "license": "CC-BY-4.0"
+}

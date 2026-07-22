@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+import hashlib
 import json
 from pathlib import Path
 
@@ -19,11 +20,11 @@ def test_repository_has_no_file_over_50_mb() -> None:
 
 def test_turkiye_release_bundle_is_complete() -> None:
     summary = json.loads(
-        (ROOT / "figures/turkiye_regional_application/Figure3_Turkiye_tas_pr_hurs.json").read_text()
+        (ROOT / "figures/main/turkiye_regional_scenarios/turkiye_regional_scenarios.json").read_text()
     )
     assert summary["baseline"] == [1995, 2014]
     assert summary["future"] == [2081, 2100]
-    assert summary["schema"] == "gcmagicc-turkiye-application/v2"
+    assert summary["schema"] == "gcmagicc-turkiye-regional-scenarios/v3"
     assert set(summary["variables"]) == {"tas", "pr", "hurs"}
     assert {key: len(value) for key, value in summary["scenario_groups"].items()} == {
         "cmip6_ssps": 8,
@@ -37,8 +38,8 @@ def test_turkiye_release_bundle_is_complete() -> None:
 
 
 def test_workflow_schematic_records_the_locked_method() -> None:
-    summary = json.loads((ROOT / "figures/gcmagicc_workflow/Figure4_GCMagicc_workflow.json").read_text())
-    assert summary["schema"] == "gcmagicc-workflow-schematic/v1"
+    summary = json.loads((ROOT / "figures/main/training_inference_workflow/gcmagicc_training_inference_workflow.json").read_text())
+    assert summary["schema"] == "gcmagicc-training-inference-workflow/v2"
     assert summary["inference"]["requires_gridded_esm_or_reanalysis_fields"] is False
     assert summary["inference"]["requires_prescribed_sst_or_ocean_state"] is False
     assert summary["inference"]["full_predictor_variants"] == ["GCMagicc", "GCMagicc-CE"]
@@ -50,29 +51,29 @@ def test_workflow_schematic_records_the_locked_method() -> None:
         "unchanged_seed": True,
     }
     assert set(summary["outputs"]) == {
-        "Figure4_GCMagicc_workflow.pdf",
-        "Figure4_GCMagicc_workflow.png",
-        "Figure4_GCMagicc_workflow.svg",
+        "gcmagicc_training_inference_workflow.pdf",
+        "gcmagicc_training_inference_workflow.png",
+        "gcmagicc_training_inference_workflow.svg",
     }
 
 
 def test_drought_hybrid_figure_restores_context_without_old_results() -> None:
     sidecar = json.loads(
-        (ROOT / "figures/drought_common_protocol/Figure5_DroughtAttribution_IRN_hybrid_common_protocol.json").read_text()
+        (ROOT / "figures/archive/iran_drought_attribution/iran_drought_attribution_synthesis_common_protocol.json").read_text()
     )
-    assert sidecar["schema"] == "gcmagicc-drought-hybrid-figure/v1"
+    assert sidecar["schema"] == "gcmagicc-drought-attribution-synthesis/v2"
     assert list(sidecar["panels"]) == list("abcdefg")
     assert sidecar["method"]["baseline"] == [1991, 2010]
     assert sidecar["method"]["aggregation"] == "area-weighted mean of grid-cell-standardized December SPEI-48"
     assert sidecar["design_provenance"]["scientific_results"].startswith("corrected common-protocol")
     assert len(sidecar["inputs"]) == 4
     assert set(sidecar["outputs"]) == {
-        "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.pdf",
-        "Figure5_DroughtAttribution_IRN_hybrid_common_protocol.png",
+        "iran_drought_attribution_synthesis_common_protocol.pdf",
+        "iran_drought_attribution_synthesis_common_protocol.png",
     }
 
     map_artifact = json.loads(
-        (ROOT / "data/derived/drought_common_protocol/era5_irn_penman_monteith_spei48_map.json").read_text()
+        (ROOT / "data/derived/iran_drought_attribution/era5_irn_penman_monteith_spei48_map.json").read_text()
     )
     assert map_artifact["schema"] == "gcmagicc-era5-irn-event-map/v1"
     assert map_artifact["event"] == "December 2025"
@@ -81,13 +82,42 @@ def test_drought_hybrid_figure_restores_context_without_old_results() -> None:
     assert map_artifact["source"]["sha256"] == "2c6fd00ebd257794dd1bbe17be6c5a0e24b4caa7e8234949108e1ac01dcbcef0"
 
     cmip6_sidecar = json.loads(
-        (ROOT / "data/derived/drought_common_protocol/cmip6_irn_penman_monteith_spei48_sidecar.json").read_text()
+        (ROOT / "data/derived/iran_drought_attribution/cmip6_irn_penman_monteith_spei48_sidecar.json").read_text()
     )
     assert cmip6_sidecar["schema"] == "gcmagicc-cmip6-drought-sidecar/v1"
     assert len(cmip6_sidecar["factual"]) == 54
     assert len(cmip6_sidecar["natural"]) == 9
     assert "not used in corrected attribution statistics" in cmip6_sidecar["purpose"]
     assert cmip6_sidecar["source"]["sha256"] == "c9e76841922b6b552bc82c3fae70787269121d704fef09cbf47e7ae992a72b3b"
+
+
+def test_selected_iran_drought_figure_and_provenance_are_frozen() -> None:
+    figure = ROOT / "figures/main/iran_drought_attribution/iran_drought_attribution_gcmagicc_v100.pdf"
+    provenance = json.loads(
+        (ROOT / "figures/main/iran_drought_attribution/iran_drought_attribution_gcmagicc_v100_provenance.json").read_text()
+    )
+    assert provenance["schema"] == "gcmagicc-iran-drought-attribution/v2"
+    assert provenance["source_revision"] == "2b9bd0a9dfb111a0f813c77caaa7c798fe219c2e"
+    assert provenance["artifact"] == {
+        "path": "figures/main/iran_drought_attribution/iran_drought_attribution_gcmagicc_v100.pdf",
+        "bytes": 50_708_076,
+        "sha256": "8c456857fb63f4da9d8bac5969c49be02d1394790ff49b8b2819e6e6938233c3",
+        "panels": "a-m",
+    }
+    assert figure.stat().st_size == provenance["artifact"]["bytes"]
+    assert hashlib.sha256(figure.read_bytes()).hexdigest() == provenance["artifact"]["sha256"]
+    assert provenance["smile_protocol"]["rsds_adjustment"] == "none; raw rsds"
+    assert provenance["smile_protocol"]["baseline"] == {
+        "start_year": 1991,
+        "end_year": 2010,
+        "pooling": "model-pooled across every eligible historical member",
+        "calendar_month_specific": True,
+    }
+    assert provenance["smile_protocol"]["member_counts"] == {
+        "CanESM5": {"historical": 65, "hist-nat": 50, "ssp245": 50},
+        "MIROC6": {"historical": 50, "hist-nat": 50, "ssp245": 50},
+        "GISS-E2-1-G": {"historical": 46, "hist-nat": 20, "ssp245": 22},
+    }
 
 
 def test_validation_audit_matches_frozen_database_snapshot() -> None:

@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
 
 def describe(path: Path) -> dict[str, str]:
     rel = path.relative_to(ROOT).as_posix()
-    if rel.startswith("data/derived/drought_common_protocol/"):
+    if rel.startswith("data/derived/iran_drought_attribution/"):
         return {
             "source_repository": "GCMagicc_v1_manuscript",
             "source_revision": "release-generated common protocol v1",
@@ -31,11 +31,11 @@ def describe(path: Path) -> dict[str, str]:
             "license": "CC-BY-4.0",
             "role": "drought common-protocol derived data and run manifest",
         }
-    if rel.startswith("data/derived/turkiye_regional_application/"):
+    if rel.startswith("data/derived/turkiye_regional_scenarios/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "bc0a782e019d4d04bf60fad676ac46758145fae4",
-            "source_path": "data/projection_plots_simple_815/versioned/v100/figure1025_july1_exact_20260703",
+            "source_revision": "2b9bd0a9dfb111a0f813c77caaa7c798fe219c2e",
+            "source_path": "data/projection_plots_simple_815/versioned/v100/regional_scenario_july1_exact_20260703",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
             "role": "frozen annual Türkiye regional projection percentiles",
@@ -49,16 +49,39 @@ def describe(path: Path) -> dict[str, str]:
             "license": "CC-BY-4.0",
             "role": "validation record-count audit with source database checksum and SQL",
         }
-    if rel.startswith("figures/drought_common_protocol/"):
+    if rel.startswith("figures/main/iran_drought_attribution/"):
+        return {
+            "source_repository": "gcmmagicc",
+            "source_revision": "2b9bd0a9dfb111a0f813c77caaa7c798fe219c2e",
+            "source_path": "data/manuscript_figures/drought_attribution/v100/IRN/20260721_001353",
+            "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+            "license": "CC-BY-4.0",
+            "role": "selected 13-panel Iran drought-attribution figure and provenance",
+        }
+    if rel.startswith("figures/supplementary/smile_common_protocol/"):
         return {
             "source_repository": "GCMagicc_v1_manuscript",
             "source_revision": "release-generated common protocol v1",
             "source_path": "src/gcmagicc_eval/workflows/1090_drought_common_protocol.py",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
-            "role": "drought common-protocol manuscript figure",
+            "role": "supplementary drought SMILE common-protocol figure",
         }
-    if rel.startswith("figures/turkiye_regional_application/"):
+    if rel.startswith("figures/archive/iran_drought_attribution/"):
+        source = (
+            "src/gcmagicc_eval/workflows/1130_drought_attribution_synthesis.py"
+            if "synthesis" in rel
+            else "src/gcmagicc_eval/workflows/1090_drought_common_protocol.py"
+        )
+        return {
+            "source_repository": "GCMagicc_v1_manuscript",
+            "source_revision": "release-generated common protocol v1",
+            "source_path": source,
+            "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+            "license": "CC-BY-4.0",
+            "role": "preserved unselected Iran drought-attribution variant",
+        }
+    if rel.startswith("figures/main/turkiye_regional_scenarios/"):
         return {
             "source_repository": "GCMagicc_v1_manuscript",
             "source_revision": "release-generated Türkiye application v1",
@@ -67,7 +90,7 @@ def describe(path: Path) -> dict[str, str]:
             "license": "CC-BY-4.0",
             "role": "Türkiye regional application figure and summary",
         }
-    if rel.startswith("figures/gcmagicc_workflow/"):
+    if rel.startswith("figures/main/training_inference_workflow/"):
         return {
             "source_repository": "GCMagicc_v1_manuscript",
             "source_revision": "release-generated workflow schematic v1",
@@ -109,7 +132,7 @@ def describe(path: Path) -> dict[str, str]:
             }
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "bc0a782e019d4d04bf60fad676ac46758145fae4",
+            "source_revision": "2b9bd0a9dfb111a0f813c77caaa7c798fe219c2e",
             "source_path": f"scr/{helper_rel}",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "Apache-2.0",
@@ -119,7 +142,7 @@ def describe(path: Path) -> dict[str, str]:
         name = rel.rsplit("/", 1)[-1]
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "bc0a782e019d4d04bf60fad676ac46758145fae4",
+            "source_revision": "2b9bd0a9dfb111a0f813c77caaa7c798fe219c2e",
             "source_path": f"notebooks/recipes/{name}",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "Apache-2.0",
@@ -145,7 +168,7 @@ def describe(path: Path) -> dict[str, str]:
                 "license": "Apache-2.0",
                 "role": "publication workflow schematic generator",
             }
-        if name == "1130_drought_hybrid_figure.py":
+        if name == "1130_drought_attribution_synthesis.py":
             return {
                 "source_repository": "GCMagicc_v1_manuscript",
                 "source_revision": "release-native implementation 2026-07-12",
@@ -161,7 +184,7 @@ def describe(path: Path) -> dict[str, str]:
             repo, revision = "cmipcruncher_firefly", "e310d238536fa136eacb5e7ace118b1ec2cc0837"
             source = f"notebooks/{name}"
         else:
-            repo, revision = "gcmmagicc", "bc0a782e019d4d04bf60fad676ac46758145fae4"
+            repo, revision = "gcmmagicc", "2b9bd0a9dfb111a0f813c77caaa7c798fe219c2e"
             source = f"notebooks/{name}"
         return {
             "source_repository": repo,
@@ -188,12 +211,14 @@ def main() -> None:
     files += sorted((ROOT / "src/gcmagicc_model").rglob("*.csv"))
     files += sorted((ROOT / "src/gcmagicc_eval").rglob("*.py"))
     files += [ROOT / "data/natural_forcing_ssp245_ar6_run0_1850-2100.csv"]
-    files += sorted((ROOT / "data/derived/drought_common_protocol").glob("*"))
-    files += sorted((ROOT / "data/derived/turkiye_regional_application").rglob("*.json"))
+    files += sorted((ROOT / "data/derived/iran_drought_attribution").glob("*"))
+    files += sorted((ROOT / "data/derived/turkiye_regional_scenarios").rglob("*.json"))
     files += sorted((ROOT / "data/derived/validation_metrics").glob("*.json"))
-    files += sorted((ROOT / "figures/drought_common_protocol").glob("*"))
-    files += sorted((ROOT / "figures/turkiye_regional_application").glob("*"))
-    files += sorted((ROOT / "figures/gcmagicc_workflow").glob("*"))
+    files += sorted((ROOT / "figures/main/iran_drought_attribution").glob("*"))
+    files += sorted((ROOT / "figures/supplementary/smile_common_protocol").glob("*"))
+    files += sorted((ROOT / "figures/archive/iran_drought_attribution").glob("*"))
+    files += sorted((ROOT / "figures/main/turkiye_regional_scenarios").glob("*"))
+    files += sorted((ROOT / "figures/main/training_inference_workflow").glob("*"))
     rows = []
     for path in sorted(set(files)):
         meta = describe(path)
