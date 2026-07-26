@@ -78,10 +78,10 @@ VAR_LONG_NAME_UNIT: dict[str, tuple[str, str]] = {
 
 
 def resolve_default_input_root(script_dir: Path) -> Path:
+    repo_root = Path(__file__).resolve().parents[3]
     candidates = [
-        script_dir / "RESOLUTIONPLOTS",
-        script_dir.parent / "data" / "nicolaiplots" / "plotsT1" / "plots_resolutions" / "RESOLUTIONPLOTS",
-        Path.cwd() / "data" / "nicolaiplots" / "plotsT1" / "plots_resolutions" / "RESOLUTIONPLOTS",
+        repo_root / "data" / "external" / "checkpoints" / "gcmagicc-ce" / "resolution" / "RESOLUTIONPLOTS",
+        Path.cwd() / "data" / "external" / "checkpoints" / "gcmagicc-ce" / "resolution" / "RESOLUTIONPLOTS",
     ]
     for candidate in candidates:
         if candidate.exists():
@@ -685,7 +685,11 @@ def list_data(index_by_var: dict[str, dict[int, list[Path]]]) -> None:
 def main() -> int:
     args = parse_args()
     input_root = args.input_root.expanduser().resolve()
-    outdir = (args.outdir.expanduser().resolve() if args.outdir else (input_root / "resolution_sensitivity"))
+    outdir = (
+        args.outdir.expanduser().resolve()
+        if args.outdir
+        else Path(__file__).resolve().parents[3] / "figures" / "supplementary" / "resolution_sensitivity"
+    )
 
     run_meta = load_run_meta(input_root)
     global_nlat = int(args.global_nlat if args.global_nlat is not None else run_meta.get("GLOBAL_NLAT", 360))

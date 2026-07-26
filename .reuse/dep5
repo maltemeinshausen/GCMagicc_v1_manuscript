@@ -12,6 +12,10 @@ Files: data/** figures/** docs/** README.md CITATION.cff codemeta.json
 Copyright: Nicolai Meinshausen; Malte Meinshausen and GCMagicc evaluation suite contributors
 License: CC-BY-4.0
 
+Files: data/derived/aerosol_sensitivity/source/**
+Copyright: Nicolai Meinshausen
+License: Apache-2.0
+
 Files: configs/** pyproject.toml
 Copyright: Nicolai Meinshausen; Malte Meinshausen and GCMagicc evaluation suite contributors
 License: Apache-2.0

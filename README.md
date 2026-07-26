@@ -33,9 +33,11 @@ python -m gcmagicc_repro reproduce --figure turkiye --dry-run
 python -m gcmagicc_repro reproduce --figure turkiye
 python -m gcmagicc_repro reproduce --figure workflow
 python -m gcmagicc_repro reproduce --figure drought-main-figure
+python -m gcmagicc_repro reproduce --figure emergent
+python -m gcmagicc_repro reproduce --figure xs
 ```
 
-The publication workflow schematic is generated as PDF, PNG, and editable SVG without external inputs. The seven-panel drought main figure is also standalone: it reads the frozen corrected common-protocol series and summary plus a small hashed ERA5 map/boundary artifact. The Türkiye workflow reads 75 frozen annual-percentile files for `tas`, `pr`, and `hurs`, draws the 25 pathways in a 3-by-3 scenario-family matrix with ERA5 historical series, writes PDF/PNG outputs, and records every input and output checksum in a JSON sidecar. The validation-count audit is also release-native; point it at a local or fetched `metrics.sqlite` without modifying the database:
+The publication workflow schematic is generated as PDF, PNG, and editable SVG without external inputs. The seven-panel drought main figure is also standalone: it reads the frozen corrected common-protocol series and summary plus a small hashed ERA5 map/boundary artifact. The Türkiye workflow reads 75 frozen annual-percentile files for `tas`, `pr`, and `hurs`, draws the 25 pathways in a 3-by-3 scenario-family matrix with ERA5 historical series, writes PDF/PNG outputs, and records every input and output checksum in a JSON sidecar. Emergent constraints are reproducible from the frozen 799-row model-trend table, six ERA5-conditioned tables, and completed seven-quantile table. GCMagicc-XS plots can be regenerated from the release's deterministic compact plotted-point sample. The validation-count audit is also release-native; point it at a local or fetched `metrics.sqlite` without modifying the database:
 
 ```bash
 python src/gcmagicc_eval/workflows/1110_metrics_database_audit.py \
@@ -45,7 +47,7 @@ python src/gcmagicc_eval/workflows/1110_metrics_database_audit.py \
 
 ## Release boundaries
 
-Files larger than 50 MB are never committed. `data/external_data_manifest.json` records their immutable URL, size, SHA-256, public model name, and destination. Entries marked `pending-publication` are release blockers, not guessed URLs. The PM and XS internal-to-public mappings remain unassigned until supported by model-author provenance.
+Files larger than 50 MB are never committed. `data/external_data_manifest.json` records their immutable URL, size, SHA-256, public model name, and destination. Entries marked `pending-publication` are release blockers, not guessed URLs. The PM and XS raw checkpoint mappings remain unassigned until supported by model-author provenance. This does not block prepared-data reproduction of the emergent-constraints figure or compact-data reproduction of the GCMagicc-XS figures.
 
 The frozen scientific scripts are preserved under `src/gcmagicc_eval/workflows/`. Some complete figure workflows require the external data listed in the manifest. The small `smoke` command tests deterministic release plumbing and the audited Hargreaves, area-weighting, December-event, bootstrap-seed, and two-pass-correction kernels without downloading multi-gigabyte checkpoints.
 

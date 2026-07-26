@@ -197,7 +197,10 @@ def plot_aerosol_pattern_matrix(
     nsub_for_cartopy: int = 3,
     central_longitude: float = 0.0,
     cmap_name: str = "RdBu_r",
-    cbar_label: str = "Change in diurnal temperature range ? in period ?? (K ?)",
+    cbar_label: str = (
+        "Full-forcing minus zero-aerosol-ERF change in diurnal temperature range, "
+        "2015–2024 (K)"
+    ),
     dpi: int = 220,
 ) -> Path:
     repo_root = Path(__file__).resolve().parent.parent
@@ -319,14 +322,14 @@ def plot_aerosol_pattern_matrix(
 
 
 def parse_args() -> argparse.Namespace:
-    repo_root = Path(__file__).resolve().parent.parent
+    repo_root = Path(__file__).resolve().parents[3]
     default_json_dir = (
         repo_root
         / "data"
-        / "nicolaiplots"
-        / "plots"
-        / "plots_aerosol"
-        / "DAER3_tasmax_mean"
+        / "external"
+        / "checkpoints"
+        / "gcmagicc-ce"
+        / "aerosol"
     )
 
     parser = argparse.ArgumentParser(
@@ -374,7 +377,14 @@ def main() -> None:
     args = parse_args()
     out_path = args.out
     if out_path is None:
-        out_path = args.json_dir / "aer_ERF_matrix_3xn_shared_cbar.pdf"
+        repo_root = Path(__file__).resolve().parents[3]
+        out_path = (
+            repo_root
+            / "figures"
+            / "supplementary"
+            / "aerosol_sensitivity"
+            / "aerosol_dtr_response_matrix.pdf"
+        )
 
     written = plot_aerosol_pattern_matrix(
         json_dir=args.json_dir,

@@ -35,11 +35,12 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 
 HERE = Path(__file__).resolve()
-REPO_ROOT = HERE.parent.parent
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+REPO_ROOT = HERE.parents[3]
+SOURCE_ROOT = REPO_ROOT / "src"
+if str(SOURCE_ROOT) not in sys.path:
+    sys.path.insert(0, str(SOURCE_ROOT))
 
-from scr.validation_helpers.helper_fonts import apply_sans_font_rcparams
+from gcmagicc_eval.helpers.validation_helpers.helper_fonts import apply_sans_font_rcparams
 
 
 # IPCC-consistent SSP colors (same base palette as notebooks/810_plot_SSPprojections.py)
@@ -78,8 +79,8 @@ SHINE_THROUGH_ALPHA = 0.30
 
 def _resolve_default_data_root(script_dir: Path) -> Path:
     candidates = [
-        script_dir.parent / "data" / "nicolaiplots" / "plots" / "plots_emergent_constraint",
-        Path.cwd() / "data" / "nicolaiplots" / "plots" / "plots_emergent_constraint",
+        REPO_ROOT / "data" / "derived" / "emergent_constraints",
+        Path.cwd() / "data" / "derived" / "emergent_constraints",
     ]
     for candidate in candidates:
         if candidate.exists():
@@ -1052,13 +1053,13 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--data_ssp",
         type=str,
-        default=str(data_root / "figchangeeraSsmall_1" / "trends_ssp_True_6.csv"),
+        default=str(data_root / "model_trends.csv"),
         help="CSV with model-level trends (must include version/trend columns).",
     )
     p.add_argument(
         "--data_era_template",
         type=str,
-        default=str(data_root / "figchangeforceeraSsmall_1" / "trends_{scen}_True_6.csv"),
+        default=str(data_root / "era5_conditioned_{scen}.csv"),
         help="ERA CSV template with {scen} placeholder.",
     )
     p.add_argument(
@@ -1092,7 +1093,7 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--output_base",
         type=str,
-        default=str(data_root / "emergent_constraints"),
+        default=str(REPO_ROOT / "figures" / "supplementary" / "emergent_constraints" / "emergent_constraints"),
         help="Output path without extension (or with extension; extension will be ignored).",
     )
     p.add_argument(

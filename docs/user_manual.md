@@ -62,6 +62,30 @@ The figure separates the one-time CMIP6/ERA5 training and held-out evaluation fr
 
 The 11.9 GB metrics database is not committed. `1110_metrics_database_audit.py` opens it with SQLite read-only and immutable flags, groups `gofnc` records by public version, recipe domain, and experiment, and writes a small auditable JSON artifact containing the exact SQL, source byte size, and SHA-256. The frozen audit underlying the manuscript contains 4,539,079 records, of which 1,265,222 are SSP2-4.5 hold-out records.
 
+## Emergent constraints
+
+The release-native command reads the frozen prepared trend tables, reconstructs the four-panel GCMagicc-PM figure, and writes its plotted-data composite:
+
+```sh
+python -m gcmagicc_repro reproduce --figure emergent
+```
+
+Warming is `(2081--2100 mean - 1995--2014 mean) + 0.85 degC`, expressed relative to 1850--1900. The calibrated scenario distributions use 2,000 replacement draws with seed 0. The release fully covers prepared-data-to-figure reproduction. Raw CMIP6, ERA5, and GCMagicc-PM checkpoint processing into the 799-row trend table remains outside the release and is recorded under `gcmagicc-pm-bundle`.
+
+## GCMagicc-XS compact replot
+
+The ten prediction-skill plots can be regenerated from the deterministic compact plotted-point table:
+
+```sh
+python -m gcmagicc_repro reproduce --figure xs
+```
+
+The external 1.53-GB monthly CSV remains checksum-locked for full raw recomputation under `gcmagicc-xs-bundle`.
+
+## GCMagicc-CE sensitivity figures
+
+The selected resolution and aerosol artifacts are frozen with normalized metadata. Recomputing their raw maps requires `gcmagicc-ce-checkpoints`. The aerosol diagnostic is the full-forcing minus zero-aerosol-ERF change in `tasmax - tasmin` in K at `nside=64`, based on 100 stochastic samples; 2015--2024 is explicitly provisional.
+
 ## Reproducibility boundary
 
 The frozen workflows retain scientific source history, while the release CLI provides stable discovery, fetch, verification, and dispatch. A figure whose manifest status is pending cannot be represented as reproducible and must be omitted at manuscript freeze.

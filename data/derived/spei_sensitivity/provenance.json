@@ -1,0 +1,31 @@
+{
+  "schema": "gcmagicc-spei-sensitivity-provenance/v1",
+  "semantic_role": "supplementary SPEI sensitivity",
+  "model_variants": ["GCMagicc", "GCMagicc-CE"],
+  "integrated_ada_revision": "16c9d72b1c4e01fbadb019f8d82e23e1fe426e23",
+  "gus_source_revisions": [
+    "8a3bb76 Add SMILE distributions to SPEI sensitivity analysis",
+    "34581af Export monthly drought attribution diagnostics"
+  ],
+  "integration_note": "Ada plotting, case shading, range markers, labels, 1025 workflow, and Ada CMIP6 default were retained while the Gus SMILE processing and semantic provenance outputs were integrated.",
+  "figure": {
+    "path": "figures/supplementary/spei_sensitivity/iran_spei_sensitivity_native.pdf",
+    "bytes": 1006530,
+    "sha256": "b4c39f2722e9584e49de20050f643f0ad5d2ff817429521079eaa874fa30d26e"
+  },
+  "source_tables": {
+    "period_attribution_original_sha256": "4b53bf6533192b81402147bbd58e7527d1869d00d5459fc5d78880bf62982525",
+    "period_attribution_normalized_sha256": "4eb7d0966386ee91590355d67ecb7be4526aa345de7ee2c3656ca446bb373d52",
+    "gcmagicc_native_summary_sha256": "59403a98421ed9d811480e97aea9960af0b12477cddc68dece62d88c289e5142",
+    "selected_smile_members_normalized_sha256": "43a2fa65f0e78c75116d618132f623ac598924d7f7a86ecd1be941595fe757a1"
+  },
+  "protocol": {
+    "region": "IRN",
+    "periods": [[2021, 2040], [2041, 2060], [2081, 2100]],
+    "scale_months": 48,
+    "smile_members": {"CanESM5": 50, "MIROC6": 50, "GISS-E2-1-G": 22},
+    "standardization": "model-pooled 1991-2010 historical GLO fit with raw rsds",
+    "regional_aggregation": "cosine-latitude weighted mean with finite-point renormalization"
+  },
+  "licence": "CC-BY-4.0"
+}

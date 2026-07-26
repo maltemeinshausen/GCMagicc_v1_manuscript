@@ -1,0 +1,72 @@
+{
+  "schema": "gcmagicc-emergent-constraints-provenance/v1",
+  "semantic_role": "supplementary emergent constraints",
+  "model_variant": "GCMagicc-PM",
+  "warming_metric": {
+    "future_period": [2081, 2100],
+    "reference_period": [1995, 2014],
+    "preindustrial_offset_celsius": 0.85,
+    "definition": "(2081-2100 mean - 1995-2014 mean) + 0.85 degC",
+    "reported_baseline": [1850, 1900]
+  },
+  "archive": {
+    "copies": ["data/nicolaiplots/plots.tar", "data/nicolaiplots/plotsT1.tar"],
+    "bytes_each": 559450108,
+    "sha256_each": "43923f2cf9563ec19273ad98a7422737448749ed7f8d6bddb92e5e590f8ef36c",
+    "committed": false,
+    "duplicate_content": true
+  },
+  "selected_archive_members": {
+    "plots/plots_emergent_constraint/figchangeeraSsmall_1/trends_ssp_True_6.csv": "eafe8ec0c39f15f74a6d5cf626b9a21b657eb5b64988719c6e089a573eed67fa",
+    "plots/plots_emergent_constraint/figchangeforceeraSsmall_1/trends_ssp119_True_6.csv": "e5ef33fce93415b8839ede3788081efb5aa9dde0b9f8032dd7f160ef4329c6db",
+    "plots/plots_emergent_constraint/figchangeforceeraSsmall_1/trends_ssp126_True_6.csv": "23c41a2b5daf6cff6a4804c47ad3f1b2086cd1e40387511b52019538ba6ca196",
+    "plots/plots_emergent_constraint/figchangeforceeraSsmall_1/trends_ssp370_True_6.csv": "6976d61a25a7aad4caeb7f9948e5ded7c88f95db3183dbec27793d118f6f8c9f",
+    "plots/plots_emergent_constraint/figchangeforceeraSsmall_1/trends_ssp434_True_6.csv": "50e1ce40bffdce0c975d9f75965da5a3aac827b58ffbd7cc24f5cebbbaebf686",
+    "plots/plots_emergent_constraint/figchangeforceeraSsmall_1/trends_ssp460_True_6.csv": "c4abda794cd639071e30202095b2c35e07a2864cc2966ec495ac810888981a0a",
+    "plots/plots_emergent_constraint/figchangeforceeraSsmall_1/trends_ssp585_True_6.csv": "66ed69eda039c7c18a3f86fcb6e79704f61c283230d4d0e67a953e10b9e710da",
+    "plots/plots_emergent_constraint/sample_emergent2.py": "6e24e58828a21edd5ca291ea7b8de4c23d7bd9e14568d92b4a702d6d5c732f2b"
+  },
+  "prepared_inputs": {
+    "model_trends_rows": 799,
+    "model_count": 19,
+    "era5_conditioned_rows": {
+      "ssp119": 30,
+      "ssp126": 39,
+      "ssp370": 48,
+      "ssp434": 15,
+      "ssp460": 12,
+      "ssp585": 57
+    }
+  },
+  "calibration": {
+    "draws": 2000,
+    "replacement": true,
+    "seed": 0,
+    "rng": "numpy.random.default_rng reset to seed 0 for each scenario",
+    "algorithm": "one ERA5-conditioned trend draw plus one pooled leave-one-family-out residual draw",
+    "residual": "trend_y_true - trend_y_hat",
+    "quantiles": ["2.5%", "5%", "10%", "50%", "90%", "95%", "97.5%"]
+  },
+  "attribution": {
+    "archived_data_and_original_sampling_script": "Nicolai Meinshausen",
+    "assembled_evaluation_figure": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+    "license": "CC-BY-4.0"
+  },
+  "reproducibility": {
+    "prepared_data_to_figure": "complete",
+    "raw_cmip6_era5_checkpoints_to_trends": "unavailable and unverified",
+    "external_dependency_for_raw_recomputation": "gcmagicc-pm-bundle"
+  },
+  "canonical_outputs": {
+    "pdf": {
+      "path": "figures/supplementary/emergent_constraints/emergent_constraints.pdf",
+      "bytes": 109151,
+      "sha256": "e92a7e998a4fa1fddb7c9765aab9a9ba9d5d419ec102b5bb9bd72dc28b24300f"
+    },
+    "png": {
+      "path": "figures/supplementary/emergent_constraints/emergent_constraints.png",
+      "bytes": 728815,
+      "sha256": "3dba8d62a15b3bfe644631d2eb44b4f0d8e90a5d592a8134046ec8fc9ca505c4"
+    }
+  }
+}

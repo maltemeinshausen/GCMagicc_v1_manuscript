@@ -1,7 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
+import csv
 import hashlib
 import json
 from pathlib import Path
+
+import numpy as np
+
+from gcmagicc_repro.release import FIGURES
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -127,3 +132,80 @@ def test_validation_audit_matches_frozen_database_snapshot() -> None:
         "gofnc_records": 4_539_079,
         "ssp245_holdout_records": 1_265_222,
     }
+
+
+def _read_numeric_csv(path: Path) -> list[dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
+def test_emergent_prepared_data_and_reconstructed_medians_are_complete() -> None:
+    data_root = ROOT / "data/derived/emergent_constraints"
+    model_rows = _read_numeric_csv(data_root / "model_trends.csv")
+    assert len(model_rows) == 799
+    assert len({row["version"] for row in model_rows}) == 19
+
+    residuals = np.asarray(
+        [float(row["trend_y_true"]) - float(row["trend_y_hat"]) for row in model_rows],
+        dtype=float,
+    )
+    expected_counts = {
+        "ssp119": 30,
+        "ssp126": 39,
+        "ssp370": 48,
+        "ssp434": 15,
+        "ssp460": 12,
+        "ssp585": 57,
+    }
+    expected_medians = {
+        "ssp119": 1.9335785,
+        "ssp126": 2.33450315,
+        "ssp370": 4.28726205,
+        "ssp434": 2.60142518,
+        "ssp460": 3.58517455,
+        "ssp585": 5.67181405,
+    }
+    quantile_rows = {
+        row["quantile"]: row
+        for row in _read_numeric_csv(data_root / "quantiles_by_scenario.csv")
+    }
+    assert set(quantile_rows) == {"2.5%", "5%", "10%", "50%", "90%", "95%", "97.5%"}
+
+    for scenario, count in expected_counts.items():
+        era_rows = _read_numeric_csv(data_root / f"era5_conditioned_{scenario}.csv")
+        assert len(era_rows) == count
+        era = np.asarray([float(row["trend_yera_hat"]) for row in era_rows], dtype=float)
+        rng = np.random.default_rng(0)
+        draws = rng.choice(era, size=2000, replace=True) + rng.choice(
+            residuals, size=2000, replace=True
+        )
+        median = float(np.quantile(draws, 0.5))
+        np.testing.assert_allclose(median, expected_medians[scenario], rtol=0.0, atol=1e-12)
+        np.testing.assert_allclose(
+            float(quantile_rows["50%"][scenario]), median, rtol=0.0, atol=1e-12
+        )
+
+
+def test_figure_dependencies_match_public_model_variants() -> None:
+    assert FIGURES["resolution"][1] == ["gcmagicc-ce-checkpoints"]
+    assert FIGURES["aerosol"][1] == ["gcmagicc-ce-checkpoints"]
+    assert FIGURES["emergent"][1] == []
+    assert FIGURES["xs"][1] == []
+
+
+def test_xs_compact_points_are_release_native_and_complete() -> None:
+    provenance = json.loads(
+        (ROOT / "data/derived/gcmagicc_xs/provenance.json").read_text(encoding="utf-8")
+    )
+    assert provenance["raw_source"]["bytes"] == 1_528_623_568
+    assert provenance["raw_source"]["sha256"] == "9436752a1d2a0b2af0d707bab9776d4cc8f874968cc2ad472c8ad16c4a5dca68"
+    assert provenance["compact_plotted_points"]["rows"] == 205_407
+    assert provenance["compact_plotted_points"]["groups"] == 1_440
+    assert provenance["reproducibility"]["compact_summary_to_figure"] == "release-native"
+
+
+def test_semantic_figure_registry_does_not_assign_numbers() -> None:
+    registry = (ROOT / "provenance/figure_registry.csv").read_text(encoding="utf-8")
+    assert "Figure1" not in registry
+    assert "Figure 1" not in registry
+    assert "figure_number" not in registry

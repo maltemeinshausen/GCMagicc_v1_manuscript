@@ -1,0 +1,24 @@
+{
+  "schema": "gcmagicc-aerosol-sensitivity/v1",
+  "semantic_role": "supplementary aerosol sensitivity",
+  "model_variant": "GCMagicc-CE",
+  "source_revision": "plots.tar sha256:43923f2cf9563ec19273ad98a7422737448749ed7f8d6bddb92e5e590f8ef36c",
+  "source_path": "data/nicolaiplots/plotsT1/plots_aerosol",
+  "diagnostic": "full-forcing minus zero-aerosol-ERF change in diurnal temperature range",
+  "formula": "(tasmax - tasmin)_full_forcing - (tasmax - tasmin)_aer_ERF_zero",
+  "units": "K",
+  "nside": 64,
+  "stochastic_samples": 100,
+  "period": [2015, 2024],
+  "period_status": "provisional pending author confirmation",
+  "model_indices": [0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "individual_map_count": 11,
+  "combined_pdf": {
+    "path": "figures/supplementary/aerosol_sensitivity/aerosol_dtr_response_matrix.pdf",
+    "bytes": 1544364,
+    "sha256": "1ce66f097dc5319f85b61c11323d7343a48bdb9e689a088ee6caabb761d4204d"
+  },
+  "large_json_and_checkpoints_committed": false,
+  "external_dependency": "gcmagicc-ce-checkpoints",
+  "license": "CC-BY-4.0"
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "gcmagicc-xs-compact-provenance/v1",
+  "semantic_role": "supplementary extrapolation prediction skill",
+  "model_variant": "GCMagicc-XS",
+  "raw_source": {
+    "path": "data/GCMagicc-XS_data/full_monthly_results.csv",
+    "bytes": 1528623568,
+    "rows": 14076920,
+    "sha256": "9436752a1d2a0b2af0d707bab9776d4cc8f874968cc2ad472c8ad16c4a5dca68",
+    "committed": false,
+    "external_dependency": "gcmagicc-xs-bundle"
+  },
+  "compact_plotted_points": {
+    "path": "data/derived/gcmagicc_xs/compact_plotted_points.csv",
+    "selection": "deterministic pandas row hash modulo 64 equals zero, after removing abrupt-2xCO2 and abrupt-4xCO2; at least one row retained per model-scenario-test-variable group",
+    "rows": 205407,
+    "groups": 1440,
+    "bytes": 21161353,
+    "sha256": "1bff5d7e288d111669b404b57995f82a6d8791882ea705ffa531111e9697fee0",
+    "models": 25,
+    "scenarios": 10,
+    "variables": ["hurs", "huss", "pr", "psl", "rsds", "sfcWind", "tas", "tasmax", "tasmin", "ts"]
+  },
+  "reproducibility": {
+    "compact_summary_to_figure": "release-native",
+    "full_raw_recomputation": "requires gcmagicc-xs-bundle"
+  },
+  "license": "CC-BY-4.0"
+}

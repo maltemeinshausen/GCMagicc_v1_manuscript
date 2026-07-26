@@ -1,0 +1,31 @@
+{
+  "schema": "gcmagicc-validation-figure-provenance/v1",
+  "semantic_roles": {
+    "main_validation_diagnostics": {
+      "draw": 7,
+      "artifact": "figures/main/validation_diagnostics/validation_diagnostics_v100_draw_007_20260504_0617.pdf",
+      "sha256": "c41bc1abf7a279cf287c774c0d34daead62ad1e950ed483e5e41a876b2b524f5"
+    },
+    "supplementary_validation_diagnostics": {
+      "draws": [1, 2, 3, 4, 5, 6, 8, 9, 10, 11],
+      "artifact_directory": "figures/supplementary/validation_diagnostics/alternate_draws"
+    },
+    "ssp245_scoreedistc": {
+      "parts": 3,
+      "artifact_directory": "figures/supplementary/scoreedistc_ssp245"
+    },
+    "observation_referenced_edisto": {
+      "parts": 3,
+      "artifact_directory": "figures/supplementary/observation_referenced_edisto"
+    }
+  },
+  "figure_number_policy": "semantic roles only; LaTeX placement determines numbering",
+  "metrics_database": {
+    "path": "data/external/validation/metrics.sqlite",
+    "bytes": 11919757312,
+    "sha256": "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03",
+    "committed": false,
+    "audit": "data/derived/validation_metrics/metrics_audit.json"
+  },
+  "licence": "CC-BY-4.0"
+}

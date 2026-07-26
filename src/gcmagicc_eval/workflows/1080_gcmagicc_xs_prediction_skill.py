@@ -25,7 +25,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable
 
-_REPO_ROOT = Path(__file__).resolve().parent.parent
+_REPO_ROOT = Path(__file__).resolve().parents[3]
 os.environ.setdefault(
     "MPLCONFIGDIR",
     str(Path(os.environ.get("TMPDIR", tempfile.gettempdir())) / "matplotlib"),
@@ -46,8 +46,8 @@ from matplotlib.ticker import AutoMinorLocator, MaxNLocator, ScalarFormatter
 # User-editable defaults
 # ---------------------------------------------------------------------------
 
-DEFAULT_INPUT_CSV = _REPO_ROOT / "data" / "GCMagicc-XS_data" / "full_monthly_results.csv"
-DEFAULT_OUTPUT_DIR = _REPO_ROOT / "data" / "GCMagicc-XS_data" / "prediction_skill"
+DEFAULT_INPUT_CSV = _REPO_ROOT / "data" / "derived" / "gcmagicc_xs" / "compact_plotted_points.csv"
+DEFAULT_OUTPUT_DIR = _REPO_ROOT / "figures" / "supplementary" / "gcmagicc_xs_extrapolation"
 DEFAULT_OUTPUT_PREFIX = "gcmagicc_xs_prediction_skill"
 
 DEFAULT_EXCLUDE_SCENARIOS = ("abrupt-2xCO2", "abrupt-4xCO2")

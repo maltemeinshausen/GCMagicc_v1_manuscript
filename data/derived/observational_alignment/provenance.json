@@ -1,0 +1,24 @@
+{
+  "schema": "gcmagicc-observational-alignment-provenance/v1",
+  "semantic_role": "main observational alignment",
+  "model_variant": "GCMagicc",
+  "authoritative_bundle": "observational_alignment_v100_20260720_030533",
+  "source_host": "gus",
+  "source_revision": "gcmmagicc main-gus at 34581af4326f4c9d43192467144dcb5c466b4d06",
+  "normalization": "machine roots in the JSON were replaced by relative external references; scientific arrays and panel values are unchanged",
+  "original_json": {
+    "bytes": 1171062,
+    "sha256": "ca9f021aef97b6411fdd2b052ae1a46615bf89488898a67e5bbd0675fb0ce195"
+  },
+  "normalized_json": {
+    "path": "data/derived/observational_alignment/observational_alignment_v100_20260720_030533.json",
+    "sha256": "7c515331f2f6c4edb4de65fa48875cf41ffcc9a9bbee6815d5851b515c4a5f10"
+  },
+  "canonical_pdf": {
+    "path": "figures/main/observational_alignment/observational_alignment_v100_20260720_030533.pdf",
+    "bytes": 1849829,
+    "sha256": "d63d9f4bcbb8d859aeb7d602b647f563996f42ade2e457115256648efdbd15a2"
+  },
+  "metrics_database_audit": "data/derived/validation_metrics/metrics_audit.json",
+  "licence": "CC-BY-4.0"
+}

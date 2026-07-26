@@ -1,0 +1,18 @@
+{
+  "schema": "gcmagicc-resolution-sensitivity/v1",
+  "semantic_role": "supplementary resolution sensitivity",
+  "model_variant": "GCMagicc-CE",
+  "source_revision": "plots.tar sha256:43923f2cf9563ec19273ad98a7422737448749ed7f8d6bddb92e5e590f8ef36c",
+  "source_path": "data/nicolaiplots/plotsT1/plots_resolutions",
+  "dependence": false,
+  "nside": [1, 2, 4, 8, 16, 32, 64, 128, 256],
+  "variables": ["psl", "tas", "pr", "sfcWind", "ts", "tasmin", "tasmax", "rsds", "hurs", "huss"],
+  "selected_time_index": 1022,
+  "sampled_time_indices": [904, 909, 924, 928, 932, 942, 970, 979, 1007, 1022],
+  "sample_count": 10,
+  "sample_seed": 123,
+  "synthesis_pdf_count": 10,
+  "raw_json_and_checkpoints_committed": false,
+  "external_dependency": "gcmagicc-ce-checkpoints",
+  "license": "CC-BY-4.0"
+}

@@ -1,0 +1,50 @@
+% Requires \usepackage{booktabs}
+% Requires \usepackage[table]{xcolor}
+% Requires \usepackage{graphicx}
+\begin{table}[tp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrrrrrrrr}
+\toprule
+Scenario & \multicolumn{3}{c}{IPCC AR6} & \multicolumn{3}{c}{CMIP6} & \multicolumn{3}{c}{GCMAGICC n20} & \multicolumn{3}{c}{n100 AR6} & \multicolumn{3}{c}{n100 AR7} \\
+  & p5 & med & p95 & p5 & med & p95 & p5 & med & p95 & p5 & med & p95 & p5 & med & p95 \\
+\midrule
+\textcolor[HTML]{00addf}{ssp119} & 1.00 & 1.40 & 1.80 & -- & -- & -- & 1.21 & 1.44 & 1.90 & 1.21 & 1.44 & 1.85 & 1.22 & 1.45 & 1.94 \\
+\textcolor[HTML]{173c66}{ssp126} & 1.30 & 1.80 & 2.40 & -- & -- & -- & 1.45 & 1.82 & 2.42 & 1.48 & 1.81 & 2.40 & 1.50 & 1.88 & 2.52 \\
+\textcolor[HTML]{f79420}{ssp245} & 2.10 & 2.70 & 3.50 & -- & -- & -- & 2.25 & 2.71 & 3.66 & 2.21 & 2.71 & 3.60 & 2.23 & 2.79 & 3.80 \\
+\textcolor[HTML]{e71d25}{ssp370} & 2.80 & 3.60 & 4.60 & -- & -- & -- & 3.17 & 3.78 & 4.75 & 3.07 & 3.71 & 4.77 & 3.11 & 3.76 & 4.95 \\
+\textcolor[HTML]{b32f4c}{ssp434} & -- & -- & -- & -- & -- & -- & 1.89 & 2.19 & 2.71 & 1.88 & 2.19 & 2.84 & 1.89 & 2.24 & 2.88 \\
+\textcolor[HTML]{d65f2e}{ssp460} & -- & -- & -- & -- & -- & -- & 2.58 & 3.07 & 4.16 & 2.57 & 3.09 & 4.10 & 2.57 & 3.18 & 4.12 \\
+\textcolor[HTML]{7c2d6f}{ssp534-over} & -- & -- & -- & -- & -- & -- & 1.81 & 2.16 & 2.95 & 1.78 & 2.19 & 2.99 & 1.75 & 2.26 & 3.12 \\
+\textcolor[HTML]{951b1e}{ssp585} & 3.30 & 4.40 & 5.70 & -- & -- & -- & 3.76 & 4.51 & 6.08 & 3.56 & 4.44 & 5.94 & 3.65 & 4.55 & 6.17 \\
+\midrule
+\textbf{SSP scenarios} & \textbf{1.00} & \textbf{2.78} & \textbf{5.70} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{1.21} & \textbf{2.71} & \textbf{6.08} & \textbf{1.21} & \textbf{2.70} & \textbf{5.94} & \textbf{1.22} & \textbf{2.76} & \textbf{6.17} \\
+\midrule
+\textcolor[HTML]{2aa198}{PA-all-l} & -- & -- & -- & -- & -- & -- & 1.45 & 1.66 & 2.19 & 1.44 & 1.66 & 2.08 & 1.44 & 1.71 & 2.21 \\
+\textcolor[HTML]{006d77}{PA-all-u} & -- & -- & -- & -- & -- & -- & 1.94 & 2.32 & 3.06 & 1.92 & 2.29 & 3.01 & 1.94 & 2.35 & 3.19 \\
+\textcolor[HTML]{8ab17d}{PA-woUS-l} & -- & -- & -- & -- & -- & -- & 1.55 & 1.77 & 2.13 & 1.49 & 1.78 & 2.35 & 1.51 & 1.81 & 2.52 \\
+\textcolor[HTML]{52796f}{PA-woUS-u} & -- & -- & -- & -- & -- & -- & 2.05 & 2.42 & 3.28 & 2.01 & 2.39 & 3.19 & 2.05 & 2.50 & 3.25 \\
+\textcolor[HTML]{c87828}{SSP2-com} & -- & -- & -- & -- & -- & -- & 1.67 & 1.99 & 2.82 & 1.65 & 2.04 & 2.78 & 1.66 & 2.07 & 2.80 \\
+\textcolor[HTML]{8a4b2a}{CP\_GCAM} & -- & -- & -- & -- & -- & -- & 2.42 & 2.87 & 3.76 & 2.40 & 2.83 & 3.67 & 2.38 & 2.92 & 3.79 \\
+\textcolor[HTML]{b6652d}{CP\_MSG} & -- & -- & -- & -- & -- & -- & 2.25 & 2.76 & 3.53 & 2.22 & 2.73 & 3.53 & 2.25 & 2.80 & 3.67 \\
+\textcolor[HTML]{d4883a}{CP\_RMD} & -- & -- & -- & -- & -- & -- & 2.40 & 2.94 & 3.98 & 2.36 & 2.91 & 3.90 & 2.38 & 2.99 & 4.06 \\
+\midrule
+\textbf{NDCs + others} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{1.45} & \textbf{2.34} & \textbf{3.98} & \textbf{1.44} & \textbf{2.33} & \textbf{3.90} & \textbf{1.44} & \textbf{2.39} & \textbf{4.06} \\
+\midrule
+\textcolor[HTML]{bddcf4}{VL} & -- & -- & -- & -- & -- & -- & 1.17 & 1.56 & 2.07 & 1.22 & 1.54 & 2.07 & 1.21 & 1.59 & 2.21 \\
+\textcolor[HTML]{a9cce9}{LN} & -- & -- & -- & -- & -- & -- & 1.38 & 1.64 & 2.20 & 1.41 & 1.66 & 2.17 & 1.44 & 1.72 & 2.23 \\
+\textcolor[HTML]{93bbe0}{L} & -- & -- & -- & -- & -- & -- & 1.40 & 1.75 & 2.17 & 1.47 & 1.76 & 2.33 & 1.50 & 1.80 & 2.45 \\
+\textcolor[HTML]{7ba5d4}{M} & -- & -- & -- & -- & -- & -- & 2.38 & 2.80 & 3.63 & 2.35 & 2.76 & 3.56 & 2.36 & 2.82 & 3.65 \\
+\textcolor[HTML]{4c6fb8}{ML} & -- & -- & -- & -- & -- & -- & 2.00 & 2.34 & 2.96 & 1.97 & 2.33 & 3.05 & 1.97 & 2.40 & 3.17 \\
+\textcolor[HTML]{6282be}{HL} & -- & -- & -- & -- & -- & -- & 2.34 & 2.89 & 3.77 & 2.29 & 2.87 & 3.90 & 2.39 & 2.90 & 4.04 \\
+\textcolor[HTML]{3b0f70}{H} & -- & -- & -- & -- & -- & -- & 2.77 & 3.30 & 4.22 & 2.71 & 3.24 & 4.23 & 2.77 & 3.31 & 4.37 \\
+\midrule
+\textbf{CMIP7 scenarios} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{1.17} & \textbf{2.33} & \textbf{4.22} & \textbf{1.22} & \textbf{2.31} & \textbf{4.23} & \textbf{1.21} & \textbf{2.36} & \textbf{4.37} \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Panel b warming values plotted in the bottom table band. Values are reported relative to the 1850--1900 reference in $^{\circ}$C. The bold row closing each scenario category gives the encompassing range across that category: the p5 column is the minimum of the individual scenario p5 values, the med column is the mean of the individual scenario medians, and the p95 column is the maximum of the individual scenario p95 values. Categories match the scenario groupings of panels a1--a3. Aggregates are taken only over the scenarios for which the respective dataset provides values, so coverage may differ between columns.}
+\label{tab:figure2_panel_b_values}
+\end{table}

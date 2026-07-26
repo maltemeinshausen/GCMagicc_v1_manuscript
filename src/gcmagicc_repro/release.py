@@ -24,10 +24,10 @@ FIGURES = {
     "drought": ("1040_drought_attribution_example_country.py", []),
     "drought-common-protocol": ("1090_drought_common_protocol.py", []),
     "drought-main-figure": ("1130_drought_attribution_synthesis.py", []),
-    "resolution": ("1050_resolution_sensitivity.py", ["gcmagicc-checkpoints"]),
-    "emergent": ("1060_emergent_constraints.py", ["gcmagicc-pm-bundle"]),
-    "aerosol": ("1070_aerosol_pattern.py", ["gcmagicc-pm-bundle"]),
-    "xs": ("1080_gcmagicc_xs_prediction_skill.py", ["gcmagicc-xs-bundle"]),
+    "resolution": ("1050_resolution_sensitivity.py", ["gcmagicc-ce-checkpoints"]),
+    "emergent": ("1060_emergent_constraints.py", []),
+    "aerosol": ("1070_aerosol_pattern.py", ["gcmagicc-ce-checkpoints"]),
+    "xs": ("1080_gcmagicc_xs_prediction_skill.py", []),
 }
 
 
