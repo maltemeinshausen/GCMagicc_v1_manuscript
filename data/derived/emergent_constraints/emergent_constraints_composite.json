@@ -1,5 +1,5 @@
 {
-  "default_output_base": "figures/supplementary/emergent_constraints/emergent_constraints",
+  "default_output_base": "/tmp/GCMagicc_v1_manuscript_sync_20260728/figures/supplementary/emergent_constraints/emergent_constraints",
   "era_by_scenario": {
     "ssp119": [
       1.3471985,
@@ -293,6 +293,13 @@
       "marker": "D"
     }
   },
+  "panel_a_spread": {
+    "definition": "sample_standard_deviation_of_y_minus_x",
+    "degrees_of_freedom": 1,
+    "n_points": 799,
+    "units": "degC",
+    "value": 0.23898295280749157
+  },
   "panel_axis": {
     "max": 7.5,
     "min": 0.0
@@ -359,7 +366,8 @@
       "pdf",
       "png"
     ],
-    "point_alpha": 0.3,
+    "point_alpha": 0.12,
+    "point_compositing_strategy": "source_over_density",
     "point_size": 20.0
   },
   "required_quantiles": [

@@ -74,7 +74,9 @@ ERA_BARCODE_DEPTH_EQUIV_DEG = 2.0
 ERA_BARCODE_DEPTH_AXES = ERA_BARCODE_DEPTH_EQUIV_DEG / PANEL_AXIS_SPAN
 SSP_LABEL_FONTSIZE = 6.1
 PANEL_LABEL_FONTSIZE = 8.2
-SHINE_THROUGH_ALPHA = 0.30
+DEFAULT_POINT_ALPHA = 0.12
+LEGEND_POINT_ALPHA = 0.82
+POINT_COMPOSITING_STRATEGY = "source_over_density"
 
 
 def _resolve_default_data_root(script_dir: Path) -> Path:
@@ -172,6 +174,125 @@ def _draw_diag(ax: plt.Axes) -> None:
     lo = min(xlim[0], ylim[0])
     hi = max(xlim[1], ylim[1])
     ax.plot([lo, hi], [lo, hi], linestyle=(0, (4, 2)), linewidth=0.95, color="#222222", alpha=0.62, zorder=0.5)
+
+
+def _paired_difference_standard_deviation(
+    points_by_version: dict[str, dict[str, list[float]]],
+) -> tuple[float | None, int]:
+    differences: list[np.ndarray] = []
+    for points in points_by_version.values():
+        x = np.asarray(points.get("x", []), dtype=float)
+        y = np.asarray(points.get("y", []), dtype=float)
+        if x.shape != y.shape:
+            raise ValueError("Panel scatter x/y arrays must have matching shapes.")
+        if x.size == 0:
+            continue
+        finite = _finite_mask(x, y)
+        if np.any(finite):
+            differences.append(y[finite] - x[finite])
+
+    if not differences:
+        return None, 0
+
+    paired_differences = np.concatenate(differences)
+    n_points = int(paired_differences.size)
+    if n_points < 2:
+        return None, n_points
+    return float(np.std(paired_differences, ddof=1)), n_points
+
+
+def _clipped_offset_diagonal(
+    ax: plt.Axes,
+    offset: float,
+) -> tuple[np.ndarray, np.ndarray] | None:
+    xmin, xmax = sorted(float(v) for v in ax.get_xlim())
+    ymin, ymax = sorted(float(v) for v in ax.get_ylim())
+    x_start = max(xmin, ymin - float(offset))
+    x_end = min(xmax, ymax - float(offset))
+    if x_start > x_end:
+        return None
+    x = np.asarray([x_start, x_end], dtype=float)
+    return x, x + float(offset)
+
+
+def _draw_panel_a_standard_deviation(
+    ax: plt.Axes,
+    standard_deviation: float | None,
+) -> tuple[list[Line2D], list[plt.Annotation]]:
+    if standard_deviation is None or not np.isfinite(standard_deviation) or standard_deviation <= 0:
+        return [], []
+
+    bound_lines: list[Line2D] = []
+    for offset in (-standard_deviation, standard_deviation):
+        segment = _clipped_offset_diagonal(ax, offset)
+        if segment is None:
+            continue
+        x, y = segment
+        (line,) = ax.plot(
+            x,
+            y,
+            linestyle=(0, (2.2, 2.2)),
+            linewidth=0.72,
+            color="#666666",
+            alpha=0.58,
+            zorder=1.7,
+        )
+        bound_lines.append(line)
+
+    if len(bound_lines) != 2:
+        return bound_lines, []
+
+    xmin, xmax = sorted(float(v) for v in ax.get_xlim())
+    ymin, ymax = sorted(float(v) for v in ax.get_ylim())
+    span = min(xmax - xmin, ymax - ymin)
+    target_x = xmin + 0.14 * span
+    text_position = (0.045, 0.37)
+    arrow_style = {
+        "arrowstyle": "-|>",
+        "color": "#707070",
+        "linewidth": 0.55,
+        "alpha": 0.78,
+        "mutation_scale": 6.0,
+        "shrinkA": 3.0,
+        "shrinkB": 1.5,
+        "connectionstyle": "arc3,rad=0.06",
+    }
+    label = (
+        "±1 standard deviation\n"
+        f"of paired difference = {standard_deviation:.2f} °C"
+    )
+    annotations = [
+        ax.annotate(
+            label,
+            xy=(target_x, target_x + standard_deviation),
+            xycoords="data",
+            xytext=text_position,
+            textcoords="axes fraction",
+            ha="left",
+            va="center",
+            fontsize=6.4,
+            color="#555555",
+            linespacing=1.15,
+            bbox={
+                "boxstyle": "round,pad=0.20",
+                "facecolor": "#ffffff",
+                "edgecolor": "none",
+                "alpha": 0.80,
+            },
+            arrowprops=arrow_style,
+            zorder=3.4,
+        ),
+        ax.annotate(
+            "",
+            xy=(target_x, target_x - standard_deviation),
+            xycoords="data",
+            xytext=text_position,
+            textcoords="axes fraction",
+            arrowprops={**arrow_style, "connectionstyle": "arc3,rad=-0.06"},
+            zorder=3.35,
+        ),
+    ]
+    return bound_lines, annotations
 
 
 def _build_model_styles(versions: list[str]) -> dict[str, dict[str, object]]:
@@ -312,7 +433,7 @@ def _plot_scatter_from_points(
                 markerfacecolor=st["color"],
                 markeredgecolor="#111111",
                 markeredgewidth=0.34,
-                alpha=point_alpha,
+                alpha=LEGEND_POINT_ALPHA,
                 label=version,
             )
         )
@@ -379,7 +500,7 @@ def _plot_scatter_by_model(
                 markerfacecolor=st["color"],
                 markeredgecolor="#111111",
                 markeredgewidth=0.34,
-                alpha=point_alpha,
+                alpha=LEGEND_POINT_ALPHA,
                 label=version,
             )
         )
@@ -796,14 +917,23 @@ def _build_composite_payload(
     output_base: str | Path,
     formats: list[str],
 ) -> dict[str, object]:
+    panel_a_sd, panel_a_n = _paired_difference_standard_deviation(top_points)
     payload = {
         "schema": "emergent_constraint_composite_v1",
         "scenarios": scenarios,
         "required_quantiles": REQUIRED_QUANTILES,
         "panel_axis": {"min": PANEL_AXIS_MIN, "max": PANEL_AXIS_MAX},
+        "panel_a_spread": {
+            "definition": "sample_standard_deviation_of_y_minus_x",
+            "degrees_of_freedom": 1,
+            "units": "degC",
+            "value": panel_a_sd,
+            "n_points": panel_a_n,
+        },
         "render_settings": {
             "point_size": float(point_size),
             "point_alpha": float(point_alpha),
+            "point_compositing_strategy": POINT_COMPOSITING_STRATEGY,
             "dpi": int(dpi),
             "formats": [str(f) for f in formats],
         },
@@ -887,6 +1017,8 @@ def _render_prepared_figure(
 
     _draw_diag(ax_top)
     _draw_diag(ax_bottom)
+    panel_a_sd, _ = _paired_difference_standard_deviation(top_points)
+    _draw_panel_a_standard_deviation(ax_top, panel_a_sd)
     ax_bottom.axhline(PANEL_AXIS_MIN, color="#2f2f2f", linewidth=0.75, alpha=0.65, zorder=3.05)
 
     _draw_era_fading_plumes(ax_bottom, scenarios=scenarios, era_by_scen=era_by_scen, scenario_colors=SCENARIO_COLORS)
@@ -995,6 +1127,7 @@ def replot(
     output_base: str | Path | None = None,
     formats: list[str] | None = None,
     dpi: int | None = None,
+    point_alpha: float | None = None,
 ) -> list[Path]:
     payload = _read_composite_json(composite_json)
     if payload.get("schema") != "emergent_constraint_composite_v1":
@@ -1023,7 +1156,11 @@ def replot(
 
     render_settings = payload.get("render_settings", {})
     point_size = float(render_settings.get("point_size", 20.0))
-    point_alpha = float(render_settings.get("point_alpha", 0.78))
+    point_alpha_use = float(
+        point_alpha
+        if point_alpha is not None
+        else render_settings.get("point_alpha", DEFAULT_POINT_ALPHA)
+    )
     dpi_use = int(dpi if dpi is not None else render_settings.get("dpi", 320))
     fmts = formats if formats is not None else list(render_settings.get("formats", ["pdf", "png"]))
     out_base = output_base if output_base is not None else payload.get("default_output_base")
@@ -1041,7 +1178,7 @@ def replot(
         formats=fmts,
         dpi=dpi_use,
         point_size=point_size,
-        point_alpha=point_alpha,
+        point_alpha=point_alpha_use,
     )
 
 
@@ -1085,10 +1222,18 @@ def _build_parser() -> argparse.ArgumentParser:
         "--filter_distinct_points",
         type=_str2bool,
         default=False,
-        help="Toggle near-diagonal filtering (TRUE/FALSE). FALSE plots all points with shine-through alpha.",
+        help="Toggle near-diagonal filtering (TRUE/FALSE). FALSE plots all points.",
     )
     p.add_argument("--point_size", type=float, default=20.0)
-    p.add_argument("--point_alpha", type=float, default=0.78)
+    p.add_argument(
+        "--point_alpha",
+        type=float,
+        default=None,
+        help=(
+            f"Scatter opacity. Direct plots default to {DEFAULT_POINT_ALPHA:.2f}; "
+            "replots preserve the composite value unless this option is supplied."
+        ),
+    )
 
     p.add_argument(
         "--output_base",
@@ -1122,6 +1267,7 @@ def main() -> int:
                 output_base=args.output_base,
                 formats=list(args.formats),
                 dpi=int(args.dpi),
+                point_alpha=args.point_alpha,
             )
         except Exception as exc:
             print(f"ERROR during replot: {exc}", file=sys.stderr)
@@ -1183,7 +1329,7 @@ def main() -> int:
     versions = sorted(df_ssp["version"].astype(str).unique())
     model_styles = _build_model_styles(versions)
     filter_distinct_points = bool(args.filter_distinct_points)
-    point_alpha = float(args.point_alpha) if filter_distinct_points else SHINE_THROUGH_ALPHA
+    point_alpha = DEFAULT_POINT_ALPHA if args.point_alpha is None else float(args.point_alpha)
 
     top_points = _extract_scatter_points_by_model(
         df_ssp=df_ssp,

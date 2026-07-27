@@ -57,16 +57,27 @@
     "raw_cmip6_era5_checkpoints_to_trends": "unavailable and unverified",
     "external_dependency_for_raw_recomputation": "gcmagicc-pm-bundle"
   },
+  "rendering": {
+    "panel_a_spread": {
+      "definition": "sample_standard_deviation_of_y_minus_x",
+      "degrees_of_freedom": 1,
+      "n_points": 799,
+      "units": "degC",
+      "value": 0.23898295280749157
+    },
+    "point_alpha": 0.12,
+    "point_compositing_strategy": "source_over_density"
+  },
   "canonical_outputs": {
     "pdf": {
       "path": "figures/supplementary/emergent_constraints/emergent_constraints.pdf",
-      "bytes": 109151,
-      "sha256": "e92a7e998a4fa1fddb7c9765aab9a9ba9d5d419ec102b5bb9bd72dc28b24300f"
+      "bytes": 103579,
+      "sha256": "3ebfc2d963d587ee5e135408bb28e589ef8925843716e7d3188ae8e00abf2ba5"
     },
     "png": {
       "path": "figures/supplementary/emergent_constraints/emergent_constraints.png",
-      "bytes": 728815,
-      "sha256": "3dba8d62a15b3bfe644631d2eb44b4f0d8e90a5d592a8134046ec8fc9ca505c4"
+      "bytes": 743097,
+      "sha256": "1fb82de752d168f900f8f70fbf2c47f01d7b0b345659f51a80f40bd964af047a"
     }
   }
 }
