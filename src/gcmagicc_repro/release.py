@@ -8,6 +8,7 @@ import hashlib
 import json
 import subprocess
 import sys
+import tarfile
 import tempfile
 import urllib.request
 from pathlib import Path
@@ -43,6 +44,56 @@ def load_external() -> dict:
     return json.loads(EXTERNAL_MANIFEST.read_text(encoding="utf-8"))
 
 
+def _safe_members(tar: "tarfile.TarFile", root: Path, subtree: Path | None = None):
+    """Yield members that resolve inside root (and inside subtree when given)."""
+    root = root.resolve()
+    confine = (subtree or root).resolve()
+    for member in tar.getmembers():
+        resolved = (root / member.name).resolve()
+        if not str(resolved).startswith(str(confine)):
+            raise RuntimeError(f"refusing unsafe tar member {member.name!r}")
+        if member.issym() or member.islnk():
+            raise RuntimeError(f"refusing link member {member.name!r}")
+        yield member
+
+
+def extract_archive(obj: dict, archive: Path) -> None:
+    """Extract a checkpoint tarball and verify every file against its recorded SHA-256.
+
+    data/checkpoint_manifest.json is the authority: a checkpoint that does not match its
+    recorded hash is not the checkpoint the paper used, so a mismatch is a hard error.
+    """
+    # Archive member names are repository-root-relative (see scripts/pack_checkpoints.py),
+    # so extraction happens at ROOT. extract_to declares the subtree the archive is
+    # allowed to write into, and is enforced rather than used as the extraction directory.
+    subtree = (ROOT / obj["extract_to"]).resolve()
+    subtree.mkdir(parents=True, exist_ok=True)
+    with tarfile.open(archive, "r:gz") as tar:
+        tar.extractall(ROOT, members=_safe_members(tar, ROOT, subtree))
+
+    manifest_path = ROOT / obj.get("per_file_manifest", "data/checkpoint_manifest.json")
+    if not manifest_path.is_file():
+        return
+    entries = next(
+        (o["files"] for o in json.loads(manifest_path.read_text(encoding="utf-8"))["objects"]
+         if o["id"] == obj["id"]),
+        [],
+    )
+    bad: list[str] = []
+    for entry in entries:
+        path = ROOT / entry["path"]
+        if not path.is_file():
+            bad.append(f"missing {entry['path']}")
+        elif path.stat().st_size != entry["bytes"] or sha256(path) != entry["sha256"]:
+            bad.append(f"hash or size mismatch {entry['path']}")
+    if bad:
+        raise RuntimeError(
+            f"{obj['id']}: {len(bad)} extracted file(s) failed verification: " + "; ".join(bad[:5])
+        )
+    print(f"  {obj['id']}: extracted and verified {len(entries)} files into {obj['extract_to']}")
+    archive.unlink()
+
+
 def fetch() -> int:
     pending: list[str] = []
     for obj in load_external()["objects"]:
@@ -61,6 +112,8 @@ def fetch() -> int:
         finally:
             if temp.exists():
                 temp.unlink()
+        if obj.get("extract_to"):
+            extract_archive(obj, destination)
     if pending:
         print("External release objects still pending:")
         for item in pending:

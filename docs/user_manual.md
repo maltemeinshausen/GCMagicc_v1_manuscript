@@ -2,7 +2,23 @@
 
 ## What is included
 
-`src/gcmagicc_model/` contains frozen model code for the two verified public configurations. Large learned checkpoints are external release objects. `src/gcmagicc_eval/workflows/` contains frozen predictor, ensemble, drought, regional-scenario, and figure workflows. `src/gcmagicc_repro/` provides the stable release interface.
+`src/gcmagicc_model/` contains frozen model code for the two verified public configurations (GCMagicc and GCMagicc-CE). The trained network weights are too large to commit (16.94 GB across 61 files) and are published as external release objects with a persistent DOI; see [`checkpoints.md`](checkpoints.md) for the full inventory, the SHA-256 of every file, the expected directory layout, and how to run inference once they are fetched. `src/gcmagicc_eval/workflows/` contains frozen predictor, ensemble, drought, regional-scenario, and figure workflows. `src/gcmagicc_repro/` provides the stable release interface.
+
+## Installation
+
+Requires Python 3.11 or later. From the repository root:
+
+```sh
+python -m venv .venv && . .venv/bin/activate
+python -m pip install -e .
+python -m pip install -e '.[analysis]'   # xarray, torch and friends, for full inference
+python -m pip install -e '.[test]'       # pytest, to run the test suite
+```
+
+Inference at the default `nside=64` runs on CPU. Peak resident memory scales with the length of the rollout rather than with checkpoint size: a full 100-year (1200-month) member generated in a single call peaks at about 140 GB, while emitting it in ten-year chunks peaks at about 23 GB for roughly 20% more wall-clock time -- the recommended configuration on memory-limited hardware. See `docs/benchmark.md` for the measured figures. A GPU is optional
+(`device="cuda"`). Model, training and inference code and the trained weights are licensed
+Apache-2.0; data, figures and documentation are licensed CC BY 4.0. See
+[`licensing_and_authorship.md`](licensing_and_authorship.md).
 
 ## Commands
 

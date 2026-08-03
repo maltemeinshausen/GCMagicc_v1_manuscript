@@ -47,7 +47,7 @@ python src/gcmagicc_eval/workflows/1110_metrics_database_audit.py \
 
 ## Release boundaries
 
-Files larger than 50 MB are never committed. `data/external_data_manifest.json` records their immutable URL, size, SHA-256, public model name, and destination. Entries marked `pending-publication` are release blockers, not guessed URLs. The PM and XS raw checkpoint mappings remain unassigned until supported by model-author provenance. This does not block prepared-data reproduction of the emergent-constraints figure or compact-data reproduction of the GCMagicc-XS figures.
+Files larger than 50 MB are never committed. `data/external_data_manifest.json` records their immutable URL, size, SHA-256, public model name, and destination. The trained GCMagicc and GCMagicc-CE checkpoints (61 files, 16.94 GB) are inventoried file-by-file with SHA-256 in `data/checkpoint_manifest.json` and documented in `docs/checkpoints.md`; `scripts/pack_checkpoints.py` rebuilds the deposit archives reproducibly and refuses to pack a file whose hash does not match. Entries marked `pending-publication` are release blockers, not guessed URLs. The PM and XS raw checkpoint mappings remain unassigned until supported by model-author provenance. This does not block prepared-data reproduction of the emergent-constraints figure or compact-data reproduction of the GCMagicc-XS figures.
 
 The frozen scientific scripts are preserved under `src/gcmagicc_eval/workflows/`. Some complete figure workflows require the external data listed in the manifest. The small `smoke` command tests deterministic release plumbing and the audited Hargreaves, area-weighting, December-event, bootstrap-seed, and two-pass-correction kernels without downloading multi-gigabyte checkpoints.
 

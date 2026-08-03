@@ -1,51 +1,69 @@
 {
-  "schema": "gcmagicc-external-data/v1",
-  "release": "v1.0.1",
-  "objects": [
-    {
-      "id": "gcmagicc-checkpoints",
-      "public_model": "GCMagicc",
-      "status": "pending-publication",
-      "url": null,
-      "sha256": null,
-      "bytes": null,
-      "destination": "data/external/checkpoints/gcmagicc"
-    },
-    {
-      "id": "gcmagicc-ce-checkpoints",
-      "public_model": "GCMagicc-CE",
-      "status": "pending-publication",
-      "url": null,
-      "sha256": null,
-      "bytes": null,
-      "destination": "data/external/checkpoints/gcmagicc-ce"
-    },
-    {
-      "id": "gcmagicc-pm-bundle",
-      "public_model": "GCMagicc-PM",
-      "status": "pending-model-author-provenance",
-      "url": null,
-      "sha256": null,
-      "bytes": null,
-      "destination": "data/external/nicolai/perfect-model"
-    },
-    {
-      "id": "gcmagicc-xs-bundle",
-      "public_model": "GCMagicc-XS",
-      "status": "pending-model-author-provenance",
-      "url": null,
-      "sha256": null,
-      "bytes": null,
-      "destination": "data/external/nicolai/xs"
-    },
-    {
-      "id": "validation-metrics-sqlite",
-      "public_model": "GCMagicc evaluation suite",
-      "status": "pending-publication",
-      "url": null,
-      "sha256": "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03",
-      "bytes": 11919757312,
-      "destination": "data/external/validation/metrics.sqlite"
-    }
-  ]
+ "schema": "gcmagicc-external-data/v1",
+ "release": "v1.0.1",
+ "objects": [
+  {
+   "id": "gcmagicc-checkpoints",
+   "public_model": "GCMagicc",
+   "status": "pending-deposit",
+   "url": null,
+   "sha256": null,
+   "bytes": null,
+   "destination": "src/gcmagicc_model/gcmagicc/gcmagicc-checkpoints.tar.gz",
+   "extract_to": "src/gcmagicc_model/gcmagicc",
+   "internal_snapshot": "model_NxlversA5",
+   "file_count": 37,
+   "uncompressed_bytes": 9150984631,
+   "per_file_manifest": "data/checkpoint_manifest.json",
+   "license": "Apache-2.0",
+   "copyright_holder": "Nicolai Meinshausen",
+   "documentation": "docs/checkpoints.md",
+   "note": "Trained weights inventoried and SHA-256'd 2026-08-02; Zenodo deposit pending. url/sha256/bytes describe the tarball and are filled in at deposit time; every file inside it is already hashed in data/checkpoint_manifest.json."
+  },
+  {
+   "id": "gcmagicc-ce-checkpoints",
+   "public_model": "GCMagicc-CE",
+   "status": "pending-deposit",
+   "url": null,
+   "sha256": null,
+   "bytes": null,
+   "destination": "src/gcmagicc_model/gcmagicc_ce/gcmagicc-ce-checkpoints.tar.gz",
+   "extract_to": "src/gcmagicc_model/gcmagicc_ce",
+   "internal_snapshot": "model_NthreeversT1",
+   "file_count": 24,
+   "uncompressed_bytes": 9043478197,
+   "per_file_manifest": "data/checkpoint_manifest.json",
+   "license": "Apache-2.0",
+   "copyright_holder": "Nicolai Meinshausen",
+   "documentation": "docs/checkpoints.md",
+   "note": "Trained weights inventoried and SHA-256'd 2026-08-02; Zenodo deposit pending. url/sha256/bytes describe the tarball and are filled in at deposit time; every file inside it is already hashed in data/checkpoint_manifest.json."
+  },
+  {
+   "id": "gcmagicc-pm-bundle",
+   "public_model": "GCMagicc-PM",
+   "status": "pending-model-author-provenance",
+   "destination": "data/external/nicolai/perfect-model",
+   "url": null,
+   "sha256": null,
+   "bytes": null
+  },
+  {
+   "id": "gcmagicc-xs-bundle",
+   "public_model": "GCMagicc-XS",
+   "status": "pending-model-author-provenance",
+   "destination": "data/external/nicolai/xs",
+   "url": null,
+   "sha256": null,
+   "bytes": null
+  },
+  {
+   "id": "validation-metrics-sqlite",
+   "public_model": "GCMagicc evaluation suite",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03",
+   "bytes": 11919757312,
+   "destination": "data/external/validation/metrics.sqlite"
+  }
+ ]
 }

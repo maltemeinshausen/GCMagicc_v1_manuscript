@@ -1,0 +1,482 @@
+{
+ "schema": "gcmagicc-checkpoint-manifest/v1",
+ "generated_utc": "2026-08-02",
+ "note": "Byte sizes and SHA-256 computed directly from the source snapshots on 2026-08-02. Only files that the released inference code actually loads are included; the wider hyperparameter sweep, optimizer backups and __pycache__ in the internal snapshots are deliberately excluded and are not required to reproduce any published result. Each public model is distributed as a single .tar.gz so that one URL, one size and one SHA-256 fully identify it; the per-file table below lets a user re-verify every extracted file independently.",
+ "objects": [
+  {
+   "id": "gcmagicc-checkpoints",
+   "public_model": "GCMagicc",
+   "internal_snapshot": "model_NxlversA5",
+   "description": "Trained GCMagicc network weights: the multiresolution HEALPix cascade (nside 1-256) plus dependence/lag models and the normalization files (ranges_7Augext.pt, meta_7Augext.pkl) that src/gcmagicc_model/gcmagicc/run.py resolves at inference.",
+   "license": "Apache-2.0",
+   "copyright_holder": "Nicolai Meinshausen",
+   "archive": {
+    "type": "zenodo",
+    "doi": null,
+    "record_url": null,
+    "status": "pending-deposit",
+    "note": "Deposit pending; see docs/checkpoints.md. DOI to be inserted before submission."
+   },
+   "file_count": 37,
+   "total_bytes": 9150984631,
+   "files": [
+    {
+     "path": "src/gcmagicc_model/gcmagicc/ranges_7Augext.pt",
+     "variant": null,
+     "role": "normalization",
+     "bytes": 5247210,
+     "sha256": "c4d1dad102a07f30666d79ff7c71316225e6956feef8017d0ee1c6ad6bbea858"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/meta_7Augext.pkl",
+     "variant": null,
+     "role": "normalization",
+     "bytes": 1123,
+     "sha256": "38a3b1aad940823acac61398b7c48425b85e67f7de7fc31d047d597bec3e8c03"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b1/best_model.pt",
+     "variant": "modelsNfour_7Augext_b1",
+     "role": "cascade",
+     "bytes": 226154,
+     "sha256": "0154cc0679aa1efa0ba58375e3cbe60da3ad7d04b398e2fb2fd1e9876f407fdb"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b2/best_model.pt",
+     "variant": "modelsNfour_7Augext_b2",
+     "role": "cascade",
+     "bytes": 1959400,
+     "sha256": "adc0d6eafdfb54ac2b8e32479c36ae7b4a0dc07a0603b51dc3e65cf17eeb7dde"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bS2/best_model.pt",
+     "variant": "modelsNfour_7Augext_bS2",
+     "role": "cascade",
+     "bytes": 900074,
+     "sha256": "69a38d8d054645698a5a0ffc675ac1b2b1b9307cd4984378b5c5171cdf4a1997"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b4/best_model.pt",
+     "variant": "modelsNfour_7Augext_b4",
+     "role": "cascade",
+     "bytes": 8943208,
+     "sha256": "e63cbe447b67f144de351355a9bf3d422304b10a35d88401dc969cf412e26d03"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b8/best_model.pt",
+     "variant": "modelsNfour_7Augext_b8",
+     "role": "cascade",
+     "bytes": 35766376,
+     "sha256": "89f2173d6c540aa12e639413fbb7b0b2603bf84335a87aa531013b767c66fe7e"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b16/best_model.pt",
+     "variant": "modelsNfour_7Augext_b16",
+     "role": "cascade",
+     "bytes": 143059048,
+     "sha256": "90ec566c49188a3f58e3a8e984500f0b63a00bfd6d217101ff8a9b63005cdcd1"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdadde16/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdadde16",
+     "role": "cascade",
+     "bytes": 98714530,
+     "sha256": "c2c70c1eae6b51b29d1f059896b9f479edee1ee5fe1b058abd6156bf263a46fe"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b32/best_model.pt",
+     "variant": "modelsNfour_7Augext_b32",
+     "role": "cascade",
+     "bytes": 572229736,
+     "sha256": "9b9145dec71569ec4fdd915ec9dee95cb38c201528b7d8954c4b70a0a81aac8d"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdadde32/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdadde32",
+     "role": "cascade",
+     "bytes": 394806178,
+     "sha256": "5d0497ca16dba61f410d207fe96c7fcc34ca47739ea7380d61080f99bc55bc48"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b64/best_model.pt",
+     "variant": "modelsNfour_7Augext_b64",
+     "role": "cascade",
+     "bytes": 2288912488,
+     "sha256": "23bd0c9f047bf38c3d14dd0b8fc386e49707dc3a295796b38f3201eec41fce7a"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdadde64/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdadde64",
+     "role": "cascade",
+     "bytes": 1579172770,
+     "sha256": "9caf44e46ae6d1269d8183a17f6569f6321e00626995925b7562bd9fa29194fc"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b128/best_model.pt",
+     "variant": "modelsNfour_7Augext_b128",
+     "role": "cascade",
+     "bytes": 212732008,
+     "sha256": "2cfd88234380fff779b8a6068115ef44ab64cb1f57d94b582a219d883627648d"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdadde128/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdadde128",
+     "role": "cascade",
+     "bytes": 523769636,
+     "sha256": "0b808978112efb043e57a85794b44bc8c0b6e9ddcbd6a364de29a6af4f057665"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_b256/best_model.pt",
+     "variant": "modelsNfour_7Augext_b256",
+     "role": "cascade",
+     "bytes": 850921576,
+     "sha256": "03593d80d52caeccdfa1239021d2cfd75cc6d79dad83db48cfeb4d4bc400a6a8"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdadde256/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdadde256",
+     "role": "cascade",
+     "bytes": 2095060772,
+     "sha256": "89d4abb56f4382e07cfcffc25e6f7fde9dc44e794af0ae51608149e97264d17a"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bde2_12_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bde2_12_10",
+     "role": "dependence",
+     "bytes": 2774242,
+     "sha256": "74ac0f168047753953f8cdbb0e5c6568b381e7c9be49abfd3b652bb989545d1f"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bde4_6_0/best_model.pt",
+     "variant": "modelsNfour_7Augext_bde4_6_0",
+     "role": "dependence",
+     "bytes": 10874978,
+     "sha256": "5d5102934170114f2b3848ec5c32c55ffdcd944d46e9ef09c6962a79af607430"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bde8_2_0/best_model.pt",
+     "variant": "modelsNfour_7Augext_bde8_2_0",
+     "role": "dependence",
+     "bytes": 43310178,
+     "sha256": "cc3cd4deb2b16e8f54dab502e049e9a83e5aad04675db9cf203a16f2a30b1a97"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdeSxl2_48_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdeSxl2_48_10",
+     "role": "dependence",
+     "bytes": 17798050,
+     "sha256": "fbf4ada403d95ce6e7aad73570d3fc6110235362ffe09e5a1bc7a4320dcb839d"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdeSxlsp2_72_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdeSxlsp2_72_10",
+     "role": "dependence",
+     "bytes": 17768610,
+     "sha256": "72cbae7b078166334a7f4616574a6ae8977a975f9ae3dde41a231d689e895174"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdeb2_12_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdeb2_12_10",
+     "role": "dependence",
+     "bytes": 2774242,
+     "sha256": "1aa0cf640cc8f50e96005864890305fe8123b77d742cd2e16c6a236de45d6935"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdeb8_2_0/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdeb8_2_0",
+     "role": "dependence",
+     "bytes": 43310178,
+     "sha256": "05b9ea826661a1d1bb40e8cd65a1bdfc096309740a827677535cee655b91e070"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdelargel1_36_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdelargel1_36_10",
+     "role": "dependence",
+     "bytes": 998690,
+     "sha256": "dcde36f4aee17fd110f53c1cccfda04bbfcc05ad34e41a1aac2f5f540a0e05fc"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdelargel2_12_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdelargel2_12_10",
+     "role": "dependence",
+     "bytes": 4841762,
+     "sha256": "c43f8cf6a14832202be5d75c6b40a3f9d49b70f5f63a3eb1374bb780430bfceb"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdelargel4_6_0/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdelargel4_6_0",
+     "role": "dependence",
+     "bytes": 19135650,
+     "sha256": "3f1e34772aedca6f1e22b8a7920461a3600caed3d2fd3f6540db14381fb3ec85"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdemean1_36_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdemean1_36_10",
+     "role": "dependence",
+     "bytes": 608482,
+     "sha256": "95ff0ea3138e76ac468884400960363b14ce08128572a8a06e1a4240641ec5c4"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdes1_36_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdes1_36_10",
+     "role": "dependence",
+     "bytes": 967330,
+     "sha256": "eaa4f1339f32a72b6ba7f5bf10ad229f867a2c6119143a1265fa3310ae76106e"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdes2_12_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdes2_12_10",
+     "role": "dependence",
+     "bytes": 17742114,
+     "sha256": "209d2eb9703d983eb8f58ee503c2a85fcd68bcb0c9b6e6572f5b59b0e6969a09"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdes4_6_0/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdes4_6_0",
+     "role": "dependence",
+     "bytes": 19131170,
+     "sha256": "b0d08e232918cfbc1029084388dbfe7e7cfda6c2ba653a682d67ed6f46d9b706"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdes8_2_0/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdes8_2_0",
+     "role": "dependence",
+     "bytes": 76342562,
+     "sha256": "42701734e1da2655ec3fbf5a342fe4686470c4ae2e92014875c274078efaad35"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdexl1_36_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdexl1_36_10",
+     "role": "dependence",
+     "bytes": 3425698,
+     "sha256": "f10f6ceef65387cc9db71c7c3d30927133c379483327b1baebf889da0aadc28a"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdexl1_48_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdexl1_48_10",
+     "role": "dependence",
+     "bytes": 3441058,
+     "sha256": "bf40304aa85459198f47164fd65d81ff61d66990a1175129f440481c09815bc9"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdexl2_12_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdexl2_12_10",
+     "role": "dependence",
+     "bytes": 17751970,
+     "sha256": "9780462a6b63b10e785b1f44b2af47730fc781831e673a43086905cc31de8d71"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdexl2_24_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdexl2_24_10",
+     "role": "dependence",
+     "bytes": 17767330,
+     "sha256": "f0c9803cd0ac176f972c6ba1a71af9477980316cd6e2185f304bb9ca8113a8fa"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc/modelsA/modelsNfour_7Augext_bdexl2_48_10/best_model.pt",
+     "variant": "modelsNfour_7Augext_bdexl2_48_10",
+     "role": "dependence",
+     "bytes": 17798050,
+     "sha256": "987f06c2b515eac2afc5cd02f2fd54f3b34bb744aed14f390c96be90e814ffd9"
+    }
+   ],
+   "archive_file": "gcmagicc-checkpoints.tar.gz",
+   "destination_root": "src/gcmagicc_model/gcmagicc/",
+   "extraction": "Extract at the repository root; paths inside the tarball are already relative to it and land under src/gcmagicc_model/gcmagicc/modelsA/.",
+   "tarball_sha256": null,
+   "tarball_bytes": null
+  },
+  {
+   "id": "gcmagicc_ce-checkpoints",
+   "public_model": "GCMagicc-CE",
+   "internal_snapshot": "model_NthreeversT1",
+   "description": "Trained GCMagicc-CE network weights: the multiresolution HEALPix cascade (nside 1-256) plus dependence/lag models and the normalization files (ranges_7Augext.pt, meta_7Augext.pkl) that src/gcmagicc_model/gcmagicc_ce/run.py resolves at inference.",
+   "license": "Apache-2.0",
+   "copyright_holder": "Nicolai Meinshausen",
+   "archive": {
+    "type": "zenodo",
+    "doi": null,
+    "record_url": null,
+    "status": "pending-deposit",
+    "note": "Deposit pending; see docs/checkpoints.md. DOI to be inserted before submission."
+   },
+   "file_count": 24,
+   "total_bytes": 9043478197,
+   "files": [
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/ranges_7Augext.pt",
+     "variant": null,
+     "role": "normalization",
+     "bytes": 5247210,
+     "sha256": "c4d1dad102a07f30666d79ff7c71316225e6956feef8017d0ee1c6ad6bbea858"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/meta_7Augext.pkl",
+     "variant": null,
+     "role": "normalization",
+     "bytes": 1123,
+     "sha256": "38a3b1aad940823acac61398b7c48425b85e67f7de7fc31d047d597bec3e8c03"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b1/best_model.pt",
+     "variant": "modelsNthree_7Augext_b1",
+     "role": "cascade",
+     "bytes": 226154,
+     "sha256": "0154cc0679aa1efa0ba58375e3cbe60da3ad7d04b398e2fb2fd1e9876f407fdb"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b2/best_model.pt",
+     "variant": "modelsNthree_7Augext_b2",
+     "role": "cascade",
+     "bytes": 1959400,
+     "sha256": "adc0d6eafdfb54ac2b8e32479c36ae7b4a0dc07a0603b51dc3e65cf17eeb7dde"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b4/best_model.pt",
+     "variant": "modelsNthree_7Augext_b4",
+     "role": "cascade",
+     "bytes": 8943208,
+     "sha256": "e63cbe447b67f144de351355a9bf3d422304b10a35d88401dc969cf412e26d03"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b8/best_model.pt",
+     "variant": "modelsNthree_7Augext_b8",
+     "role": "cascade",
+     "bytes": 35766376,
+     "sha256": "89f2173d6c540aa12e639413fbb7b0b2603bf84335a87aa531013b767c66fe7e"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b16/best_model.pt",
+     "variant": "modelsNthree_7Augext_b16",
+     "role": "cascade",
+     "bytes": 143059048,
+     "sha256": "90ec566c49188a3f58e3a8e984500f0b63a00bfd6d217101ff8a9b63005cdcd1"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_bdadde16/best_model.pt",
+     "variant": "modelsNthree_7Augext_bdadde16",
+     "role": "cascade",
+     "bytes": 98714530,
+     "sha256": "c2c70c1eae6b51b29d1f059896b9f479edee1ee5fe1b058abd6156bf263a46fe"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b32/best_model.pt",
+     "variant": "modelsNthree_7Augext_b32",
+     "role": "cascade",
+     "bytes": 572229736,
+     "sha256": "9b9145dec71569ec4fdd915ec9dee95cb38c201528b7d8954c4b70a0a81aac8d"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_bdadde32/best_model.pt",
+     "variant": "modelsNthree_7Augext_bdadde32",
+     "role": "cascade",
+     "bytes": 394806178,
+     "sha256": "5d0497ca16dba61f410d207fe96c7fcc34ca47739ea7380d61080f99bc55bc48"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b64/best_model.pt",
+     "variant": "modelsNthree_7Augext_b64",
+     "role": "cascade",
+     "bytes": 2288912488,
+     "sha256": "23bd0c9f047bf38c3d14dd0b8fc386e49707dc3a295796b38f3201eec41fce7a"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_bdadde64/best_model.pt",
+     "variant": "modelsNthree_7Augext_bdadde64",
+     "role": "cascade",
+     "bytes": 1579172770,
+     "sha256": "9caf44e46ae6d1269d8183a17f6569f6321e00626995925b7562bd9fa29194fc"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b128/best_model.pt",
+     "variant": "modelsNthree_7Augext_b128",
+     "role": "cascade",
+     "bytes": 212732008,
+     "sha256": "2cfd88234380fff779b8a6068115ef44ab64cb1f57d94b582a219d883627648d"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_bdadde128/best_model.pt",
+     "variant": "modelsNthree_7Augext_bdadde128",
+     "role": "cascade",
+     "bytes": 523769636,
+     "sha256": "0b808978112efb043e57a85794b44bc8c0b6e9ddcbd6a364de29a6af4f057665"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_b256/best_model.pt",
+     "variant": "modelsNthree_7Augext_b256",
+     "role": "cascade",
+     "bytes": 850921576,
+     "sha256": "03593d80d52caeccdfa1239021d2cfd75cc6d79dad83db48cfeb4d4bc400a6a8"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_bdadde256/best_model.pt",
+     "variant": "modelsNthree_7Augext_bdadde256",
+     "role": "cascade",
+     "bytes": 2095060772,
+     "sha256": "89d4abb56f4382e07cfcffc25e6f7fde9dc44e794af0ae51608149e97264d17a"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l16_2_0_5/best_model.pt",
+     "variant": "modelsNthree_7Augext_l16_2_0_5",
+     "role": "dependence",
+     "bytes": 157735266,
+     "sha256": "7c1aad2cf25f5b77f705d35089faed795fb7615022c4fceb9075695b79f2a939"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l1_48_10_40/best_model.pt",
+     "variant": "modelsNthree_7Augext_l1_48_10_40",
+     "role": "dependence",
+     "bytes": 2401634,
+     "sha256": "ebf0c1c59f0f95920a51f2353b66880224fc8ad52bba741a306451dfaee40d20"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l1_48_5_20/best_model.pt",
+     "variant": "modelsNthree_7Augext_l1_48_5_20",
+     "role": "dependence",
+     "bytes": 1013346,
+     "sha256": "e721f8b9ff2e5fd578d5644b4ac80bea94afdc7b6ee9023edeac3f83ae1bd0d3"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l1_72_10_40/best_model.pt",
+     "variant": "modelsNthree_7Augext_l1_72_10_40",
+     "role": "dependence",
+     "bytes": 2432354,
+     "sha256": "6644854a001d59316583d6742c6da241d67fbd8b827aeecf0f15b8eeba15b150"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l2_36_5_20/best_model.pt",
+     "variant": "modelsNthree_7Augext_l2_36_5_20",
+     "role": "dependence",
+     "bytes": 4871778,
+     "sha256": "e6481005ae9895ac09d09f82fac3f8d1770f2a2497eb9f2471820297e937c125"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l2_48_10_40/best_model.pt",
+     "variant": "modelsNthree_7Augext_l2_48_10_40",
+     "role": "dependence",
+     "bytes": 12265826,
+     "sha256": "d06e63908cafa51a44c44903951403cdd782789612be934e46dce46aa5c31a03"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l4_6_0_10/best_model.pt",
+     "variant": "modelsNthree_7Augext_l4_6_0_10",
+     "role": "dependence",
+     "bytes": 11760226,
+     "sha256": "3795be8992b92c9dac7f45b2f1e5c4a1a007b0deabd9432b28a0af7ba69cf6c5"
+    },
+    {
+     "path": "src/gcmagicc_model/gcmagicc_ce/modelsA/modelsNthree_7Augext_l8_2_0_5/best_model.pt",
+     "variant": "modelsNthree_7Augext_l8_2_0_5",
+     "role": "dependence",
+     "bytes": 39475554,
+     "sha256": "1b3b07cf2ade86c9d8418ee9e990a8f625f04b71ec06fed6b68475aca99f4dba"
+    }
+   ],
+   "archive_file": "gcmagicc_ce-checkpoints.tar.gz",
+   "destination_root": "src/gcmagicc_model/gcmagicc_ce/",
+   "extraction": "Extract at the repository root; paths inside the tarball are already relative to it and land under src/gcmagicc_model/gcmagicc_ce/modelsA/.",
+   "tarball_sha256": null,
+   "tarball_bytes": null
+  }
+ ]
+}
