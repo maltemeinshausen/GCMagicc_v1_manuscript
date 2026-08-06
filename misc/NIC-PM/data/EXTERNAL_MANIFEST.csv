@@ -1,0 +1,2 @@
+name,role,byte_size,sha256,gcmagicc_org_url,status
+normalized_7Augext/data_DAT_*.h5,OPTIONAL upstream input for samplesSera.py trend regeneration (per-model + ERA5),TBD,TBD,https://gcmagicc.org/data/TBD,MISSING-on-authors-host but NOT required for the figure: trend tables are shipped in data/ and the figure reproduces byte-identically without this. Only needed to regenerate trends from scratch (RUN_TRENDS=1).

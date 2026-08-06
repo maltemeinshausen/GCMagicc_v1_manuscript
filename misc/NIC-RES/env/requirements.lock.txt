@@ -1,0 +1,29 @@
+# GCMagicc release-bundle pinned environment.
+# CANONICAL reproduction environment = ETH Euler cluster (where the release
+# outputs + SHA-256 hashes are produced), verified 2026-07-12:
+#   module load stack/2024-06 python_cuda/3.11.6
+#   Python 3.11.6 ; torch 2.3.1+cu121 ; h5py 3.11.0 ; healpy 1.19.0 ;
+#   numpy / scipy / pandas / matplotlib from the stack.
+#
+# pip-style pins (for a non-module venv reproducing the canonical stack):
+torch==2.3.1+cu121
+numpy
+scipy
+pandas
+matplotlib
+h5py==3.11.0
+healpy==1.19.0
+cartopy   # optional (NIC-RES coastlines only)
+#
+# Not every bundle step needs every package:
+#   * GPU inference/regeneration  -> torch, numpy, h5py, healpy
+#   * spatial renderer (NIC-RES)  -> + matplotlib (+ cartopy optional)
+#   * pure CSV->figure steps      -> numpy, pandas, matplotlib only
+#     (NIC-XS 1080_Figure..., NIC-PM sample_emergent2/era_plus_residuals)
+# The CSV->figure steps run CPU-only and reproduce on any platform.
+#
+# --- Alternative verified stack (authors' ada host) ---
+#   Python 3.14.6 ; torch 2.10.0+cu130 ; h5py 3.13.0 ; healpy 1.19.0.
+# Scientific outputs match up to floating-point noise across the two stacks;
+# BIT-EXACT reproduction of GPU member draws requires the canonical Euler stack
+# + matching GPU. The CPU CSV->figure outputs are bit-exact on both.

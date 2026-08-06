@@ -7,3 +7,31 @@ dist/
 *.egg-info/
 data/external/
 figures/generated/
+
+# --- NIC-* reproducibility bundles (added 2026-08-06) ---------------------
+# Bundle CODE, CONFIG, ENV, DOCS, MANIFESTS and the small decision-relevant
+# outputs are tracked. The bulk regenerated artefacts are not: they are
+# published as citable Zenodo archives (see misc/zenodo/SHA256SUMS.zip.txt)
+# and, later, browsable at gcmagicc.org via the gcm_firefly_frontend portal.
+
+# Prepared Zenodo archives (926 MB) - upload targets, not repo content
+misc/zenodo/*.zip
+
+# Bulk regenerated image sets
+misc/NIC-XS/outputs/plots_eval_nside2_nosmooth_miss585_release/
+misc/NIC-RES/outputs/RESOLUTIONPLOTS/
+
+# Model checkpoints shipped inside bundles (349 MB + 18 MB)
+misc/NIC-PM/checkpoints/
+misc/NIC-XS/checkpoints/
+
+# Per-bundle config blobs (5.1 MB each, regenerable from code)
+misc/*/config/*.h5
+misc/*/config/*.npz
+
+# Build artefacts that leaked into the bundles' own SHA256SUMS
+misc/**/__pycache__/
+
+# PRIVATE: internal id -> public name provenance notes. Nicolai's README:
+# "strip PROVENANCE_INTERNAL.md before public release and re-hash".
+misc/*/PROVENANCE_INTERNAL.md
