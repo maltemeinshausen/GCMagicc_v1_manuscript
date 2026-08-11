@@ -8,3 +8,7 @@ The two core model directories came from an unversioned data checkout. Their exa
 - source snapshot `model_NthreeversT1` → public GCMagicc-CE.
 
 No mapping is asserted for GCMagicc-PM or GCMagicc-XS pending the model-author bundles.
+
+Publication figures generated from ignored data trees and a modified source working tree are identified by the last Git base revision together with SHA-256 snapshots of the relevant generator scripts, compact plotted data, and final artifacts. This avoids attributing uncommitted generated output to a clean commit that did not contain the plotting changes.
+
+The validation selection freezes the main artifact and ten supplementary alternate draws from the same `publication_set_v100/v100` bundle generated on 2026-08-10. The observational-alignment record also states which supplementary panel-index and EDISTO inputs were checked against the refreshed 2026-08-07 bundle.

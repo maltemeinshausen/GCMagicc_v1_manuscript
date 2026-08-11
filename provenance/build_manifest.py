@@ -75,17 +75,17 @@ def describe(path: Path) -> dict[str, str]:
     if rel.startswith("data/derived/validation_diagnostics/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "validation bundle 2026-05-04",
-            "source_path": "data/manuscript_figures/figure_validation/plot_caroussel/v100",
+            "source_revision": "main-gus b1af6a4 + generator snapshots; publication-set main and supplementary bundles 20260810_0845",
+            "source_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
-            "role": "semantic validation-figure selection provenance",
+            "role": "publication-set validation-figure selection provenance",
         }
     if rel.startswith("data/derived/observational_alignment/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "main-gus 34581af; bundle 20260720_030533",
-            "source_path": "data/manuscript_figures/observational_alignment/observational_alignment_v100_20260720_030533",
+            "source_revision": "main-gus b1af6a4 + generator sha256:15de2923f3b135fb4fa60b3d568ae54ff4fe4b4d088612badbf185c3518ddc1a; bundle 20260807_110344",
+            "source_path": "data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
             "role": "normalized observational-alignment plotted data and provenance",
@@ -135,14 +135,23 @@ def describe(path: Path) -> dict[str, str]:
             "license": "CC-BY-4.0",
             "role": "supplementary GCMagicc-XS prediction-skill figure",
         }
-    if rel.startswith(("figures/main/validation_diagnostics/", "figures/supplementary/validation_diagnostics/")):
+    if rel.startswith("figures/main/validation_diagnostics/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "validation bundle 2026-05-04",
-            "source_path": "data/manuscript_figures/figure_validation/plot_caroussel/v100",
+            "source_revision": "main-gus b1af6a4 + generator sha256:80180b212fb1e3da45aef2fa1a768a8f37a2dfc9e563801804ba715e9ed90962; bundle 20260810_0845",
+            "source_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100/main",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
-            "role": "validation diagnostics selected by semantic manuscript role",
+            "role": "main validation diagnostics selected by semantic manuscript role",
+        }
+    if rel.startswith("figures/supplementary/validation_diagnostics/"):
+        return {
+            "source_repository": "gcmmagicc",
+            "source_revision": "main-gus b1af6a4 + generator sha256:80180b212fb1e3da45aef2fa1a768a8f37a2dfc9e563801804ba715e9ed90962; bundle 20260810_0845",
+            "source_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100/supplementary",
+            "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
+            "license": "CC-BY-4.0",
+            "role": "supplementary validation diagnostics selected by semantic manuscript role",
         }
     if rel.startswith(("figures/supplementary/scoreedistc_ssp245/", "figures/supplementary/observation_referenced_edisto/")):
         return {
@@ -156,7 +165,7 @@ def describe(path: Path) -> dict[str, str]:
     if rel.startswith("figures/main/observational_alignment/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "main-gus 34581af; bundle 20260720_030533",
+            "source_revision": "main-gus b1af6a4 + generator sha256:15de2923f3b135fb4fa60b3d568ae54ff4fe4b4d088612badbf185c3518ddc1a; bundle 20260807_110344",
             "source_path": "data/manuscript_figures/observational_alignment",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",

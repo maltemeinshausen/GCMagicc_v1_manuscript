@@ -2,22 +2,54 @@
   "schema": "gcmagicc-observational-alignment-provenance/v1",
   "semantic_role": "main observational alignment",
   "model_variant": "GCMagicc",
-  "authoritative_bundle": "observational_alignment_v100_20260720_030533",
+  "authoritative_bundle": "observational_alignment_v100_20260807_110344",
   "source_host": "gus",
-  "source_revision": "gcmmagicc main-gus at 34581af4326f4c9d43192467144dcb5c466b4d06",
+  "source_revision": {
+    "git_base": "gcmmagicc main-gus b1af6a414077e7671108b1f6945af3776b17ce5f",
+    "working_tree": "notebooks/618_verification_tas_warming_SSPs.py was modified at generation time",
+    "generator_path": "notebooks/618_verification_tas_warming_SSPs.py",
+    "generator_sha256": "15de2923f3b135fb4fa60b3d568ae54ff4fe4b4d088612badbf185c3518ddc1a"
+  },
   "normalization": "machine roots in the JSON were replaced by relative external references; scientific arrays and panel values are unchanged",
   "original_json": {
-    "bytes": 1171062,
-    "sha256": "ca9f021aef97b6411fdd2b052ae1a46615bf89488898a67e5bbd0675fb0ce195"
+    "bytes": 1171504,
+    "sha256": "bd7faae073eaa3fcae1e1cb6afb7b801b93d1f6445e9841a7c1333595290e4b7"
   },
   "normalized_json": {
-    "path": "data/derived/observational_alignment/observational_alignment_v100_20260720_030533.json",
-    "sha256": "7c515331f2f6c4edb4de65fa48875cf41ffcc9a9bbee6815d5851b515c4a5f10"
+    "path": "data/derived/observational_alignment/observational_alignment_v100_20260807_110344.json",
+    "bytes": 1099820,
+    "sha256": "d14921a59c763b501dc4692d363b0894ade6e1dec68037bbbbadab304b9c5918"
   },
+  "compact_panel_tables": [
+    {
+      "path": "data/derived/observational_alignment/observational_alignment_v100_20260807_110344_panel_b_values.tex",
+      "bytes": 5092,
+      "sha256": "9db0c74d95a6440ab05b542acfbd713f358127ef1e221486d548e5f7b2972aea"
+    },
+    {
+      "path": "data/derived/observational_alignment/observational_alignment_v100_20260807_110344_panel_c1_original_cmip6_model_numbers.tex",
+      "bytes": 758,
+      "sha256": "1309577c5b1dada9bd68d5f11a20ba7879cd2350bf080b91237402dc7bac5ef1"
+    },
+    {
+      "path": "data/derived/observational_alignment/observational_alignment_v100_20260807_110344_panel_c2_gcmagicc_cmip6_model_numbers.tex",
+      "bytes": 760,
+      "sha256": "dadcc10f24440f97ab3e95190befb30d3482b4662f7fdd56aa32641574cc7b6b"
+    }
+  ],
   "canonical_pdf": {
-    "path": "figures/main/observational_alignment/observational_alignment_v100_20260720_030533.pdf",
-    "bytes": 1849829,
-    "sha256": "d63d9f4bcbb8d859aeb7d602b647f563996f42ade2e457115256648efdbd15a2"
+    "path": "figures/main/observational_alignment/observational_alignment_v100_20260807_110344.pdf",
+    "bytes": 1864339,
+    "sha256": "01e0c729f00ece9c5ef2ad536b99a5b59f8b09928ad37eb9159a5939aec8c452"
+  },
+  "canonical_png": {
+    "path": "figures/main/observational_alignment/observational_alignment_v100_20260807_110344.png",
+    "bytes": 1540938,
+    "sha256": "5ba1e632a8ea610df7694d0b31ffffe04dca6dfbe878b7a75c830b119fbe530b"
+  },
+  "supplementary_compatibility": {
+    "panel_c_model_index": "panels c1 and c2 retain the same numbered 24-model list in the 20260807_110344 bundle",
+    "observation_referenced_edisto": "panel diagnostics and row-5 match-map inputs are unchanged from the 20260720_030533 bundle; the existing three-part supplementary EDISTO figure remains current"
   },
   "metrics_database_audit": "data/derived/validation_metrics/metrics_audit.json",
   "licence": "CC-BY-4.0"

@@ -1,14 +1,44 @@
 {
   "schema": "gcmagicc-validation-figure-provenance/v1",
+  "source_revision": {
+    "git_base": "gcmmagicc main-gus b1af6a414077e7671108b1f6945af3776b17ce5f",
+    "working_tree": "the validation plotting notebooks were modified at generation time",
+    "generator_snapshots": [
+      {
+        "path": "notebooks/1010_validation_diagnostics.py",
+        "sha256": "80180b212fb1e3da45aef2fa1a768a8f37a2dfc9e563801804ba715e9ed90962"
+      },
+      {
+        "path": "notebooks/1010_validation_diagnostics_batch.py",
+        "sha256": "39148a59207a285ef82a8b10e03b81e882f113248d064c35a88a5baf6ca4bb4b"
+      }
+    ]
+  },
   "semantic_roles": {
     "main_validation_diagnostics": {
-      "draw": 7,
-      "artifact": "figures/main/validation_diagnostics/validation_diagnostics_v100_draw_007_20260504_0617.pdf",
-      "sha256": "c41bc1abf7a279cf287c774c0d34daead62ad1e950ed483e5e41a876b2b524f5"
+      "selection": "publication-set main artifact",
+      "bundle": "publication_set_v100/v100/main generated 20260810_0845",
+      "artifact": "figures/main/validation_diagnostics/validation_diagnostics_main_v100_20260810_0845.pdf",
+      "bytes": 1414595,
+      "sha256": "c9d7e229fd69e930ffef22148e2772fbd589e5b6ab220faf1426f127611d750a"
     },
     "supplementary_validation_diagnostics": {
-      "draws": [1, 2, 3, 4, 5, 6, 8, 9, 10, 11],
-      "artifact_directory": "figures/supplementary/validation_diagnostics/alternate_draws"
+      "selection": "publication-set supplementary artifacts",
+      "bundle": "publication_set_v100/v100/supplementary generated 20260810_0845",
+      "draws": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"],
+      "artifact_directory": "figures/supplementary/validation_diagnostics/alternate_draws",
+      "artifacts": [
+        {"file": "validation_diagnostics_s01_v100_20260810_0845.pdf", "bytes": 1402225, "sha256": "4de4fe1dc5aee0b39b4b729fc82d430ee762f34ca96b9817ccc4a6e9279fbad0"},
+        {"file": "validation_diagnostics_s02_v100_20260810_0845.pdf", "bytes": 1286072, "sha256": "4533e6e351c14427a39a92c0d4e8286bd7d9eb13b026c3fa341841549f5c41a2"},
+        {"file": "validation_diagnostics_s03_v100_20260810_0845.pdf", "bytes": 1218043, "sha256": "aacb9fec95378f44b593d728d41acb244bd426148404ffa65d8869a1bf5ac6e7"},
+        {"file": "validation_diagnostics_s04_v100_20260810_0845.pdf", "bytes": 1450967, "sha256": "b60362d3b18162162c1d0005712d845406a9dfd6702a70e9da62cd10ab252e44"},
+        {"file": "validation_diagnostics_s05_v100_20260810_0845.pdf", "bytes": 1525893, "sha256": "72b08e8b7d868ab525e27b7302be5ef5dedc86000cef95de7193a5911f9e62dd"},
+        {"file": "validation_diagnostics_s06_v100_20260810_0845.pdf", "bytes": 1375053, "sha256": "70f77eabcb68f56298e6fa2cefb988c1a2ad66346b17a2431dab0b813787ea7b"},
+        {"file": "validation_diagnostics_s07_v100_20260810_0845.pdf", "bytes": 1444297, "sha256": "e23668f9a81d6828444260b46008ba83b689df3bd3e2a7c48b1d32841a385c59"},
+        {"file": "validation_diagnostics_s08_v100_20260810_0845.pdf", "bytes": 1449922, "sha256": "a9e0f2c9ea510110cc9c3027419fcbd09a1a62054ecd0871e8a3fb7dfbcc0a26"},
+        {"file": "validation_diagnostics_s09_v100_20260810_0845.pdf", "bytes": 1400371, "sha256": "95150bd0c82d32684912497c6d3ddc8836e95570630a484df9adfe58d80c8774"},
+        {"file": "validation_diagnostics_s10_v100_20260810_0845.pdf", "bytes": 1335750, "sha256": "d7ad03d011172bcaeee460cbae532f82c2316814b9249b1debb91b561cc27713"}
+      ]
     },
     "ssp245_scoreedistc": {
       "parts": 3,

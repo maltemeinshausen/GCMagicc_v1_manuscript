@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-20T03:05:45Z",
+  "generated_at_utc": "2026-08-07T11:03:57Z",
   "version_tag": "v100",
   "run_roots": [
     "external/gcmmagicc/data/projection_plots_simple_815/versioned/v100/20260717_064217"
@@ -62,7 +62,7 @@
     "row4_gapfiller_artifact": "external/gcmmagicc/data/gapfiller/plotset_20260720_024505_v100_IRN_tas/run_debiasloop_n20_v100_latlon_20260701_IRN_tas_tas_composite_manifest.json",
     "row4_gapfiller_artifact_type": "manifest",
     "row5_matchmap_json": "external/gcmmagicc/data/matchmaps/versioned/shared/EDISTO_V/overview/overview/Matchmaps_normalized.json",
-    "row4_generation_command": "external/gcmmagicc/.pixi/envs/default/bin/python external/gcmmagicc/notebooks/781_GapFiller_CompositeStream.py --non-interactive --version-tag v100 --scenario ssp245 --ensemble-workflow AR6 --ensemble-dir external/datasets/gcmagicc/ERA5spliced/all-vars-one-file/v100/ssp245/AR6/all/n_20/original/run_debiasloop_n20_v100_latlon_20260701 --gcmagicc-cmip6-dir external/datasets/gcmagicc/CMIP6replicas/v100 --region IRN --variables tas --save-dir external/gcmmagicc/data/gapfiller/plotset_20260720_024505_v100_IRN_tas --log-level INFO",
+    "row4_generation_command": null,
     "row5_status": "resolved",
     "row5_expected_pattern": "external/gcmmagicc/data/matchmaps/**/EDISTO_V/**/overview/overview/Matchmaps*_normalized.json"
   },
@@ -182,8 +182,8 @@
   },
   "row2_layers": {
     "cmip6_ssp_weighted": {
-      "included": false,
-      "source_root": "external/ada-gcmmagicc/data/projection_plots/analysed_data/cmip6/tas/annual/global/p1981-2100_min9",
+      "included": true,
+      "source_root": "external/gcmmagicc/data/projection_plots/analysed_data/reduced/cmip6/tas/annual/global/p1981-2100_min9",
       "target_scenarios": [
         "ssp119",
         "ssp126",
@@ -194,8 +194,7 @@
         "ssp534-over",
         "ssp585"
       ],
-      "scenarios_with_values": [],
-      "missing_scenarios": [
+      "scenarios_with_values": [
         "ssp119",
         "ssp126",
         "ssp245",
@@ -204,7 +203,8 @@
         "ssp460",
         "ssp534-over",
         "ssp585"
-      ]
+      ],
+      "missing_scenarios": []
     },
     "gcmagicc_n20": {
       "included": true,
@@ -5092,18 +5092,19 @@
       "missing_scenarios": []
     },
     "v090_ssp_whiskers": {
-      "included": false,
+      "included": true,
       "source_csv": "external/gcmmagicc/data/nicolaiplots/plotsT1/plots_emergent_constraint/quantiles_by_scenario.csv",
-      "drawn_scenarios": [],
-      "skipped_scenarios": [
+      "drawn_scenarios": [
         "ssp119",
         "ssp126",
-        "ssp245",
         "ssp370",
         "ssp434",
         "ssp460",
+        "ssp585"
+      ],
+      "skipped_scenarios": [
+        "ssp245",
         "ssp534-over",
-        "ssp585",
         "SSP2-com"
       ],
       "conversion_note": "CSV warmings use the panel-b secondary-axis convention; subtract 0.85 to plot on the primary axis."
@@ -5119,7 +5120,11 @@
             "median": 1.4,
             "p95": 1.8
           },
-          "cmip6": null,
+          "cmip6": {
+            "p5": 0.987041914351915,
+            "median": 1.6344114783218893,
+            "p95": 2.3516016851884687
+          },
           "gcmagicc_n20": {
             "p5": 1.2146107250000342,
             "median": 1.4385895000000688,
@@ -5147,7 +5152,11 @@
             "median": 1.8,
             "p95": 2.4
           },
-          "cmip6": null,
+          "cmip6": {
+            "p5": 1.458678109426773,
+            "median": 2.2863567889053127,
+            "p95": 2.9630419885440955
+          },
           "gcmagicc_n20": {
             "p5": 1.4532377500000222,
             "median": 1.8158584999999676,
@@ -5175,7 +5184,11 @@
             "median": 2.7,
             "p95": 3.5
           },
-          "cmip6": null,
+          "cmip6": {
+            "p5": 2.251611332622343,
+            "median": 3.093284629783947,
+            "p95": 4.06979771963416
+          },
           "gcmagicc_n20": {
             "p5": 2.2518902000000907,
             "median": 2.711535250000003,
@@ -5203,7 +5216,11 @@
             "median": 3.6,
             "p95": 4.6
           },
-          "cmip6": null,
+          "cmip6": {
+            "p5": 3.214666001186155,
+            "median": 4.298341780567172,
+            "p95": 5.656186543170282
+          },
           "gcmagicc_n20": {
             "p5": 3.174357875000021,
             "median": 3.784845499999966,
@@ -5227,7 +5244,11 @@
         "scenario_color": "#b32f4c",
         "datasets": {
           "ipcc_ar6": null,
-          "cmip6": null,
+          "cmip6": {
+            "p5": 1.632651549410515,
+            "median": 2.5330964024840115,
+            "p95": 3.765960480726451
+          },
           "gcmagicc_n20": {
             "p5": 1.8923847749999565,
             "median": 2.1866972500000146,
@@ -5251,7 +5272,11 @@
         "scenario_color": "#d65f2e",
         "datasets": {
           "ipcc_ar6": null,
-          "cmip6": null,
+          "cmip6": {
+            "p5": 2.1724668820912805,
+            "median": 3.2532863406488794,
+            "p95": 4.676072309359917
+          },
           "gcmagicc_n20": {
             "p5": 2.579745674999981,
             "median": 3.071411499999988,
@@ -5275,7 +5300,11 @@
         "scenario_color": "#7c2d6f",
         "datasets": {
           "ipcc_ar6": null,
-          "cmip6": null,
+          "cmip6": {
+            "p5": 1.3827144794936328,
+            "median": 2.454721218107569,
+            "p95": 3.6670053352786973
+          },
           "gcmagicc_n20": {
             "p5": 1.8093542999999812,
             "median": 2.164821749999993,
@@ -5303,7 +5332,11 @@
             "median": 4.4,
             "p95": 5.7
           },
-          "cmip6": null,
+          "cmip6": {
+            "p5": 3.6661250942868286,
+            "median": 5.128038375687696,
+            "p95": 6.678928647677187
+          },
           "gcmagicc_n20": {
             "p5": 3.7560823500000793,
             "median": 4.507272750000032,
@@ -8695,10 +8728,10 @@
     }
   },
   "outputs": {
-    "png": "external/gcmmagicc/data/manuscript_figures/figure2_era_spliced_1021/Figure2_ERAspliced_v100_20260720_030533.png",
-    "pdf": "external/gcmmagicc/data/manuscript_figures/figure2_era_spliced_1021/Figure2_ERAspliced_v100_20260720_030533.pdf",
-    "row2_panel_b_values_tex": "external/gcmmagicc/data/manuscript_figures/figure2_era_spliced_1021/Figure2_ERAspliced_v100_20260720_030533_panel_b_values.tex",
-    "row4_panel_c1_original_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/figure2_era_spliced_1021/Figure2_ERAspliced_v100_20260720_030533_panel_c1_original_cmip6_model_numbers.tex",
-    "row4_panel_c2_gcmagicc_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/figure2_era_spliced_1021/Figure2_ERAspliced_v100_20260720_030533_panel_c2_gcmagicc_cmip6_model_numbers.tex"
+    "png": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344.png",
+    "pdf": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344.pdf",
+    "row2_panel_b_values_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344_panel_b_values.tex",
+    "row4_panel_c1_original_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344_panel_c1_original_cmip6_model_numbers.tex",
+    "row4_panel_c2_gcmagicc_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344_panel_c2_gcmagicc_cmip6_model_numbers.tex"
   }
 }
