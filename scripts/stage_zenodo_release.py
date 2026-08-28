@@ -94,7 +94,6 @@ def main() -> int:
     parser.add_argument("--historical-metrics", required=True, type=Path)
     parser.add_argument("--current-metrics", required=True, type=Path)
     parser.add_argument("--energy-distance", required=True, type=Path)
-    parser.add_argument("--xs-figure-source", required=True, type=Path)
     parser.add_argument("--xs-regenerated", required=True, type=Path)
     parser.add_argument("--xs-member-draws", required=True, type=Path)
     parser.add_argument("--out", type=Path, default=ROOT / "dist" / "zenodo")
@@ -110,11 +109,14 @@ def main() -> int:
         "validation-metrics-sqlite": args.historical_metrics,
         "validation-diagnostics-metrics-sqlite-v20260821": args.current_metrics,
         "validation-diagnostics-edist-sqlite-v20260821": args.energy_distance,
-        "gcmagicc-xs-figure-source": args.xs_figure_source,
         "gcmagicc-xs-regenerated-intermediate-v20260713": args.xs_regenerated,
         "gcmagicc-xs-member-draws-v20260713": args.xs_member_draws,
     }
-    objects = {item["id"]: item for item in json.loads(MANIFEST.read_text(encoding="utf-8"))["objects"]}
+    objects = {
+        item["id"]: item
+        for item in json.loads(MANIFEST.read_text(encoding="utf-8"))["objects"]
+        if item.get("deposit", True)
+    }
     if set(local_sources) != set(objects):
         raise RuntimeError("staging source IDs do not match the external-data manifest")
 
@@ -134,7 +136,6 @@ def main() -> int:
         }:
             verify_sqlite(source)
         elif object_id in {
-            "gcmagicc-xs-figure-source",
             "gcmagicc-xs-regenerated-intermediate-v20260713",
         }:
             verify_csv(source)

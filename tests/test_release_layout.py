@@ -20,9 +20,13 @@ def test_external_manifest_records_model_author_release_objects() -> None:
     }
     assert objects["gcmagicc-pm-bundle"]["public_model"] == "GCMagicc-PM"
     assert objects["gcmagicc-xs-bundle"]["public_model"] == "GCMagicc-XS"
-    assert objects["gcmagicc-xs-figure-source"]["sha256"] == (
+    figure_source = objects["gcmagicc-xs-figure-source"]
+    assert figure_source["sha256"] == (
         "9436752a1d2a0b2af0d707bab9776d4cc8f874968cc2ad472c8ad16c4a5dca68"
     )
+    assert figure_source["status"] == "not-redistributed"
+    assert figure_source["deposit"] is False
+    assert figure_source["url"] is None
 
 
 def test_repository_has_no_file_over_50_mb() -> None:

@@ -146,6 +146,8 @@ def extract_archive(obj: dict, archive: Path) -> None:
 def fetch() -> int:
     pending: list[str] = []
     for obj in load_external()["objects"]:
+        if obj["status"] == "not-redistributed":
+            continue
         if obj["status"] != "published":
             pending.append(f"{obj['id']} ({obj['status']})")
             continue
@@ -308,7 +310,15 @@ def verify() -> int:
         licenses = obj.get("licenses", [obj.get("license")])
         if not licenses or any(item not in {"Apache-2.0", "CC-BY-4.0"} for item in licenses):
             failures.append(f"external object has invalid licence metadata: {obj_id}")
-        if obj.get("status") != "published":
+        status = obj.get("status")
+        if status == "not-redistributed":
+            if obj.get("deposit") is not False:
+                failures.append(f"non-redistributed object must set deposit=false: {obj_id}")
+            if obj.get("url") is not None:
+                failures.append(f"non-redistributed object must not have a URL: {obj_id}")
+            if not obj.get("note"):
+                failures.append(f"non-redistributed object requires an explanatory note: {obj_id}")
+        elif status != "published":
             failures.append(f"external object is not published: {obj_id} ({obj.get('status')})")
         elif not str(obj.get("url", "")).startswith("https://"):
             failures.append(f"external object has no HTTPS URL: {obj_id}")
@@ -370,6 +380,11 @@ def verify() -> int:
                         if row["public_url"] != obj.get("url"):
                             failures.append(f"external URL mismatch in {relative}:{line_number}")
                         if row["status"] != "published":
+                            failures.append(f"external status mismatch in {relative}:{line_number}")
+                    elif obj.get("status") == "not-redistributed":
+                        if row["public_url"]:
+                            failures.append(f"non-redistributed URL in {relative}:{line_number}")
+                        if not row["status"].startswith("not redistributed"):
                             failures.append(f"external status mismatch in {relative}:{line_number}")
     if failures:
         print("VERIFY: FAIL")

@@ -1,3 +1,3 @@
 name,role,byte_size,sha256,public_url,status
-gcmagicc-checkpoints.tar.gz,"A5 checkpoint set used by the intervention workflow",7921092900,e863a3f43b56972e244885aa50def51703ac96ccf948b233d69ddc8faf77afae,,awaiting Zenodo publication; set MODEL_DIR to the extracted archive
+gcmagicc-checkpoints.tar.gz,"A5 checkpoint set used by the intervention workflow",7921092900,e863a3f43b56972e244885aa50def51703ac96ccf948b233d69ddc8faf77afae,https://zenodo.org/records/22139683/files/gcmagicc-checkpoints.tar.gz?download=1,awaiting Zenodo publication; set MODEL_DIR to the extracted archive
 normalized_7Augext/data_DAT_ERA5_historical-*.h5,"intervention input; predictor column 13 is aer_ERF",,,,not redistributed; rebuild from the documented CMIP6 and ERA5 preparation workflow

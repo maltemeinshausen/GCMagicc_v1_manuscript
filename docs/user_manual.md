@@ -96,7 +96,7 @@ The ten prediction-skill plots can be regenerated from the deterministic compact
 python -m gcmagicc_repro reproduce --figure xs
 ```
 
-The external 1.53-GB monthly CSV is checksum-locked as `gcmagicc-xs-figure-source` for full-data figure replotting. Regenerating that CSV requires the `gcmagicc-xs-bundle` plus the 4.6-TB normalized input collection, which is not redistributed.
+The historical 1.53-GB monthly figure-source CSV is checksum-locked as `gcmagicc-xs-figure-source` but is not redistributed in v1.0.1. The release-native compact table reproduces the published figure; the historical source can be added in a future Zenodo version if requested. Regenerating the full CSV requires the `gcmagicc-xs-bundle` plus the 4.6-TB normalized input collection, which is also not redistributed.
 
 ## GCMagicc sensitivity figures
 

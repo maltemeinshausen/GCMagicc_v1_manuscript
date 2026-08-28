@@ -8,7 +8,8 @@
     "rows": 14076920,
     "sha256": "9436752a1d2a0b2af0d707bab9776d4cc8f874968cc2ad472c8ad16c4a5dca68",
     "committed": false,
-    "external_dependency": "gcmagicc-xs-figure-source"
+    "external_dependency": "gcmagicc-xs-figure-source",
+    "distribution_status": "not redistributed in v1.0.1; exact identity retained for a possible future Zenodo version"
   },
   "compact_plotted_points": {
     "path": "data/derived/gcmagicc_xs/compact_plotted_points.csv",
@@ -23,7 +24,7 @@
   },
   "reproducibility": {
     "compact_summary_to_figure": "release-native",
-    "full_csv_to_figure": "requires gcmagicc-xs-figure-source",
+    "full_csv_to_figure": "requires the checksum-recorded historical figure source, which is not redistributed in v1.0.1",
     "full_raw_recomputation": "requires gcmagicc-xs-bundle plus the 4.6-TB normalized input collection, which is not redistributed"
   },
   "license": "CC-BY-4.0"
