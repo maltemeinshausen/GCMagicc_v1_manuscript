@@ -1,11 +1,10 @@
 # GCMagicc reproducibility bundles
 
-Four self-contained, clean-room-reproducible bundles for the GCMagicc GMD
-manuscript. Each bundle regenerates its intermediates + figure and carries code,
+Four public release bundles for the GCMagicc GMD manuscript. Each bundle carries code,
 config, checkpoints (or an external manifest for large ones), an input manifest,
 a pinned environment, a README explaining the science and every panel, SHA-256
-hashes, dual licenses, and a **private** provenance note (internal id → public
-name; strip `PROVENANCE_INTERNAL.md` before public release and re-hash).
+hashes, and dual licenses. Local private provenance notes and Python caches are
+explicitly excluded by `scripts/pack_release_bundles.py`.
 
 | Bundle | Figure | Public model | Reproduction status |
 |---|---|---|---|
@@ -22,35 +21,30 @@ name; strip `PROVENANCE_INTERNAL.md` before public release and re-hash).
 
 ## Cross-cutting conventions
 
-- **No credentials / hostnames / private paths** in shipped code. All former
-  `/scratch2/...`, model dirs and device pins are env-configurable
-  (`SCRATCH_BASE`, `DATA_DIR`, `H5_PATH`, `MODEL_DIR`, `MODEL_BASE`, `DEVICE`).
+- **No credentials, hostnames, or private paths** in shipped code. Data roots,
+  model directories, and device pins are environment-configurable (`SCRATCH_BASE`,
+  `DATA_DIR`, `H5_PATH`, `MODEL_DIR`, `MODEL_BASE`, `DEVICE`).
 - **Environment:** `env/requirements.lock.txt` (Python 3.14.6; torch 2.10.0+cu130;
   or the Euler stack torch 2.3.1+cu121). `env/RUNTIME.md` per bundle.
-- **Files ≤ 50 MB** shipped directly (incl. the two NIC-XS checkpoints and the
-  354 MB NIC-PM per-model checkpoint set). **Larger** artifacts (the ~8.9 GB A5
-  checkpoint set for NIC-RES/NIC-AER; the normalized data cubes) are listed in
-  each `data/EXTERNAL_MANIFEST.csv` for hosting at immutable gcmagicc.org URLs
-  with byte size + SHA-256 (fields marked TBD until hosted).
+- **Files ≤ 50 MB** are eligible for the Git repository. Larger bundle inputs and
+  release archives are listed with byte size, SHA-256, and immutable Zenodo URL
+  in each `data/EXTERNAL_MANIFEST.csv` and the top-level external-data manifest.
 - **Licensing:** code © Nicolai Meinshausen, Apache-2.0; data/figures/docs CC BY 4.0.
 
-## ⚠ Outstanding blocker for full regeneration
+## Raw-input boundary
 
-The normalized input cube `/scratch2/userdata/nicolai/cmip6/normalized_7Augext/`
-(the `data_DAT_*.h5` files holding `y64` + the `X` predictor matrix) and the raw
-vetted prep sources are **no longer on the authors' host** (scratch purge). They
-are required for the GPU regeneration of **NIC-XS**, **NIC-AER**, and the optional
-**NIC-PM** trend step, and the **NIC-RES** render step. To finish the "regenerate"
-half, point the pipelines at the current data location (ada / Euler `work/math`)
-via `DATA_DIR`/`H5_PATH`, or rebuild via `prep_data_new.py`. NIC-RES Part B
-(compute scaling) and the NIC-PM figure do **not** need this data.
+The 4.6-TB normalized `data_DAT_*.h5` collection (`y64` plus the predictor
+matrix) is not redistributed. It is required for the GPU regeneration of
+NIC-XS, NIC-AER, the optional NIC-PM trend step, and the NIC-RES render step.
+The published figures remain reproducible from the frozen prepared tables,
+compact plotted data, and final artifacts shipped here. NIC-RES Part B and the
+NIC-PM figure do not require the normalized collection.
 
 ## Regeneration (when data is available)
 
-Follow `gcm_sequence/EULER.md`: scp `code/` to Euler, `module load`, submit with
-pinned GPU + `--preload`, write to `/cluster/scratch/nicolai/gcm_runs`. A generic
-sbatch template is in `_shared/regenerate.sbatch.template`. NIC-XS/AER used ada
-(torch-2.10 build) historically; either stack reproduces up to float noise.
+Follow `gcm_sequence/EULER.md`, set the paths documented in
+`_shared/regenerate.sbatch.template`, and submit with the pinned environment.
+The historical GPU stacks reproduce up to floating-point noise.
 
 ## Acceptance
 

@@ -1,12 +1,12 @@
 {
-  "schema": "gcmagicc-validation-figure-provenance/v1",
+  "schema": "gcmagicc-validation-figure-provenance/v2",
   "source_revision": {
-    "git_base": "gcmmagicc main-gus b1af6a414077e7671108b1f6945af3776b17ce5f",
-    "working_tree": "the validation plotting notebooks were modified at generation time",
+    "git_base": "gcmmagicc 8b30bcd9743f53cf7eecd79d112c64373bcd9b13",
+    "working_tree": "notebooks/1010_validation_diagnostics.py was modified at generation time; exact generator hashes are authoritative",
     "generator_snapshots": [
       {
         "path": "notebooks/1010_validation_diagnostics.py",
-        "sha256": "80180b212fb1e3da45aef2fa1a768a8f37a2dfc9e563801804ba715e9ed90962"
+        "sha256": "3bda0f95467015dc2ee4a913063e390b34ab4fd00f7771b79900210cb3acdbe9"
       },
       {
         "path": "notebooks/1010_validation_diagnostics_batch.py",
@@ -14,48 +14,100 @@
       }
     ]
   },
+  "publication_set": {
+    "source_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100",
+    "generated_at_utc": "2026-08-21T11:31:21Z",
+    "manifest": {
+      "path": "data/derived/validation_diagnostics/publication_set_manifest_20260821_1121.json",
+      "bytes": 12140,
+      "sha256": "276f7344f7293d9e5e06fa7dfe0084c3b5d7df0ec2530080c803c1eea655c058"
+    },
+    "roles": {
+      "main": {"seed": 1017},
+      "supplementary": {
+        "draws": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"],
+        "seeds": [1011, 1012, 1013, 1014, 1015, 1016, 1010, 1018, 1019, 1020]
+      }
+    }
+  },
+  "source_databases": {
+    "metrics": {
+      "source_path": "data/metric_databases/metrics.sqlite",
+      "external_object": "validation-diagnostics-metrics-sqlite-v20260821",
+      "bytes": 12056313856,
+      "sha256": "70cba2cb782e8061ebfe4e6ef9bf47cf4a6a0e7f160f91ea1851780e54036150",
+      "committed": false
+    },
+    "energy_distance": {
+      "source_path": "data/edist_databases/edist.sqlite",
+      "external_object": "validation-diagnostics-edist-sqlite-v20260821",
+      "bytes": 2697842688,
+      "sha256": "0bae785e0c539dfd2a12f576a40eb8723635838a1c25ea5cf77be691bed31352",
+      "committed": false
+    },
+    "validation_record": {
+      "path": "data/derived/validation_diagnostics/edist_metrics_immutable_rebuild_20260821.validation.json",
+      "bytes": 7426,
+      "sha256": "56aac3143508ef10b03566fc16c1009fb23c047cfac9d00e7c7b3887060c23f4",
+      "status": "passed_with_explained_equal_z_deduplication_changes",
+      "scope": "read-only metrics integrity and promoted energy-distance database validation"
+    }
+  },
   "semantic_roles": {
     "main_validation_diagnostics": {
       "selection": "publication-set main artifact",
-      "bundle": "publication_set_v100/v100/main generated 20260810_0845",
-      "artifact": "figures/main/validation_diagnostics/validation_diagnostics_main_v100_20260810_0845.pdf",
-      "bytes": 1414595,
-      "sha256": "c9d7e229fd69e930ffef22148e2772fbd589e5b6ab220faf1426f127611d750a"
+      "bundle": "publication_set_v100/v100/main generated 20260821_1121",
+      "artifact": "figures/main/validation_diagnostics/validation_diagnostics_main_v100_20260821_1121.pdf",
+      "bytes": 1453939,
+      "sha256": "a4b77df0b436a7335a12ec4b7380faee69a642067036eb348ecbbbab67d6085e"
     },
     "supplementary_validation_diagnostics": {
       "selection": "publication-set supplementary artifacts",
-      "bundle": "publication_set_v100/v100/supplementary generated 20260810_0845",
+      "bundle": "publication_set_v100/v100/supplementary generated 20260821_1121",
       "draws": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"],
       "artifact_directory": "figures/supplementary/validation_diagnostics/alternate_draws",
       "artifacts": [
-        {"file": "validation_diagnostics_s01_v100_20260810_0845.pdf", "bytes": 1402225, "sha256": "4de4fe1dc5aee0b39b4b729fc82d430ee762f34ca96b9817ccc4a6e9279fbad0"},
-        {"file": "validation_diagnostics_s02_v100_20260810_0845.pdf", "bytes": 1286072, "sha256": "4533e6e351c14427a39a92c0d4e8286bd7d9eb13b026c3fa341841549f5c41a2"},
-        {"file": "validation_diagnostics_s03_v100_20260810_0845.pdf", "bytes": 1218043, "sha256": "aacb9fec95378f44b593d728d41acb244bd426148404ffa65d8869a1bf5ac6e7"},
-        {"file": "validation_diagnostics_s04_v100_20260810_0845.pdf", "bytes": 1450967, "sha256": "b60362d3b18162162c1d0005712d845406a9dfd6702a70e9da62cd10ab252e44"},
-        {"file": "validation_diagnostics_s05_v100_20260810_0845.pdf", "bytes": 1525893, "sha256": "72b08e8b7d868ab525e27b7302be5ef5dedc86000cef95de7193a5911f9e62dd"},
-        {"file": "validation_diagnostics_s06_v100_20260810_0845.pdf", "bytes": 1375053, "sha256": "70f77eabcb68f56298e6fa2cefb988c1a2ad66346b17a2431dab0b813787ea7b"},
-        {"file": "validation_diagnostics_s07_v100_20260810_0845.pdf", "bytes": 1444297, "sha256": "e23668f9a81d6828444260b46008ba83b689df3bd3e2a7c48b1d32841a385c59"},
-        {"file": "validation_diagnostics_s08_v100_20260810_0845.pdf", "bytes": 1449922, "sha256": "a9e0f2c9ea510110cc9c3027419fcbd09a1a62054ecd0871e8a3fb7dfbcc0a26"},
-        {"file": "validation_diagnostics_s09_v100_20260810_0845.pdf", "bytes": 1400371, "sha256": "95150bd0c82d32684912497c6d3ddc8836e95570630a484df9adfe58d80c8774"},
-        {"file": "validation_diagnostics_s10_v100_20260810_0845.pdf", "bytes": 1335750, "sha256": "d7ad03d011172bcaeee460cbae532f82c2316814b9249b1debb91b561cc27713"}
+        {"file": "validation_diagnostics_s01_v100_20260821_1121.pdf", "bytes": 1424125, "sha256": "5ad7617c5f1e39edfc050a24de6dcb50c6b77f5e8d8fe79efb14985e40e95b81"},
+        {"file": "validation_diagnostics_s02_v100_20260821_1121.pdf", "bytes": 1295807, "sha256": "958476e776ded22a968a745458ac4351ee1e9adc92b3131498f3440ee333d2a3"},
+        {"file": "validation_diagnostics_s03_v100_20260821_1121.pdf", "bytes": 1227629, "sha256": "917c73893e28b6a91a9d99d452ffcea5d9997523d31acb85bd2f23e77f402cde"},
+        {"file": "validation_diagnostics_s04_v100_20260821_1121.pdf", "bytes": 1459092, "sha256": "0e4ca286568d76f945ff94f64594826502f811549826610b9e9634f5e28800a4"},
+        {"file": "validation_diagnostics_s05_v100_20260821_1121.pdf", "bytes": 1534018, "sha256": "209d1f374cf4f8dd498825f0b68efd601e4b5f55bc34e8611aea99165af74665"},
+        {"file": "validation_diagnostics_s06_v100_20260821_1121.pdf", "bytes": 1384552, "sha256": "aca537b1220838b63a5c09bb7db56c0e990ebd0e6cc23d7bad56c652da9f7efd"},
+        {"file": "validation_diagnostics_s07_v100_20260821_1121.pdf", "bytes": 1411593, "sha256": "aacfb125209249e294a2206233c9bf3424e61014992f6b7f44df8003ab6baea6"},
+        {"file": "validation_diagnostics_s08_v100_20260821_1121.pdf", "bytes": 1459178, "sha256": "e023e850f2f9f2e88e362b6b06a3722017a25d33105bf2cdf4b9dd5a775f5606"},
+        {"file": "validation_diagnostics_s09_v100_20260821_1121.pdf", "bytes": 1408580, "sha256": "dad70e259af9b61a904c08e092980e0ba8f00f9d9ae439313d106dad20c0f701"},
+        {"file": "validation_diagnostics_s10_v100_20260821_1121.pdf", "bytes": 1344123, "sha256": "141b817f265000952905a3d3d120e928014d4c7fc220482d92c9479b47cdc806"}
       ]
     },
     "ssp245_scoreedistc": {
       "parts": 3,
-      "artifact_directory": "figures/supplementary/scoreedistc_ssp245"
+      "artifact_directory": "figures/supplementary/scoreedistc_ssp245",
+      "database_provenance": "data/derived/validation_metrics/metrics_audit.json"
     },
     "observation_referenced_edisto": {
       "parts": 3,
-      "artifact_directory": "figures/supplementary/observation_referenced_edisto"
+      "artifact_directory": "figures/supplementary/observation_referenced_edisto",
+      "database_provenance": "data/derived/validation_metrics/metrics_audit.json"
     }
   },
-  "figure_number_policy": "semantic roles only; LaTeX placement determines numbering",
-  "metrics_database": {
-    "path": "data/external/validation/metrics.sqlite",
-    "bytes": 11919757312,
-    "sha256": "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03",
-    "committed": false,
-    "audit": "data/derived/validation_metrics/metrics_audit.json"
+  "table_sources": [
+    {
+      "role": "row selections for the main validation figure",
+      "path": "data/derived/validation_diagnostics/tables/validation_diagnostics_main_v100_20260821_1121_RowText.tex",
+      "bytes": 5080,
+      "sha256": "8c2cc35faad8ca5a1310d87be6268e1662b4b30dc6ef997c0bc4d7c35247e880"
+    },
+    {
+      "role": "energy-distance summary for the main validation figure",
+      "path": "data/derived/validation_diagnostics/tables/validation_diagnostics_main_v100_20260821_1121_EnergyDistance.tex",
+      "bytes": 1810,
+      "sha256": "675ac432be527581375a45560202dff7d69ebf571037dce0b9070894eeb274fb"
+    }
+  ],
+  "historical_metrics_audit": {
+    "path": "data/derived/validation_metrics/metrics_audit.json",
+    "applies_to": "previously frozen SCOREEDISTC and observation-referenced EDISTO panels; not the 20260821 validation-diagnostics publication set"
   },
+  "figure_number_policy": "semantic roles only; LaTeX placement determines numbering",
   "licence": "CC-BY-4.0"
 }

@@ -1,7 +1,7 @@
 {
   "schema": "gcmagicc-aerosol-sensitivity/v1",
   "semantic_role": "supplementary aerosol sensitivity",
-  "model_variant": "GCMagicc-CE",
+  "model_variant": "GCMagicc",
   "source_revision": "plots.tar sha256:43923f2cf9563ec19273ad98a7422737448749ed7f8d6bddb92e5e590f8ef36c",
   "source_path": "data/nicolaiplots/plotsT1/plots_aerosol",
   "diagnostic": "full-forcing minus zero-aerosol-ERF change in diurnal temperature range",
@@ -19,6 +19,6 @@
     "sha256": "1ce66f097dc5319f85b61c11323d7343a48bdb9e689a088ee6caabb761d4204d"
   },
   "large_json_and_checkpoints_committed": false,
-  "external_dependency": "gcmagicc-ce-checkpoints",
+  "external_dependency": "gcmagicc-checkpoints",
   "license": "CC-BY-4.0"
 }

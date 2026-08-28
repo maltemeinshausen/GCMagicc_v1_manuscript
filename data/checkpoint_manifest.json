@@ -472,7 +472,7 @@
      "sha256": "1b3b07cf2ade86c9d8418ee9e990a8f625f04b71ec06fed6b68475aca99f4dba"
     }
    ],
-   "archive_file": "gcmagicc_ce-checkpoints.tar.gz",
+   "archive_file": "gcmagicc-ce-checkpoints.tar.gz",
    "destination_root": "src/gcmagicc_model/gcmagicc_ce/",
    "extraction": "Extract at the repository root; paths inside the tarball are already relative to it and land under src/gcmagicc_model/gcmagicc_ce/modelsA/.",
    "tarball_sha256": null,

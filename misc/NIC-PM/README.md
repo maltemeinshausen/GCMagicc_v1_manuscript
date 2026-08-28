@@ -30,10 +30,8 @@ Two linked results:
 - **Family = first 4 characters of the CMIP6 `source_id`** (e.g. `ACCE`, `CanE`,
   `CESM`, `EC-E`, `FGOA`, `GFDL`, `GISS`, `HadG`, `INM-`, `IPSL`, `MIRO`, `SAM0`,
   `UKES`) → **13 families** partitioning the 33 ids (32 CMIP6 + ERA5). Mapping
-  driven by `config/UniqueModels_10Jun.csv` (`source_id, model_index`).
-- **⚠ Manuscript inconsistency to resolve:** the supplement states **13** families
-  but the main-text variant table says **15**. This bundle uses **13** (the
-  first-4-char rule). Flag for co-author reconciliation before freeze.
+  driven by `config/UniqueModels_10Jun.csv` (`source_id, model_index`). The
+  release and manuscript use this 13-family definition consistently.
 - LOFO: hold out one family, train on the rest, predict the held-out family;
   repeat for all families.
 

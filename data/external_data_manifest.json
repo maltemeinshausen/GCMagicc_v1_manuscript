@@ -1,60 +1,90 @@
 {
  "schema": "gcmagicc-external-data/v1",
  "release": "v1.0.1",
+ "zenodo_record": null,
+ "record_doi": null,
  "objects": [
   {
    "id": "gcmagicc-checkpoints",
    "public_model": "GCMagicc",
-   "status": "pending-deposit",
+   "status": "pending-publication",
    "url": null,
-   "sha256": null,
-   "bytes": null,
+   "sha256": "e863a3f43b56972e244885aa50def51703ac96ccf948b233d69ddc8faf77afae",
+   "bytes": 7921092900,
+   "deposit_file": "gcmagicc-checkpoints.tar.gz",
    "destination": "src/gcmagicc_model/gcmagicc/gcmagicc-checkpoints.tar.gz",
    "extract_to": "src/gcmagicc_model/gcmagicc",
    "internal_snapshot": "model_NxlversA5",
    "file_count": 37,
    "uncompressed_bytes": 9150984631,
    "per_file_manifest": "data/checkpoint_manifest.json",
+   "per_file_object_id": "gcmagicc-checkpoints",
    "license": "Apache-2.0",
    "copyright_holder": "Nicolai Meinshausen",
-   "documentation": "docs/checkpoints.md",
-   "note": "Trained weights inventoried and SHA-256'd 2026-08-02; Zenodo deposit pending. url/sha256/bytes describe the tarball and are filled in at deposit time; every file inside it is already hashed in data/checkpoint_manifest.json."
+   "documentation": "docs/checkpoints.md"
   },
   {
    "id": "gcmagicc-ce-checkpoints",
    "public_model": "GCMagicc-CE",
-   "status": "pending-deposit",
+   "status": "pending-publication",
    "url": null,
-   "sha256": null,
-   "bytes": null,
+   "sha256": "94a1633dc5d66a0a451f6e4086178358690364f45445bbbbb95a81858fbefc10",
+   "bytes": 7821642809,
+   "deposit_file": "gcmagicc-ce-checkpoints.tar.gz",
    "destination": "src/gcmagicc_model/gcmagicc_ce/gcmagicc-ce-checkpoints.tar.gz",
    "extract_to": "src/gcmagicc_model/gcmagicc_ce",
    "internal_snapshot": "model_NthreeversT1",
    "file_count": 24,
    "uncompressed_bytes": 9043478197,
    "per_file_manifest": "data/checkpoint_manifest.json",
+   "per_file_object_id": "gcmagicc_ce-checkpoints",
    "license": "Apache-2.0",
    "copyright_holder": "Nicolai Meinshausen",
-   "documentation": "docs/checkpoints.md",
-   "note": "Trained weights inventoried and SHA-256'd 2026-08-02; Zenodo deposit pending. url/sha256/bytes describe the tarball and are filled in at deposit time; every file inside it is already hashed in data/checkpoint_manifest.json."
+   "documentation": "docs/checkpoints.md"
+  },
+  {
+   "id": "nic-aer-release-bundle",
+   "public_model": "GCMagicc",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "a6c6afdbc0a68f72391349b78773831117f9dcc223699ba9f79516c19d8843a7",
+   "bytes": 15441840,
+   "deposit_file": "NIC-AER.zip",
+   "destination": "data/external/bundles/NIC-AER.zip",
+   "licenses": ["Apache-2.0", "CC-BY-4.0"]
   },
   {
    "id": "gcmagicc-pm-bundle",
    "public_model": "GCMagicc-PM",
-   "status": "pending-model-author-provenance",
-   "destination": "data/external/nicolai/perfect-model",
+   "status": "pending-publication",
    "url": null,
-   "sha256": null,
-   "bytes": null
+   "sha256": "8ff4fbd4d31ff4b23bc7a4a7332b278c1eee546ccba76dc8872f06c388e91dd1",
+   "bytes": 340185199,
+   "deposit_file": "NIC-PM.zip",
+   "destination": "data/external/bundles/NIC-PM.zip",
+   "licenses": ["Apache-2.0", "CC-BY-4.0"]
+  },
+  {
+   "id": "nic-res-release-bundle",
+   "public_model": "GCMagicc",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "d0abd6805d80af18a0621237376c76f2862c0be9e5b2aade14a389ce586e7d70",
+   "bytes": 401539853,
+   "deposit_file": "NIC-RES.zip",
+   "destination": "data/external/bundles/NIC-RES.zip",
+   "licenses": ["Apache-2.0", "CC-BY-4.0"]
   },
   {
    "id": "gcmagicc-xs-bundle",
    "public_model": "GCMagicc-XS",
-   "status": "pending-model-author-provenance",
-   "destination": "data/external/nicolai/xs",
+   "status": "pending-publication",
    "url": null,
-   "sha256": null,
-   "bytes": null
+   "sha256": "711643295fce7a5ff2c5100a9401a3bf6a67fbf0ae655abd8f295c204c5b8b61",
+   "bytes": 798096121,
+   "deposit_file": "NIC-XS.zip",
+   "destination": "data/external/bundles/NIC-XS.zip",
+   "licenses": ["Apache-2.0", "CC-BY-4.0"]
   },
   {
    "id": "validation-metrics-sqlite",
@@ -63,7 +93,64 @@
    "url": null,
    "sha256": "34feda39f369142300224773efde1c5e80c32133cc4c324d20de83403239fb03",
    "bytes": 11919757312,
-   "destination": "data/external/validation/metrics.sqlite"
+   "deposit_file": "validation-metrics-snapshot-20260420.sqlite",
+   "destination": "data/external/validation/metrics.sqlite",
+   "license": "CC-BY-4.0"
+  },
+  {
+   "id": "validation-diagnostics-metrics-sqlite-v20260821",
+   "public_model": "GCMagicc evaluation suite",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "70cba2cb782e8061ebfe4e6ef9bf47cf4a6a0e7f160f91ea1851780e54036150",
+   "bytes": 12056313856,
+   "deposit_file": "validation-diagnostics-metrics-v20260821.sqlite",
+   "destination": "data/external/validation/metrics_v20260821.sqlite",
+   "license": "CC-BY-4.0"
+  },
+  {
+   "id": "validation-diagnostics-edist-sqlite-v20260821",
+   "public_model": "GCMagicc evaluation suite",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "0bae785e0c539dfd2a12f576a40eb8723635838a1c25ea5cf77be691bed31352",
+   "bytes": 2697842688,
+   "deposit_file": "validation-diagnostics-edist-v20260821.sqlite",
+   "destination": "data/external/validation/edist_v20260821.sqlite",
+   "license": "CC-BY-4.0"
+  },
+  {
+   "id": "gcmagicc-xs-figure-source",
+   "public_model": "GCMagicc-XS",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "9436752a1d2a0b2af0d707bab9776d4cc8f874968cc2ad472c8ad16c4a5dca68",
+   "bytes": 1528623568,
+   "deposit_file": "gcmagicc-xs-figure-source-full_monthly_results-sha9436752a.csv",
+   "destination": "data/external/gcmagicc_xs/full_monthly_results_figure_source.csv",
+   "license": "CC-BY-4.0"
+  },
+  {
+   "id": "gcmagicc-xs-regenerated-intermediate-v20260713",
+   "public_model": "GCMagicc-XS",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "c172dc10d0f64eec54efe57187968ed8fdf1e8d0c9d4c5895e09d0a8cbcb6b84",
+   "bytes": 466770470,
+   "deposit_file": "gcmagicc-xs-regenerated-full_monthly_results-20260713-shac172dc10.csv",
+   "destination": "data/external/gcmagicc_xs/full_monthly_results_regenerated_20260713.csv",
+   "license": "CC-BY-4.0"
+  },
+  {
+   "id": "gcmagicc-xs-member-draws-v20260713",
+   "public_model": "GCMagicc-XS",
+   "status": "pending-publication",
+   "url": null,
+   "sha256": "ed7d10cf1a81f8ed59e127ff4fedac4580e4247d68bccbfaa0482461d2bde86f",
+   "bytes": 454465366,
+   "deposit_file": "gcmagicc-xs-member-draws-20260713-shaed7d10cf.npz",
+   "destination": "data/external/gcmagicc_xs/member_draws_20260713.npz",
+   "license": "CC-BY-4.0"
   }
  ]
 }

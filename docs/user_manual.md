@@ -96,11 +96,11 @@ The ten prediction-skill plots can be regenerated from the deterministic compact
 python -m gcmagicc_repro reproduce --figure xs
 ```
 
-The external 1.53-GB monthly CSV remains checksum-locked for full raw recomputation under `gcmagicc-xs-bundle`.
+The external 1.53-GB monthly CSV is checksum-locked as `gcmagicc-xs-figure-source` for full-data figure replotting. Regenerating that CSV requires the `gcmagicc-xs-bundle` plus the 4.6-TB normalized input collection, which is not redistributed.
 
-## GCMagicc-CE sensitivity figures
+## GCMagicc sensitivity figures
 
-The selected resolution and aerosol artifacts are frozen with normalized metadata. Recomputing their raw maps requires `gcmagicc-ce-checkpoints`. The aerosol diagnostic is the full-forcing minus zero-aerosol-ERF change in `tasmax - tasmin` in K at `nside=64`, based on 100 stochastic samples; 2015--2024 is explicitly provisional.
+The selected resolution and aerosol artifacts use the default GCMagicc A5 lineage and are frozen with normalized metadata. Recomputing their raw maps requires `gcmagicc-checkpoints`. The aerosol diagnostic is the full-forcing minus zero-aerosol-ERF change in `tasmax - tasmin` in K at `nside=64`, based on 100 stochastic samples; 2015--2024 is explicitly provisional.
 
 ## Reproducibility boundary
 

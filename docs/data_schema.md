@@ -2,7 +2,7 @@
 
 ## External object manifest
 
-Each object has `id`, final public model name, `status`, immutable `url`, exact `sha256`, exact byte count, and repository-relative `destination`. Published objects require all fields. Pending objects intentionally use null URL/hash/size.
+Each object has `id`, final public model name, `status`, immutable `url`, exact `sha256`, exact byte count, a unique `deposit_file`, and repository-relative fetch `destination`. Published objects require all fields. Checkpoint objects additionally identify the per-file manifest record used after safe extraction.
 
 ## Natural forcing CSV
 
@@ -22,4 +22,4 @@ Every registered workflow declares the frozen script, required external object I
 
 ## Semantic provenance
 
-`provenance/figure_registry.csv` links each manuscript role to its selected artifact, prepared-data directory, raw external dependency, and scientific status. `provenance/ada_data_audit.csv` records source host, normalized source path, byte count, checksum, model variant, licence, disposition, and remaining blocker. Neither file encodes manuscript figure numbers.
+`provenance/figure_registry.csv` links each manuscript role to its selected artifact, prepared-data directory, raw external dependency, and scientific status. `provenance/source_data_audit.csv` records the normalized source snapshot and path, byte count, checksum, model variant, licence, disposition, and remaining blocker. Neither file encodes manuscript figure numbers.

@@ -2,12 +2,12 @@
   "schema": "gcmagicc-spei-sensitivity-provenance/v1",
   "semantic_role": "supplementary SPEI sensitivity",
   "model_variants": ["GCMagicc", "GCMagicc-CE"],
-  "integrated_ada_revision": "16c9d72b1c4e01fbadb019f8d82e23e1fe426e23",
-  "gus_source_revisions": [
+  "integrated_revision": "16c9d72b1c4e01fbadb019f8d82e23e1fe426e23",
+  "source_revisions": [
     "8a3bb76 Add SMILE distributions to SPEI sensitivity analysis",
     "34581af Export monthly drought attribution diagnostics"
   ],
-  "integration_note": "Ada plotting, case shading, range markers, labels, 1025 workflow, and Ada CMIP6 default were retained while the Gus SMILE processing and semantic provenance outputs were integrated.",
+  "integration_note": "The established plotting, case shading, range markers, labels, 1025 workflow, and CMIP6 default were retained while the SMILE processing and semantic provenance outputs were integrated.",
   "figure": {
     "path": "figures/supplementary/spei_sensitivity/iran_spei_sensitivity_native.pdf",
     "bytes": 1006530,

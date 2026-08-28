@@ -687,7 +687,7 @@ def report_device_status(device: str) -> None:
 # =============================================================================
 # 0) Optional model root override. Set this to the absolute path containing
 #     run_general.py / model checkpoints if you do not want to rely on env vars.
-MODEL_ROOT_OVERRIDE: Optional[str] = None  # e.g. "/scratch/models"
+MODEL_ROOT_OVERRIDE: Optional[str] = None  # e.g. "/path/to/models"
 if MODEL_ROOT_OVERRIDE:
     os.environ["GCMAGICC_MODEL_ROOT"] = MODEL_ROOT_OVERRIDE
     print(f"📁 MODEL_ROOT_OVERRIDE set to {MODEL_ROOT_OVERRIDE}")

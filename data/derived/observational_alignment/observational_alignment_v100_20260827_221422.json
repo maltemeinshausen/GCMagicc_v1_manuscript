@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-07T11:03:57Z",
+  "generated_at_utc": "2026-08-27T22:14:35Z",
   "version_tag": "v100",
   "run_roots": [
     "external/gcmmagicc/data/projection_plots_simple_815/versioned/v100/20260717_064217"
@@ -8728,10 +8728,10 @@
     }
   },
   "outputs": {
-    "png": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344.png",
-    "pdf": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344.pdf",
-    "row2_panel_b_values_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344_panel_b_values.tex",
-    "row4_panel_c1_original_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344_panel_c1_original_cmip6_model_numbers.tex",
-    "row4_panel_c2_gcmagicc_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344_panel_c2_gcmagicc_cmip6_model_numbers.tex"
+    "png": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260827_221422.png",
+    "pdf": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260827_221422.pdf",
+    "row2_panel_b_values_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260827_221422_panel_b_values.tex",
+    "row4_panel_c1_original_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260827_221422_panel_c1_original_cmip6_model_numbers.tex",
+    "row4_panel_c2_gcmagicc_cmip6_model_numbers_tex": "external/gcmmagicc/data/manuscript_figures/observational_alignment/observational_alignment_v100_20260827_221422_panel_c2_gcmagicc_cmip6_model_numbers.tex"
   }
 }

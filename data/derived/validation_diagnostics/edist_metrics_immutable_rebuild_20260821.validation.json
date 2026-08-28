@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "status": "passed_with_explained_equal_z_deduplication_changes",
+  "run_id": "metrics-immutable-member-exact-equal-z-final2-20260821",
+  "generated_at_utc": "2026-08-21T03:00:46+00:00",
+  "input": {
+    "metrics_path": "data/metric_databases/metrics.sqlite",
+    "metrics_sha256_expected": "70cba2cb782e8061ebfe4e6ef9bf47cf4a6a0e7f160f91ea1851780e54036150",
+    "metrics_sha256_before": "70cba2cb782e8061ebfe4e6ef9bf47cf4a6a0e7f160f91ea1851780e54036150",
+    "metrics_sha256_after": "70cba2cb782e8061ebfe4e6ef9bf47cf4a6a0e7f160f91ea1851780e54036150",
+    "metrics_modified": false,
+    "metrictype_globs": [
+      "*RMSE*",
+      "RMSE*",
+      "*L2*",
+      "L2*"
+    ]
+  },
+  "source_edist": {
+    "local_july_sha256": "8212a9c597e97f8499f24417e9b9369a047ae4e686690aff9f5d8ba3cfc0d704",
+    "ada30_april_sha256": "293afc562f54efab274234d79fc21f5136beabaa1e951407e41a44f1219f4c08"
+  },
+  "staged_edist": {
+    "path": "data/edist_databases/.staging/metrics_immutable_member_exact_equal_z_final2_20260821/edist.sqlite",
+    "sha256": "0bae785e0c539dfd2a12f576a40eb8723635838a1c25ea5cf77be691bed31352",
+    "sqlite_integrity_check": "ok",
+    "removed_after_atomic_promotion": true
+  },
+  "selection_manifest": {
+    "canonical_path": "provenance/validation_diagnostics/validation_diagnostics_main_v100_20260810_0845_RowText.selection_manifest.json",
+    "artifact_mirror_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100/main/validation_diagnostics_main_v100_20260810_0845_RowText.selection_manifest.json",
+    "sha256": "7e9ac2e4f0c4e127e7100d2bceb4d5f0523b1253a27137a55d2d1965953b0ef5",
+    "byte_identical_copies": true
+  },
+  "row_counts": {
+    "edistnc": 1003638,
+    "edistcz": 1692782,
+    "score_edist": 804184,
+    "edistoc": 649342,
+    "ediston": 4000,
+    "score_edisto": 54864,
+    "edistcz_components": 1692782,
+    "score_edistc_provenance": 804184,
+    "edist_run_metadata": 1
+  },
+  "public_table_comparison_excluding_timestamps": {
+    "edistnc": {
+      "identity_old_only": 0,
+      "identity_new_only": 0,
+      "value_old_only": 0,
+      "value_new_only": 0
+    },
+    "edistcz": {
+      "identity_old_only": 0,
+      "identity_new_only": 0,
+      "value_old_only": 0,
+      "value_new_only": 0
+    },
+    "score_edist": {
+      "identity_old_only": 2,
+      "identity_new_only": 2,
+      "value_old_only": 49778,
+      "value_new_only": 49778,
+      "value_abs_diff_gt_1e_12": 2824,
+      "value_abs_diff_gt_1e_9": 2797,
+      "value_abs_diff_gt_1e_6": 2796,
+      "value_abs_diff_gt_1e_3": 2631,
+      "max_abs_diff": 0.36938619732319966,
+      "max_relative_diff": 0.3830621102376672
+    },
+    "edistoc": {
+      "identity_old_only": 0,
+      "identity_new_only": 0,
+      "value_old_only": 0,
+      "value_new_only": 0
+    },
+    "ediston": {
+      "identity_old_only": 0,
+      "identity_new_only": 0,
+      "value_old_only": 0,
+      "value_new_only": 0
+    },
+    "score_edisto": {
+      "identity_old_only": 0,
+      "identity_new_only": 0,
+      "value_old_only": 0,
+      "value_new_only": 0
+    }
+  },
+  "explained_score_change": {
+    "cause": "The legacy builder averaged 1,894,171 retained pre-deduplication EDISTCZ crunch records, then persisted 1,692,782 unique EDISTCZ identities. The repaired builder gives each persisted Z identity one denominator vote.",
+    "duplicate_gofcz_identity_groups": 369639,
+    "extra_pre_deduplication_retained_edistcz_records": 201389,
+    "material_changes_by_domain_gt_1e_12": {
+      "BiasMaps": 2100,
+      "JointEvolution": 711,
+      "Variability": 5,
+      "Histograms": 4,
+      "SeasonalCycle": 4
+    },
+    "old_only_near_zero_score_identities": [
+      "v100/ENSOCharacteristics/ENSO_duration_RMSE_full/nino34/EC-Earth3/r15i1p1f1/ssp585",
+      "v101/ENSOCharacteristics/ENSO_duration_RMSE_full/nino34/EC-Earth3/r15i1p1f1/ssp585"
+    ],
+    "new_only_near_zero_score_identities": [
+      "v100/ENSOCharacteristics/ENSO_duration_RMSE_full/nino34/CanESM5-1/r10i1p1f1/ssp585",
+      "v101/ENSOCharacteristics/ENSO_duration_RMSE_full/nino34/CanESM5-1/r10i1p1f1/ssp585"
+    ],
+    "near_zero_note": "These four edge cases have denominators at floating-point zero and scores of order 1e17. No new near-zero threshold was introduced."
+  },
+  "formula_validation": {
+    "edistcz_max_abs_error": 0.0,
+    "edistnc_max_abs_error": 0.0,
+    "score_edistc_max_abs_error": 0.0,
+    "equal_z_denominator_max_abs_error": 4.547473508864641e-13,
+    "equal_z_denominator_rows_over_1e_12": 0,
+    "invalid_component_counts": 0,
+    "invalid_coverage_rows": 0
+  },
+  "strict_gofzz_coverage_reconciliation": {
+    "supported_experiment_domain_pairs": 159,
+    "eligible_gofcz_rows": 6496217,
+    "unique_exact_z_requirements": 306240,
+    "missing_gofcz_rows": 1572643,
+    "missing_unique_exact_gofzz_requirements": 176561,
+    "missing_experiment_z_domain_groups": 391,
+    "matches_ada30_audit": true
+  },
+  "score_coverage": {
+    "complete_rows": 372295,
+    "partial_available_case_rows": 431889,
+    "omitted_z_entries": {
+      "missing_exact_gofzz_no_exact_key": 534906,
+      "missing_exact_gofzz_alternate_window_available": 189062
+    }
+  },
+  "frozen_august_regression": {
+    "stable_identities_checked": 11,
+    "stable_identities_missing_or_ambiguous": 0,
+    "max_score_abs_change": 2.7755575615628914e-17,
+    "selection_order_and_regions_unchanged": true,
+    "enso_mean_retained_gofzz": 0.07103150239927712,
+    "enso_retained_z_count": 4,
+    "enso_candidate_z_count": 5,
+    "numeric_scores_with_gofzz_na": 0
+  },
+  "promotion": {
+    "canonical_edist_path": "data/edist_databases/edist.sqlite",
+    "canonical_edist_sha256_after": "0bae785e0c539dfd2a12f576a40eb8723635838a1c25ea5cf77be691bed31352",
+    "archived_edist_path": "data/edist_databases/archive/edist.pre_metrics_immutable_20260821.sha256-8212a9c597e97f84.sqlite",
+    "archived_edist_sha256": "8212a9c597e97f8499f24417e9b9369a047ae4e686690aff9f5d8ba3cfc0d704",
+    "atomic_replace_completed": true
+  },
+  "rowtext_artifacts": {
+    "canonical_stem": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100/main/validation_diagnostics_main_v100_20260810_0845_RowText",
+    "tex_sha256_before": "c21afa8d24ae252b48253141330ce1448e71c07411278f8e7bc59df6d42cf0f7",
+    "tex_sha256_after": "4f5030eb5cf3672236c15fd6cee910cee950563d0721461678257deb78893fb8",
+    "pdf_sha256_before": "0dc24f1c42fa451b41ed32c761aa96b10188b30d8b72f7516009213b6576265c",
+    "pdf_sha256_after": "e94eebf27a81ea9a16302816f3fc8d48d1b7335c95f2b0dfaa6dfe642c4c3f80",
+    "png_sha256_before": "a2c8612aeb3a62ee568ecba90f3281558d47bcb9d9548cdd70b0c77f8cdd8e78",
+    "png_sha256_after": "6995bc8c4dd20ba96424c7e78f99ec39502d28114eb84012e26cd6054afe5165",
+    "old_new_report": "provenance/validation_diagnostics/validation_diagnostics_main_v100_20260810_0845_RowText.old-new.md",
+    "pre_repair_archive": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100/main/archive/metrics_immutable_pre_20260821"
+  },
+  "tests": {
+    "focused_pytest_passed": 31,
+    "git_diff_check_passed": true,
+    "python_compile_passed": true
+  },
+  "explicit_exclusions_observed": [
+    "No GOF reruns or backfills",
+    "No 404/405 workflows",
+    "No metrics.sqlite writes",
+    "No fuzzy window matching or relabeling",
+    "No GOFZZ zero filling",
+    "No completeness gate",
+    "No raw-member or Z-manifest changes"
+  ]
+}

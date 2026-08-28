@@ -1,0 +1,23 @@
+% Requires: \usepackage{booktabs}
+% Requires: \usepackage{tabularx}
+\begin{table*}[t]
+\centering
+\caption{Energy-distance score summaries corresponding to the histogram panels in Figure~3 of the main manuscript.}
+\label{tab:validation-main-edist}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}l l X X X X@{}}
+\toprule
+Panel & Recipe & All comparisons by recipe & Shown-variable subset & ssp245 subset & Selected random example \\
+\midrule
+d & BiasMaps & 2.7e-1 (1.3e-1 - 5.3e-1); n=33750 & tas: 2.6e-1 (1.3e-1 - 4.5e-1); n=3375 & ssp245 only: 2.2e-1 (1.2e-1 - 4.4e-1); n=4050 & 3.4e-1 \\
+g & GlobalTimeseries & 1.3e-2 (-7.8e-2 - 2.1e-1); n=2480 & psl: 2.2e-2 (7.8e-3 - 6.8e-2); n=248 & ssp245 only: 4.7e-3 (-1.2e-1 - 1.5e-1); n=270 & 5.3e-2 \\
+j & Histograms & 2.6e-1 (2.5e-2 - 9.7e-1); n=124120 & tasmax: 2.4e-1 (-1.3e-2 - 8.5e-1); n=12412 & ssp245 only: 2.1e-1 (-7.9e-3 - 8.2e-1); n=15080 & h / Arabian-Sea: 1.4; i / Russian-Arctic: 1.6 \\
+m & SeasonalCycle & 1.8e-1 (1.8e-2 - 6.6e-1); n=107880 & ts: 1.8e-1 (1.1e-2 - 6.2e-1); n=10788 & ssp245 only: 1.4e-1 (-6.7e-3 - 5.1e-1); n=15080 & k / Bay-of-Bengal: 3.3e-1; l / New-Zealand: 7e-1 \\
+p & ZonalMeans & 1.1e-1 (2.1e-2 - 3.7e-1); n=2440 & tas: 1.1e-1 (-6.3e-3 - 3.1e-1); n=244 & ssp245 only: 8.4e-2 (7.6e-3 - 2.8e-1); n=270 & 1.4e-1 \\
+s & Variability & 1.6 (3.7e-1 - 6.1); n=89262 & tasmax: 1.8 (2.5e-1 - 6.9); n=8932 & ssp245 only: 1.4 (1.3e-1 - 5); n=15602 & q / Equatorial.Atlantic-Ocean: 1.3e1; r / N.Pacific-Ocean: 5.3 \\
+w & HumidityCoupling & 1.1 (7.3e-1 - 1.6); n=496 & hurs: 1.1 (6.9e-1 - 1.6); n=248 & ssp245 only: 1 (6.3e-1 - 1.6); n=54 & 8.9e-1 \\
+aa & ENSOTeleconnections & 1.6 (8.5e-1 - 2.3); n=424 & pr: 1.4 (7.8e-1 - 2.1); n=212 & ssp245 only: 1.2 (3.4e-1 - 2.7); n=52 & 1.4 \\
+\bottomrule
+\end{tabularx}
+\end{table*}

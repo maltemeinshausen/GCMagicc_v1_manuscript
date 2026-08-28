@@ -1,0 +1,261 @@
+{
+  "generated_at_utc": "2026-08-21T11:31:21Z",
+  "driver": "notebooks/1010_validation_diagnostics_batch.py",
+  "source_script": "notebooks/1010_validation_diagnostics.py",
+  "comparison": "cmip6",
+  "publication_set": true,
+  "variants_requested": [
+    "v100"
+  ],
+  "instances_per_variant": 11,
+  "instances_by_variant": {
+    "v100": 11
+  },
+  "seed_base": 1010,
+  "runs_by_variant": {
+    "v100": [
+      {
+        "variant": "v100",
+        "instance": 1,
+        "seed": 1017,
+        "publication_role": "main",
+        "supplementary_number": null,
+        "figure": {
+          "png": "v100/main/validation_diagnostics_main_v100_20260821_1121.png",
+          "pdf": "v100/main/validation_diagnostics_main_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/main/validation_diagnostics_main_v100_20260821_1121_RowText.png",
+          "pdf": "v100/main/validation_diagnostics_main_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/main/validation_diagnostics_main_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/main/validation_diagnostics_main_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/main/validation_diagnostics_main_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/main/validation_diagnostics_main_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 2,
+        "seed": 1011,
+        "publication_role": "supplementary",
+        "supplementary_number": 1,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s01_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 3,
+        "seed": 1012,
+        "publication_role": "supplementary",
+        "supplementary_number": 2,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s02_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 4,
+        "seed": 1013,
+        "publication_role": "supplementary",
+        "supplementary_number": 3,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s03_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 5,
+        "seed": 1014,
+        "publication_role": "supplementary",
+        "supplementary_number": 4,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s04_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 6,
+        "seed": 1015,
+        "publication_role": "supplementary",
+        "supplementary_number": 5,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s05_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 7,
+        "seed": 1016,
+        "publication_role": "supplementary",
+        "supplementary_number": 6,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s06_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 8,
+        "seed": 1010,
+        "publication_role": "supplementary",
+        "supplementary_number": 7,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s07_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 9,
+        "seed": 1018,
+        "publication_role": "supplementary",
+        "supplementary_number": 8,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s08_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 10,
+        "seed": 1019,
+        "publication_role": "supplementary",
+        "supplementary_number": 9,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s09_v100_20260821_1121_EnergyDistance.tex"
+        }
+      },
+      {
+        "variant": "v100",
+        "instance": 11,
+        "seed": 1020,
+        "publication_role": "supplementary",
+        "supplementary_number": 10,
+        "figure": {
+          "png": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121.pdf",
+          "tex": null
+        },
+        "rowtext": {
+          "png": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121_RowText.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121_RowText.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121_RowText.tex"
+        },
+        "energy_distance": {
+          "png": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121_EnergyDistance.png",
+          "pdf": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121_EnergyDistance.pdf",
+          "tex": "v100/supplementary/validation_diagnostics_s10_v100_20260821_1121_EnergyDistance.tex"
+        }
+      }
+    ]
+  }
+}

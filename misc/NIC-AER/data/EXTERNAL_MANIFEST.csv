@@ -1,3 +1,3 @@
-name,role,byte_size,sha256,gcmagicc_org_url,status
-modelsA/modelsNfour_7Augext_*.tar,A5 checkpoint set (~8.9 GB),TBD,TBD,https://gcmagicc.org/checkpoints/TBD,AVAILABLE-on-authors-host at model_Nxl_versA5/modelsA/ (>50MB): tar + hash + host; point MODEL_DIR at extracted dir
-normalized_7Augext/data_DAT_ERA5_historical-...nc.h5,intervention input; X col 13 = aer_ERF,TBD,TBD,https://gcmagicc.org/data/TBD,LOCATED on ada-31:/scratch2/userdata/nicolai/cmip6/normalized_7Augext (4.6TB, node-local); run regen on ada-31; host to gcmagicc.org for external users
+name,role,byte_size,sha256,public_url,status
+gcmagicc-checkpoints.tar.gz,"A5 checkpoint set used by the intervention workflow",7921092900,e863a3f43b56972e244885aa50def51703ac96ccf948b233d69ddc8faf77afae,,awaiting Zenodo publication; set MODEL_DIR to the extracted archive
+normalized_7Augext/data_DAT_ERA5_historical-*.h5,"intervention input; predictor column 13 is aer_ERF",,,,not redistributed; rebuild from the documented CMIP6 and ERA5 preparation workflow

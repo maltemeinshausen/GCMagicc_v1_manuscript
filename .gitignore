@@ -14,7 +14,7 @@ figures/generated/
 # published as citable Zenodo archives (see misc/zenodo/SHA256SUMS.zip.txt)
 # and, later, browsable at gcmagicc.org via the gcm_firefly_frontend portal.
 
-# Prepared Zenodo archives (926 MB) - upload targets, not repo content
+# Prepared Zenodo archives - upload targets, not repo content
 misc/zenodo/*.zip
 
 # Bulk regenerated image sets

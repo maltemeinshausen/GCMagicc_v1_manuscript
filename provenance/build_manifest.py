@@ -43,7 +43,7 @@ def describe(path: Path) -> dict[str, str]:
             "source_path": "data/nicolaiplots/plotsT1/plots_resolutions/RESOLUTIONPLOTS/run_meta.json",
             "copyright": "Nicolai Meinshausen",
             "license": "CC-BY-4.0",
-            "role": "normalized GCMagicc-CE resolution-sensitivity metadata",
+            "role": "normalized GCMagicc resolution-sensitivity metadata",
         }
     if rel.startswith("data/derived/aerosol_sensitivity/source/"):
         return {
@@ -52,7 +52,7 @@ def describe(path: Path) -> dict[str, str]:
             "source_path": rel,
             "copyright": "Nicolai Meinshausen",
             "license": "Apache-2.0",
-            "role": "normalized original GCMagicc-CE aerosol generator or plotter",
+            "role": "normalized original GCMagicc aerosol generator or plotter",
         }
     if rel.startswith("data/derived/aerosol_sensitivity/"):
         return {
@@ -61,7 +61,7 @@ def describe(path: Path) -> dict[str, str]:
             "source_path": "data/nicolaiplots/plotsT1/plots_aerosol",
             "copyright": "Nicolai Meinshausen",
             "license": "CC-BY-4.0",
-            "role": "normalized GCMagicc-CE aerosol-sensitivity metadata",
+            "role": "normalized GCMagicc aerosol-sensitivity metadata",
         }
     if rel.startswith("data/derived/gcmagicc_xs/"):
         return {
@@ -75,7 +75,7 @@ def describe(path: Path) -> dict[str, str]:
     if rel.startswith("data/derived/validation_diagnostics/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "main-gus b1af6a4 + generator snapshots; publication-set main and supplementary bundles 20260810_0845",
+            "source_revision": "checkout 8b30bcd + generator snapshots; publication-set main and supplementary bundles 20260821_1121",
             "source_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
@@ -84,8 +84,8 @@ def describe(path: Path) -> dict[str, str]:
     if rel.startswith("data/derived/observational_alignment/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "main-gus b1af6a4 + generator sha256:15de2923f3b135fb4fa60b3d568ae54ff4fe4b4d088612badbf185c3518ddc1a; bundle 20260807_110344",
-            "source_path": "data/manuscript_figures/observational_alignment/observational_alignment_v100_20260807_110344",
+            "source_revision": "gcmmagicc revision c5c3d9f + generator sha256:8b4de15fc90a1e8675ec6137c1f331e93ad7c1745779d4af45c2cbf6262cd238; bundle 20260827_221422 generated immediately before containing commit",
+            "source_path": "data/manuscript_figures/observational_alignment/observational_alignment_v100_20260827_221422",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
             "role": "normalized observational-alignment plotted data and provenance",
@@ -115,7 +115,7 @@ def describe(path: Path) -> dict[str, str]:
             "source_path": "data/nicolaiplots/plotsT1/plots_resolutions/RESOLUTIONPLOTS/synthesis_figures",
             "copyright": "Nicolai Meinshausen",
             "license": "CC-BY-4.0",
-            "role": "supplementary GCMagicc-CE resolution-sensitivity synthesis",
+            "role": "supplementary GCMagicc resolution-sensitivity synthesis",
         }
     if rel.startswith("figures/supplementary/aerosol_sensitivity/"):
         return {
@@ -124,7 +124,7 @@ def describe(path: Path) -> dict[str, str]:
             "source_path": "data/nicolaiplots/plotsT1/plots_aerosol",
             "copyright": "Nicolai Meinshausen",
             "license": "CC-BY-4.0",
-            "role": "supplementary GCMagicc-CE aerosol-sensitivity map",
+            "role": "supplementary GCMagicc aerosol-sensitivity map",
         }
     if rel.startswith("figures/supplementary/gcmagicc_xs_extrapolation/"):
         return {
@@ -138,7 +138,7 @@ def describe(path: Path) -> dict[str, str]:
     if rel.startswith("figures/main/validation_diagnostics/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "main-gus b1af6a4 + generator sha256:80180b212fb1e3da45aef2fa1a768a8f37a2dfc9e563801804ba715e9ed90962; bundle 20260810_0845",
+            "source_revision": "checkout 8b30bcd + generator sha256:3bda0f95467015dc2ee4a913063e390b34ab4fd00f7771b79900210cb3acdbe9; batch sha256:39148a59207a285ef82a8b10e03b81e882f113248d064c35a88a5baf6ca4bb4b; bundle 20260821_1121",
             "source_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100/main",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
@@ -147,7 +147,7 @@ def describe(path: Path) -> dict[str, str]:
     if rel.startswith("figures/supplementary/validation_diagnostics/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "main-gus b1af6a4 + generator sha256:80180b212fb1e3da45aef2fa1a768a8f37a2dfc9e563801804ba715e9ed90962; bundle 20260810_0845",
+            "source_revision": "checkout 8b30bcd + generator sha256:3bda0f95467015dc2ee4a913063e390b34ab4fd00f7771b79900210cb3acdbe9; batch sha256:39148a59207a285ef82a8b10e03b81e882f113248d064c35a88a5baf6ca4bb4b; bundle 20260821_1121",
             "source_path": "data/manuscript_figures/validation_diagnostics/publication_set_v100/v100/supplementary",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
@@ -165,8 +165,8 @@ def describe(path: Path) -> dict[str, str]:
     if rel.startswith("figures/main/observational_alignment/"):
         return {
             "source_repository": "gcmmagicc",
-            "source_revision": "main-gus b1af6a4 + generator sha256:15de2923f3b135fb4fa60b3d568ae54ff4fe4b4d088612badbf185c3518ddc1a; bundle 20260807_110344",
-            "source_path": "data/manuscript_figures/observational_alignment",
+            "source_revision": "gcmmagicc revision c5c3d9f + generator sha256:8b4de15fc90a1e8675ec6137c1f331e93ad7c1745779d4af45c2cbf6262cd238; bundle 20260827_221422 generated immediately before containing commit",
+            "source_path": "data/manuscript_figures/observational_alignment/observational_alignment_v100_20260827_221422",
             "copyright": "Malte Meinshausen and GCMagicc evaluation suite contributors",
             "license": "CC-BY-4.0",
             "role": "main observational-alignment figure",
@@ -180,7 +180,7 @@ def describe(path: Path) -> dict[str, str]:
             "license": "CC-BY-4.0",
             "role": "supplementary Iran SPEI-sensitivity figure",
         }
-    if rel in {"provenance/ada_data_audit.csv", "provenance/ada_data_audit.md", "provenance/figure_registry.csv"}:
+    if rel in {"provenance/source_data_audit.csv", "provenance/source_data_audit.md", "provenance/figure_registry.csv"}:
         return {
             "source_repository": "GCMagicc_v1_manuscript",
             "source_revision": "release audit 2026-07-26",
@@ -424,8 +424,8 @@ def main() -> None:
     ):
         files += sorted(path for path in (ROOT / relative).rglob("*") if path.is_file())
     files += [
-        ROOT / "provenance/ada_data_audit.csv",
-        ROOT / "provenance/ada_data_audit.md",
+        ROOT / "provenance/source_data_audit.csv",
+        ROOT / "provenance/source_data_audit.md",
         ROOT / "provenance/figure_registry.csv",
     ]
     rows = []
