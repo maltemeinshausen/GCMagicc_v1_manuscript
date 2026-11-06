@@ -19,3 +19,11 @@ License: Apache-2.0
 Files: configs/** pyproject.toml
 Copyright: Nicolai Meinshausen; Malte Meinshausen and GCMagicc evaluation suite contributors
 License: Apache-2.0
+
+Files: data/era5_retrieval/*.py
+Copyright: Malte Meinshausen and GCMagicc evaluation suite contributors
+License: Apache-2.0
+
+Files: .zenodo.json
+Copyright: Nicolai Meinshausen; Malte Meinshausen and GCMagicc evaluation suite contributors
+License: CC-BY-4.0

@@ -1,0 +1,56 @@
+{
+  "title": "GCMagicc v1.0.1: model and evaluation code for \"GCMagicc v1: a fast generative emulator for multivariate climate-impact ensembles\"",
+  "upload_type": "software",
+  "version": "1.0.1",
+  "publication_date": "2026-11-06",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Meinshausen, Nicolai",
+      "affiliation": "The University of Melbourne; University of Washington",
+      "orcid": "0009-0006-1274-3508"
+    },
+    {
+      "name": "Meinshausen, Malte",
+      "affiliation": "The University of Melbourne; Climate Resource",
+      "orcid": "0000-0003-4048-3521"
+    }
+  ],
+  "license": "Apache-2.0",
+  "description": "<p>Frozen code release of <strong>GCMagicc v1.0.1</strong> accompanying the Geoscientific Model Development manuscript <em>GCMagicc v1: a fast generative emulator for multivariate climate-impact ensembles</em> (EGUsphere preprint egusphere-2026-5176).</p><p>The release contains the frozen model code for the GCMagicc and GCMagicc-CE configurations, the evaluation, drought-attribution, regional-scenario and figure workflows, compact prepared data, figures, provenance manifests, tests, and the ERA5 retrieval recipe (<code>data/era5_retrieval/</code>).</p><p>This is a mixed-licence release: code is licensed under Apache License 2.0; data, figures and documentation are licensed under Creative Commons Attribution 4.0 International (see <code>LICENSE</code>, <code>LICENSES/</code> and <code>.reuse/dep5</code>).</p><p>The trained model checkpoints, reproduction bundles and validation databases are too large for this record and are archived separately at <a href=\"https://doi.org/10.5281/zenodo.22139683\">https://doi.org/10.5281/zenodo.22139683</a>.</p>",
+  "keywords": [
+    "climate emulator",
+    "GCMagicc",
+    "MAGICC",
+    "CMIP6",
+    "ERA5",
+    "machine learning",
+    "climate model emulation",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5194/egusphere-2026-5176",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.22139683",
+      "relation": "isSupplementedBy",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "10.24381/cds.f17050d7",
+      "relation": "requires",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://gcmagicc.org",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ]
+}
